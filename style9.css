@@ -1,0 +1,677 @@
+
+
+.upload
+{
+width: 80%;
+height:auto;
+background-color:transparent;
+margin-left: 70px;
+border-radius: 7px;
+border-style: ridge;
+margin-left: 160px;
+margin-bottom: 50px;
+margin-top: 50px;
+}
+
+.select{
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  height: 40px; /* Adjust height as needed */
+  background-color: transparent;
+  margin-top: 10px;
+  margin-left: 60px;
+  padding: 10px;
+  align-items: center; /* Center items vertically */
+}
+
+.select label {
+  margin-left: 20px;
+  margin-right: 10px; /* Space between label and select */
+  font-weight:bold;
+}
+
+.select select {
+  background-color: white; /* Match the option background */
+  height: 30px; /* Keep consistent height */
+  padding: 5px; /* Optional: Add padding for better appearance */
+  margin-left: 50px;
+  width: 20%;
+  height: 50px;
+}
+
+/* Remove margin-left from option as it's not necessary */
+.select option {
+  background-color: #ff6600;
+  width: 20%;
+  height: 50px;
+  font-weight:bold;
+}
+
+.movies {
+width: 100%;
+height:auto;
+background-color:transparent;
+margin-left: 70px;
+border-radius: 0px;
+border-style: none;
+margin-left: 0px;
+margin-top: 20px;
+margin-bottom: 0px;
+}
+
+.movies h4
+{
+font-size: 30px;
+color: purple;
+float: left;
+margin-left: 70px;
+}
+
+.title {
+    position: relative; /* Changed to relative */
+    width: 90%;
+    height: 120px;
+    background-color:transparent;
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.top {
+    width: 20%; /* Changed to 100% */
+    height: auto; /* Adjusted for dynamic height */
+    background-color:transparent;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.top label {
+    margin-left: 10px;
+    margin-top: 0;
+    background-color: transparent;
+    padding: 5px;
+    display: block; /* Changed to block for proper alignment */
+}
+
+.title input {
+    width: calc(100% - 20px); /* Adjusted for padding */
+    height: 30px;
+    margin-top: 10px; /* Adjusted margin */
+    background-color:transparent;
+    padding: 5px; /* Added padding for better appearance */
+}
+
+.Description {
+    display: block; /* Change to block to make it visible */
+    width: 20%;
+    height: auto; /* Adjusted for dynamic height */
+    background-color:transparent;
+    margin-top: 50px;
+    padding: 10px;
+    margin-left: 50px;
+    border-radius: 7px;
+}
+
+.Description label {
+    margin-left: 10px;
+    margin-top: 2px;
+    font-weight: normal; /* Changed to normal */
+}
+
+textarea {
+    width:80%;
+    height: 200px;
+    margin-top: 20px;
+    background-color:transparent;
+    padding: 5px; /* Added padding for better appearance */
+    float: left;
+    margin-left: 50px;
+}
+
+
+.episodes
+{
+    width: 20%;
+    height: 20px;
+    background-color:transparent;
+    margin-top:10px;
+    margin-left: 50px;
+    padding: 10px;
+    border-style: none;
+border-radius: 7px;
+
+}
+
+.episodes label
+{
+    margin-left: 10px;
+    font-weight: bold;
+    margin-top: 2px;
+    color:green;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.data {
+  position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color:grey;
+    margin-top: 80px;
+    margin-left: 80px;
+    padding: 50px;
+    border-style: ridge;
+    gap:50px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+.data label {
+    font-weight: none;
+    margin-right: 20px; /* Space between label and input */
+    width: 40%; /* Adjust width as needed */
+}
+
+.data input,
+.data select {
+    width: 55%;
+    height: 30px; 
+}
+
+
+button
+{
+width: 20%;
+height: 40px;
+background-color: green;
+margin-top: 100px;
+margin-left:  20px;
+border-radius: 7px;
+position: relative;
+margin-bottom: 50px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+}
+
+
+/* Remove default circular style */
+input[type="radio"] {
+    appearance: none; /* Remove the default style */
+    -webkit-appearance: none;
+    -moz-appearancema: none;
+    margin-top: 0px;
+    width: 20px;  /* Set width of the radio input */
+    height: 20px; /* Set height of the radio input */
+    border: 2px solid #555;  /* Custom border */
+    border-radius: 3px; /* Square shape */
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color:purple; /* Background color when checked */
+    border: 2px solid #4CAF50;
+}
+
+
+.meta
+{
+    width:30%;
+    height: 30px;
+    background-color:transparent;
+margin-top: 20px;
+margin-bottom: 0px;
+position: relative;
+margin-left: 60px;
+
+}
+
+.meta p
+{
+padding:5px;
+background-color:transparent;
+}
+
+
+.meta label
+{
+color: black;
+margin-top: 0px;
+
+}
+
+
+.series
+{
+
+    width: 100%;
+    height:auto;
+    background-color:transparent;
+    margin-left: 70px;
+    border-radius: 0px;
+    border-style: none;
+    margin-left: 0px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.series h4
+{
+    font-size: 30px;
+    color: purple;
+    float: left;
+    margin-left: 70px;
+}
+ 
+.episode-section {
+    margin-bottom: 40px;
+}
+
+.preview-items {
+    display: flex;
+    gap: 20px;
+}
+
+.textarea {
+
+    background-color: red;
+    width: 80%;
+    height: 100px;
+}
+
+.thumbnail
+{
+width: 20%;
+height: 50px;
+background-color:transparent;
+float: left;
+margin-left: 50px;
+margin-top: 50px;
+border-radius: 7px;
+}
+
+.thumbnail label
+{
+margin-top: 15px;
+float: left;
+margin-left: 10px;
+}
+
+.Episodes
+{
+    width: 20%;
+    height: 50px;
+    background-color:transparent;
+    float: left;
+    margin-left: 50px;
+    margin-top: 50px;
+    border-radius: 7px;
+
+}
+
+.Episodes label
+{
+margin-top: 15px;
+float: left;
+margin-left: 10px;
+}
+
+.Episode
+{
+    position:absolute;
+    width: 20%;
+    height: 50px;
+    background-color:transparent;
+    float: left;
+    margin-left: 50px;
+    margin-top: 100px;
+    border-radius: 7px;
+
+}
+
+.Episode label
+{
+margin-top: 15px;
+float: left;
+margin-left: 10px;
+}
+
+.tittle {
+    position: relative; /* Changed to relative */
+    width: 90%;
+    height: 120px;
+    background-color:transparent;
+    margin-top: 200px;
+    margin-left: 50px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.topp {
+    width: 20%; /* Changed to 100% */
+    height: auto; /* Adjusted for dynamic height */
+    background-color:transparent;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.topp label {
+    margin-left: 10px;
+    margin-top: 0;
+    background-color: transparent;
+    padding: 5px;
+    display: block; /* Changed to block for proper alignment */
+}
+
+.tittle input {
+    width: calc(100% - 20px); /* Adjusted for padding */
+    height: 30px;
+    margin-top: 10px; /* Adjusted margin */
+    background-color:transparent;
+    padding: 5px; /* Added padding for better appearance */
+}
+
+.Descriptionn {
+    display: block; /* Change to block to make it visible */
+    width: 20%;
+    height: auto; /* Adjusted for dynamic height */
+    background-color:transparent;
+    margin-top: 50px;
+    padding: 10px;
+    margin-left: 50px;
+    border-radius: 7px;
+}
+
+.Descriptionn label {
+    margin-left: 10px;
+    margin-top: 2px;
+    font-weight: normal; /* Changed to normal */
+}
+
+textarea {
+    width:80%;
+    height: 200px;
+    margin-top: 20px;
+    background-color:transparent;
+    padding: 5px; /* Added padding for better appearance */
+    float: left;
+    margin-left: 50px;
+}
+
+
+.remove button
+{
+  width: 20%;
+    height: 40px;
+    background-color: green;
+    margin-top:20px;
+    margin-left:   20px;
+    border-radius: 7px;
+    position: relative;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.metadata
+{
+    position: absolute;
+margin-top: 10px;
+width: 20%;
+height: 30px;
+float: left;
+margin-left: 50px;
+background-color:transparent;
+border-radius: 7px;
+margin-bottom: 60px;
+}
+
+.metadata label
+{
+    float: left;
+    margin-left: 30px;
+    font-weight: bold;
+    margin-top: 4px;
+    color:green;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+.uploads
+{
+    width: 80%;
+    height: 370px;
+    background-color:transparent;
+    margin-top:10px;
+    margin-left: 60px;
+    padding: 10px;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+border-style: none;
+gap:30px;
+justify-content: space-around;
+}
+
+
+.uploads {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 30px; /* Space between upload and preview */
+}
+
+
+.uploadss
+{
+    width: 80%;
+    height: 370px;
+    background-color:transparent;
+    margin-top:30px;
+    margin-left: 60px;
+    padding: 10px;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+border-style: none;
+gap:10px;
+justify-content: space-around;
+}
+
+
+.uploadss {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 30px; /* Space between upload and preview */
+}
+
+
+
+.uploader
+{
+    width: 80%;
+    height: 370px;
+    background-color:transparent;
+    margin-top:30px;
+    margin-left: 60px;
+    padding: 10px;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+border-style: none;
+gap:30px;
+justify-content: space-around;
+}
+
+
+.uploader {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 30px; /* Space between upload and preview */
+}
+
+
+#thumbnailImageContainer {
+    margin-top: 90px; /* Adjust margin if necessary */
+}
+
+
+
+.preview-container {
+    display: flex;
+    flex-direction: column; /* Stack the title and items vertically */
+}
+
+.preview-items {
+    display: flex;
+    gap: 150px; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+video, img {
+    display: block; /* Ensure they are block elements */
+}
+
+
+.post 
+{   
+     width: 200px;
+    height: 2rem;
+    background-color:transparent;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.post label 
+{
+
+    margin-left: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+ 
+
+}
+
+.card {
+    text-align: center;
+   height: 250px;
+    border: 2px solid #faa301;
+    border-radius: 0px;
+margin-left:5px;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 50px;
+
+}
+.carrd {
+    text-align: center;
+   height: 250px;
+    border: 2px solid #faa301;
+    border-radius: 0px;
+margin-left:5px;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 50px;
+
+}
+
+.cardd {
+    text-align: center;
+   height: 250px;
+    border: 2px solid #faa301;
+    border-radius: 0px;
+margin-left:5px;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 50px;
+
+}
+
+.app-title {
+    color: #27ae60;
+}
+
+.app-subtitle {
+    color: #333;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    
+}
+
+.file-label {
+    cursor: pointer;
+    display: flexbox;
+    padding: 7px;
+    background-color: #c834db;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.file-label:hover {
+    background-color: #73ec10;
+ 
+}
+
+.file-input {
+    display: none;
+}
+
+
+.file-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.file-name {
+    color: rgb(19, 2, 255);
+}
+
+.preview-container
+{
+    width: 80%;
+    height: 300px;
+    background-color:transparent;
+    margin-top:10px;
+    margin-left: 60px;
+    padding: 10px;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+border-style: ridge;
+gap:70px;
+justify-content: space-around;
+margin-bottom: 20px;
+}
+
+.preview-containerr
+{
+    width: 80%;
+    height: 370px;
+    background-color:transparent;
+    margin-top:30px;
+    margin-left: 60px;
+    padding: 10px;
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+border-style: ridge;
+gap:70px;
+justify-content: space-around;
+margin-bottom: 20px;
+}

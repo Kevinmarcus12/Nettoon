@@ -1,0 +1,1412 @@
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for better UX */
+}
+
+body {
+  display: flex; /* Missing flex display */
+  flex-direction: column; /* Ensures content flows properly */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  text-align: center; /* Keeps text centered */
+  background-color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh; /* Ensures full height on all screens */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+}
+
+.container {
+  position: fixed;
+  background-color:white;
+  display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  object-fit: cover;
+  top: 0px;
+  float: left;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height:54px ;
+  border-radius: 0px;
+  left: 0px;
+  border-style: none;
+  z-index: 1;
+  margin-bottom: 0px;
+  justify-content: space-between;
+}
+
+
+
+.Table {
+  position: relative; /* Positioning context for child elements */
+  min-width: 12%; /* Allow slight flexibility */
+  max-width: 16%; /* Prevent excessive stretching */
+  height: 2.8rem; /* Maintain proportional height */
+  background-color: transparent;/* Debugging background */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center; /* Ensure vertical alignment */
+  justify-content: center; /* Ensure horizontal centering */
+}
+
+.overlay-text {
+  position: absolute; /* Keep it overlaid inside .Table */
+  width: 94%; /* Full width */
+  height: auto; /* Allow flexible height */
+  background-color: transparent;/* Debugging background */
+  padding: 0;
+  text-align: center;
+  font-size: 15px; /* Standard text size */
+  font-weight:700;
+  color: white; /* Ensure visibility */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Improve readability */
+  z-index: 3; /* Higher than .Table to stay visible */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Perfect centering */
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Remove underline from the anchor tag */
+a {
+  text-decoration: none; /* Ensure no underline on the anchor tag */
+}
+
+/* Optional: Ensure no underline on spans if needed */
+.net-text, .toon-text {
+  text-decoration: none; /* Ensure no underline on spans */
+}
+
+
+.nav {
+  position: absolute;
+  width: 84.5%;
+  float: left;
+  margin-left: 15.3vw; /* Adjusted for responsiveness */
+  height: auto;
+  background-color: transparent;
+  margin-top: 0;
+  display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center; /* Center items vertically */
+  justify-content: space-around; /* Center items horizontally */
+  gap: 5vw;
+  max-height: 5.4vh; /* Adjusted for better height scaling */
+  margin-bottom: 1vh;
+}
+
+
+.search {
+  display: flex;
+  position: relative; /* Make the container relative for absolute positioning */
+  width: 90%;
+  height: auto;
+  background-color: transparent;
+  margin: 2vh auto;
+  border-radius: 0.5rem;
+  margin-left: 3vw;
+  align-items: center;
+}
+
+.search input[type="search"] {
+  flex: 1;
+  height: 3.5vh;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: 0.01rem solid #ccc;
+  max-width: 100%;
+  padding-left: 2.5rem; /* Ensure space for the icon */
+  color: #36454F;
+}
+
+/* Dark mode input */
+body.dark-mode .search input[type="search"] {
+  color: #fff;
+}
+
+/* Placeholder styling */
+.search input[type="search"]::placeholder {
+  color: #36454F;
+}
+
+body.dark-mode .search input[type="search"]::placeholder {
+  color: #D3D3D3;
+}
+
+.dark-mode .nav input[type="text"]  {
+  color:   #F5F5DC; 
+}
+
+.dark-mode .nav input[type="text"]::placeholder  {
+  color:   #F5F5DC; 
+}
+
+
+/* Search Icon Styling */
+.search .search-icon {
+  position: absolute;
+  right: 10px; /* Adjusts distance from the left */
+  top: 51%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 20px;
+  min-height: 20px;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  
+}
+
+.search input[type="search"]::-webkit-search-decoration,
+.search input[type="search"]::-webkit-search-cancel-button,
+.search input[type="search"]::-webkit-search-results-button,
+.search input[type="search"]::-webkit-search-results-decoration {
+  display: none; /* Hide the clear button */
+}
+
+/* Notifications Icon */
+.Notifications {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin-top: 0.3125rem; /* Converted from 5px */
+  margin-left: 1.25rem; /* Converted from 20px */
+  margin-bottom: 0.1875rem; /* Converted from 3px */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.Notifications img {
+  width: 2vw;
+  height: 2vw;
+  margin-top: 0.4375rem; /* Converted from 7px */
+}
+
+/* Notification Dropdown */
+.Notification-container {
+  display: none; /* Hidden by default */
+  position: absolute;
+  width: 24%;
+  height: auto;
+  background-color: #333; /* Dark mode background */
+  min-width: 11.25em; /* 180px */
+  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
+  top: 100%; /* Always appears below the icon */
+  right: 1%; /* Align to the right edge of the icon */
+  border-radius: 0.5em; /* Rounded corners */
+  max-height: 30em; /* Prevents excessive height */
+  overflow-y: auto; /* Enables scrolling if too many notifications */
+  z-index: 30;
+  padding: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+  color: white;
+}
+
+/* Active class to show the container */
+.Notification-container.active {
+  display: block;
+}
+
+
+.Theme {
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center vertically */
+  cursor: pointer; /* Pointer for hover effect */
+}
+
+
+.Theme img {
+  width: 1.6875em; /* Converted from 27px */
+  height: 1.6875em;
+  border-radius: 50%; /* Circular profile image */
+  margin-left: 1em; /* Converted from 10px */
+}
+
+.dark-mode .Theme img
+{
+  filter: invert(1);
+}
+
+
+.Account {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin: 0 1.5625rem 0.1875rem 0; /* Converted from 25px, 3px */
+  display: flex; /* Flexbox for alignment */
+  align-items: center;
+  border-radius: 50%;
+  margin-top: 0.3125rem; /* Converted from 5px */
+  float: right;
+  margin-right: 1rem;/* Converted from 30px */
+}
+
+.Account img {
+  width: 2vw;
+  height: 2vw;
+  float: left;
+  margin-left: 0.4rem; /* Converted from 5px */
+  border-radius: 50%;
+}
+
+.dark-mode .Account img
+{
+  filter: invert(1);
+}
+
+
+.account-dropdown {
+  position: relative; /* Position for dropdown */
+  display: inline-block; /* Align with other elements */
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 1%;
+  width: 24%;
+  min-width: 11.25em;
+  max-height: 25em;
+  background-color: #333;
+  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  z-index: 30;
+  padding: 0.5em 0;
+  text-align: left;
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) white;
+}
+
+.dropdown-content a {
+  
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; /* Make links block elements */
+}
+
+.account-dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Profile Section */
+.proofile {
+  width: 85%;
+  min-height: 1.875em; /* 30px */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: white;
+  padding: 0.625em; /* 10px */
+  border-radius: 0.4375em; /* 7px */
+  max-width: 90%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.proofile:hover {
+  background-color: grey; /* Subtle purple hover effect */
+  color: white;
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Profile Image */
+.proofile img {
+  width: 1.6875em; /* 27px */
+  height: 1.6875em;
+  border-radius: 50%;
+  margin-right: 0.625em; /* 10px */
+}
+
+/* Profile Name */
+.proofile label {
+  font-weight: bold;
+  font-size: 0.875em; /* 14px */
+  color: black;
+  margin-left: 0.3125em; /* 5px */
+  text-align: left;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Change text color on hover */
+.proofile:hover label {
+  color: white;
+}
+
+
+.dropdown-content li {
+  list-style: none; /* Remove bullet points */
+}
+
+
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  z-index: 1;
+  margin-top: 0;
+  padding: 0.3125em; /* Converted from 5px */
+  border-radius: 0.25em; /* Slight rounding for better UI */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transform: translateY(5px); /* Smooth pop-up effect */
+}
+
+.upload:hover .tooltip, 
+.Notifications:hover .tooltip, 
+.Account:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+/* 🔥 Overlay Background (Blurs Everything Behind) */
+.upload-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5) ; /* Semi-transparent black */
+  backdrop-filter: blur(8px); /* Blurs background for depth effect */
+  z-index: 10; /* Ensures it covers everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔥 Floating Upload Container */
+.upload-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Keeps content aligned to top */
+  width: 90vw;
+  max-width: 750px;
+  min-height: 700px;
+  max-height: 700px;
+  overflow-y: auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 11;
+  opacity: 0;
+  transform: translateY(-50px); /* Starts slightly above */
+  animation: popIn 0.5s ease-out forwards;
+  margin-top: 5px; /* Fixed: Added 'px' */
+  text-align: center;
+  scrollbar-width: thin; /* Set scrollbar to thin */
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Color of the scrollbar thumb and track */
+}
+
+a {
+  display: inline-block; /* Ensures it behaves like a block element */
+  text-decoration: none; /* Removes the default underline */
+}
+
+
+/* 🎬 Smooth Pop-in Animation */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+  .upload-container {
+    width: 95vw;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+}
+
+/* 🌙 Dark Mode */
+.dark-mode .upload-container {
+  background-color: #222;
+  border: 0.1rem solid #444;
+  color: #eee;
+}
+
+
+/* 🎬 Smooth Pop-in Animation */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎨 Title Section Styling */
+.title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.title h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.title input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+
+h2 {
+  position: sticky;
+  top: 0;
+  left: 0; /* Ensures it starts from the left edge */
+  right: 0; /* Ensures it extends to the right edge */
+  background:white;
+  color: red;
+  text-align: center;
+  width: 100vw; /* Forces it to take the full viewport width */
+  max-width: 100vw; /* Ensures it doesn't exceed the screen width */
+  margin: 0; /* Completely removes margin */
+  padding: 0.5rem 0.5rem; /* Adjusts padding for better spacing */
+  border-radius: 0; /* Removes border-radius if you want full-width */
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: block;
+  z-index: 10;
+}
+
+/* 🌙 Dark Mode */
+.dark-mode .upload-container  h2{
+  background-color: #222;
+  border: 0.1rem solid #444;
+  color:yellow;
+}
+
+/* Ensure parent container does not add extra margin */
+.upload-container {
+  padding-top: 0; /* Removes any extra padding */
+  margin-top: 0 !important; /* Forces removal of extra margin */
+  width: 100%;
+
+}
+
+/* Dark mode support */
+.dark-mode h2 {
+  color: yellow;
+}
+
+/* ✅ Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .upload-container {
+    width: 95vw; /* Expands more on smaller screens */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Slightly smaller font on small screens */
+    margin-top: 3vh;
+  }
+}
+
+/* ✅ Ultra Small Devices (Mobile) */
+@media (max-width: 480px) {
+  .upload-container {
+    width: 98vw; /* Expands fully for mobile */
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-top: 2vh;
+  }
+}
+
+/* ✅ TITLE AND DESCRIPTION CONTAINER */
+.title, .Description {
+  width: 100%; /* Full width for flexibility */
+  height: auto;
+  padding: 1rem;
+  border-radius: 0.4rem; /* Slightly smoother rounded edges */
+  box-sizing: border-box; /* Prevents layout shift due to padding */
+  background-color: transparent; /* Keeps the section clean */
+  margin-bottom: 1.5rem; /* More breathing room between sections */
+}
+
+/* ✅ TITLE AND DESCRIPTION CONTAINER */
+.dark-mode .title input, textarea {
+  background-color:white; /* Keeps the section clean */
+}
+
+
+/* ✅ Text Styling for Titles and Descriptions */
+.title h3, .Description h3 {
+  color: black;
+  font-size: 1.3rem; /* Slightly larger for emphasis */
+  font-weight: 600; /* Bolder look for better readability */
+}
+
+/* ✅ Dark mode support */
+.dark-mode .title h3, .dark-mode .Description h3 {
+  color: #f1f1f1; /* Slightly off-white for less strain on eyes */
+}
+
+
+
+/* ✅ General Input and Textarea Styling */
+input, textarea {
+  width: 100%;
+  padding: 0.9rem; /* Slightly more padding for better UX */
+  background-color: white;
+  border-radius: 0.3rem;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 1.2rem; /* More spacing between fields */
+}
+
+/* ✅ Input & Textarea Focus Effect (For Better UX) */
+input:focus, textarea:focus {
+  border-color: #007bff; /* Highlights when selected */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* ✅ Dark Mode for Input and Textarea */
+.dark-mode input, .dark-mode textarea {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+/* ✅ Mobile-Friendly Adjustments */
+@media (max-width: 768px) {
+  .title h3, .Description h3 {
+    font-size: 1.15rem; /* Slightly smaller for compact screens */
+  }
+
+  input, textarea {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* ✅ Ultra Small Devices (Mobile) */
+@media (max-width: 480px) {
+  .title, .Description {
+    padding: 0.8rem;
+  }
+
+  input, textarea {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+/* ✅ Universal Focus Effect for Input & Textarea */
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+
+}
+
+/* ✅ Textarea Styling (Future-Proof & Adjustable) */
+textarea {
+  resize: vertical; /* Allows flexible resizing */
+  height: 200px; /* Initial optimal height */
+  min-height: 150px; /* Ensures a minimum spacious height */
+  max-width: 100%;
+  font-size: 1rem;
+  background-color:white;
+}
+
+/* ✅ Description Section Styling */
+.Description textarea {
+  padding: 0.9rem; /* Slightly more padding for comfort */
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+
+}
+
+/* ✅ Dark Mode Support */
+.dark-mode .Description textarea {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+/* ✅ Buttons - Modern, Responsive & Scalable */
+.submit-button {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600; /* Slightly bolder for a strong CTA */
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* ✅ Button Hover & Click Effects */
+.submit-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Subtle hover lift effect */
+}
+
+.submit-button:active {
+  transform: scale(0.98); /* Slight click effect */
+}
+
+/* ✅ Button Focus State */
+.submit-button:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+
+/* ✅ Responsive Optimizations */
+@media (max-width: 768px) {
+  textarea {
+    height: 180px; /* Slightly smaller for mobile screens */
+  }
+
+  .submit-button {
+    width: 100%; /* Full width button for better usability */
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  textarea {
+    height: 160px; /* Further optimized for smaller screens */
+    font-size: 0.95rem;
+  }
+
+  .submit-button {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+.uploads {
+  position: relative;
+  width: 90%;
+  max-width: 60rem; /* 960px equivalent */
+  height: auto;
+  display: flex;
+  flex-wrap: wrap; /* Enables stacking for smaller screens */
+  justify-content: center;
+  background-color:transparent;
+  border-radius: 0.5rem;
+  padding: 1.5rem; /* Slightly increased for better spacing */
+  gap: 1.2rem; /* Consistent spacing */
+  border: 0.05rem solid #ccc;
+}
+
+/* Hide File Inputs */
+.file-input {
+  display: none;
+}
+
+/* 📌 Video & Thumbnail Upload Boxes */
+.video, .thumbnail {
+  flex: 1 1 48%; /* Responsive width */
+  max-width: 22rem; /* Increases flexibility */
+  min-width: 12rem; /* Prevents breaking on smaller screens */
+  height: auto;
+  aspect-ratio: 16/9; /* Maintains aspect ratio */
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: 0.1rem dashed #ccc;
+
+}
+
+/* ✨ Hover Effect for Better Interactivity */
+.video:hover, .thumbnail:hover {
+  border-color: goldenrod;
+  background-color: rgba(0, 123, 255, 0.1);
+  transform: scale(1.02); /* Subtle zoom effect */
+}
+
+.upload-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0.5rem;
+}
+
+
+
+/* 🖼️ Preview Container - Hidden by Default */
+.preview-container {
+  display: none; /* Remains hidden until activated */
+  width: 100%;
+  height: auto;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color:transparent;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  padding: 1.2rem;
+  gap: 0.7rem;
+  border: 0.05rem solid #ccc;
+  transition: all 0.3s ease-in-out; /* Smooth appearance effect */
+}
+
+/* ✅ Appears When Active */
+.preview-container.active {
+  display: flex; /* Becomes visible when triggered */
+}
+
+/* 🎥 Previewed Videos & Images */
+.preview-container video,
+.preview-container img {
+  flex: 1 1 48%; /* Responsive width */
+  max-width: 22rem; /* Slightly increased for better scaling */
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  padding: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+
+
+/* 📱 Mobile Optimization */
+@media (max-width: 48rem) { /* 768px equivalent */
+  .uploads {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video, .thumbnail {
+    flex-basis: 100%;
+    max-width: 95%; /* Slightly reduced for better spacing */
+  }
+
+  .preview-container video,
+  .preview-container img {
+    flex-basis: 100%;
+    max-width: 95%;
+  }
+}
+
+
+.metadata-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2vw;
+  border-radius: 0.625rem;
+  align-items: center; /* Centers children horizontally */
+  justify-content: center; /* Centers children vertically */
+  width: 100%;
+  max-width: 600px; /* Increased width for better spacing */
+  margin: 0 auto; /* Centers the whole container */
+  background-color: green;
+  text-align: center; /* Centers text inside */
+}
+
+.upper-container,
+.lower-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center; /* Ensures vertical centering */
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto; /* Ensures center alignment */
+  background-color: transparent;
+  text-align: center;
+}
+
+
+/* 🎯 Ensure All Inner Elements Are Centered */
+.metadata-container * {
+  align-self: center; /* Forces every element inside to align at the center */
+}
+
+/* 📱 Mobile Adjustments */
+@media (max-width: 768px) {
+  .metadata-container {
+    width: 95%;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .upper-container,
+  .lower-container {
+    width: 90%;
+    gap: 1rem;
+  }
+}
+
+
+/* 🎯 Metadata Group Styling */
+.metadata-group {
+  width: 100%; /* Ensures full width */
+  max-width: 90rem; /* Prevents stretching on large screens */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  text-align: center;
+  background-color:red;
+  border-radius: 0.625rem;
+  margin-top: 60px;
+}
+
+/* 🎭 Label Styling */
+.metadata-group label {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+}
+
+/* 🌙 Dark Mode Adaptation */
+.dark-mode .metadata-group label {
+  color: white;
+}
+
+/* 📝 Input & Select Field Refinement */
+select, input {
+  width: 100%;
+  max-width: 30rem; /* Slightly reduced to fit UI */
+  padding: 0.75rem;
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+/* 🔵 Focus Effects */
+input:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* 📌 Main Metadata Container */
+.metadata-container {
+  display: flex;
+  flex-direction: column; /* Ensures items stack in sequence */
+  align-items: center;
+  width: 100%;
+  gap: 2rem; /* Adds consistent spacing */
+  padding: 2vw;
+  border-radius: 0.625rem;
+}
+
+/* 🎯 Metadata Group Styling */
+.metadata-group {
+  width: 90%; /* Makes it fully responsive */
+  max-width: 50rem; /* Prevents excessive stretching */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  border-radius: 0.625rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* 🏷️ Label Styling */
+.metadata-group label {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: black;
+}
+
+/* 🌙 Dark Mode Support */
+.dark-mode .metadata-group label {
+  color: white;
+}
+
+/* 🖊️ Input & Select Styling */
+select,
+input {
+  width: 100%;
+  max-width: 40rem; /* Balanced width for all screens */
+  padding: 0.8rem;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* 🏆 Mobile Optimization */
+@media (max-width: 768px) {
+  .metadata-group {
+    width: 100%; /* Takes full width on smaller screens */
+  }
+
+  select,
+  input {
+    max-width: 100%; /* Makes inputs fully fluid */
+  }
+}
+/* 🔵 Focus Effects */
+input:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 📌 Main Metadata Container */
+.metadata-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  padding: 2vw;
+  border-radius: 0.625rem;
+  max-width: 90rem; /* Prevents over-expansion on ultra-wide screens */
+  margin: auto; /* Centers the container */
+}
+
+/* 🎯 Metadata Group Styling */
+.metadata-group {
+  width: 100%;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Increased gap for better readability */
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  border-radius: 0.625rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* 🏷️ Label Styling */
+.metadata-group label {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: black;
+}
+
+/* 🌙 Dark Mode Support */
+.dark-mode .metadata-group label {
+  color: white;
+}
+
+/* 🖊️ Input & Select Styling */
+select,
+input {
+  width: 100%;
+  max-width: 40rem;
+  padding: 0.9rem;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+  .metadata-group {
+    width: 100%;
+    max-width: 100%; /* Full width for small screens */
+  }
+
+  select,
+  input {
+    max-width: 100%;
+    font-size: 1.05rem; /* Slightly increased for better mobile usability */
+  }
+}
+
+/* 🏷️ Tags Container */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 90%;
+  min-height: 40px; /* Adjusted for a cleaner look */
+  cursor: text;
+  background-color: transparent;
+  border-radius: 7px;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* 🎯 Individual Tags */
+.tag {
+  background-color: transparent;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 15px;
+  margin: 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc; /* Subtle border for better visibility */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 🌙 Dark Mode Support */
+.dark-mode .tag {
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ❌ Remove Tag Button */
+.tag .remove-tag {
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s ease-in-out;
+}
+
+.tag .remove-tag:hover {
+  color: red;
+}
+
+/* 🔡 Input Field */
+.tags-container input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  width: 90%;
+  max-width: 50rem;
+  height: 38px; /* Slightly adjusted for better alignment */
+  border-radius: 5px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* 🔵 Focus Effect */
+.tags-container input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+  .tags-container {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .tag {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .tags-container input {
+    font-size: 0.85rem;
+    height: 36px;
+  }
+}
+/* 🌍 Language Selection Container */
+.languages {
+  width: 100%;
+  background-color: transparent;
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  gap: 1.5vw; /* Keeps spacing relative for flexibility */
+}
+
+/* 🗨️ Meta Section for Comments */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; /* Adjusted for balanced spacing */
+  background-color: transparent;
+  margin-top: 2vw;
+  width: 50%;
+  margin-left: 0;
+  border-radius: 7px;
+  padding: 10px;
+  flex-wrap: nowrap; /* Ensures elements stay in a single row */
+  transition: background 0.3s ease-in-out;
+}
+
+/* 🔤 Meta Labels */
+.meta p {
+  font-weight: bold;
+  margin-right: 12px; /* Ensures spacing between text and inputs */
+  white-space: nowrap; /* Prevents text from wrapping */
+  font-size: 1rem;
+}
+
+/* 🎯 Adjust Radio Button Spacing */
+.meta input[type="radio"] {
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+/* 🏷️ Label Styling */
+.meta label {
+  font-weight: normal;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.95rem;
+  transition: color 0.3s ease-in-out;
+}
+
+/* 🌙 Dark Mode Adjustments */
+.dark-mode .meta p,
+.dark-mode .meta label {
+  color: white;
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+  .meta {
+    width: 100%; /* Expands to full width on smaller screens */
+    flex-wrap: wrap; /* Allows wrapping if necessary */
+    justify-content: center;
+  }
+
+  .meta p {
+    font-size: 0.95rem;
+  }
+
+  .meta label {
+    font-size: 0.9rem;
+  }
+}
+
+.containerr {
+  background: transparent;
+  display:none;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+  min-height: 50px;
+}
+
+.dark-mode .containerr label
+{
+  color:white;
+}
+
+.hidden {
+  display: none;
+}
+
+input, select, button {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🎨 General Button Styling */
+button {
+  width: 50%;
+  min-width: 120px; /* Slightly increased for better touch accessibility */
+  max-width: 300px; /* Prevents excessive stretching on wider screens */
+  height: 2.8rem; /* Slightly taller for better UX */
+  background-color: #45a049;
+  color: white;
+  margin: 0.5rem 1vw 3vw; /* Top, dynamic left spacing, and bottom */
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem; /* Scales with user preferences */
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  border: none;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* 🎭 First Button in a Container */
+button:first-child {
+  background: beige;
+  color: black;
+}
+
+/* 🚀 Button Hover Effect */
+button:hover {
+  background: #0056b3;
+  transform: scale(1.05); /* Subtle hover animation */
+}
+
+/* 📱 Mobile & Small Screens */
+@media (max-width: 768px) {
+  button {
+    width: 80%; /* Takes more space for better usability */
+    font-size: 1rem; /* Slightly smaller font */
+    height: 2.5rem; /* Adjust height for smaller screens */
+  }
+}
+
+button {
+  all: unset; /* Removes browser default styles */
+  background-color: #007bff; /* Button color */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+
+/* Light Mode Styles */
+.light-mode {
+  background-color: white; /* White background for Light Mode */
+  color: black; /* Black text for Light Mode */
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212; /* Black background for Dark Mode */
+  color: white; /* White text for Dark Mode */
+}
+
+
+.dark-mode .container .nav{
+  background-color: #121212; 
+   }
+
+   .dark-mode .container .Table{
+    background-color: #121212; 
+     }
+
+     .dark-mode .container .Table .overlay-text{
+      background-color: #121212; 
+       }
+
+
+.dark-mode .container .search img,
+.dark-mode .container .upload img,
+.dark-mode .container .Notifications img,
+.dark-mode .container .Settings img,
+.dark-mode .container  .search input img
+
+{
+  filter: invert(1);
+
+
+}
+
+
+  .dark-mode .nav .search input {
+    background-color:transparent;
+  }
+  
+  .dark-mode .nav .search-input .placeholder {
+    color:   #F5F5DC; 
+  }
+  
+  .dark-mode .nav .search-input img
+  {
+    filter: invert(1);
+  
+  }
+
+  
+
+    .net-text {
+      color: red; /* Black color for NET in light mode */
+      font-size: 2em; /* Adjust size as needed */
+    }
+    
+    .toon-text {
+      color: red; /* Red color for TOON in light mode */
+      font-size: 2em; /* Adjust size as needed */
+    }
+    
+    
+    
+    .dark-mode .net-text {
+      color: red; /* White color for NET in dark mode */
+    }
+    
+    .dark-mode .toon-text {
+      color: red;  /* Yellow color for TOON in dark mode */
+    }
+

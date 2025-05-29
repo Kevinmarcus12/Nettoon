@@ -1,0 +1,809 @@
+html {
+    scroll-behavior: smooth;
+  
+  }
+  
+  body {
+    justify-content: center; /* Centers content vertically if needed */
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Keeps text centered */
+    background-color: white; 
+    font-family: 'Poppins', sans-serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0; 
+    min-height: 100vh; /* Ensures full height on all screens */
+  }
+  
+  
+.container {
+  position: fixed;
+  background-color:white;
+  display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  object-fit: cover;
+  top: 0px;
+  float: left;
+  width: 100%;
+  height: auto;
+  max-height:54px ;
+  border-radius: 0px;
+  left: 0px;
+  border-style: none;
+  z-index: 10;
+  margin-bottom: 0px;
+  justify-content: space-between;
+}
+
+.Table {
+  position: relative;
+  min-width: 14%;  /* Slightly increased for better proportions */
+  max-width: 15.5%;
+  height: 3rem;  /* Adjusted for better spacing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.25rem; /* Increased size for better readability */
+  font-weight: 800; /* Slightly bolder */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 3;
+  background-color: transparent;
+  margin-left: 0px;
+}
+
+/* NET and TOON Styling */
+.net-text {
+  background:red;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3em;
+  letter-spacing: 2px;
+}
+
+.toon-text {
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3em;
+  margin-left: 5px;
+}
+
+/* Dark Mode */
+.dark-mode .net-text {
+  background:red;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .toon-text {
+  background:yellow;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .shorts-text {
+  background:red;
+  color: white;
+}
+
+
+/* Remove underline from anchor tags */
+a, .net-text, .toon-text {
+  text-decoration: none;
+}
+
+.nav {
+  position: absolute;
+  width: 87%;
+  float: left;
+  margin-left: 13.1vw; /* Keeps navigation aligned on all screen sizes */
+  height: auto;
+  background-color:transparent; 
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center; /* Center items vertically */
+  justify-content: space-around; /* Ensure equal spacing */
+  gap: 5vw; /* Adjusts dynamically */
+  max-height: 5.8567vh; /* Scales well across different devices */
+  margin-bottom: 1vh;
+}
+
+/* Main search container */
+.search {
+  display: flex;
+  position: relative;
+  width: 90%;
+  max-width: 850px; /* was 600px */
+  height: auto;
+  background-color:transparent; 
+  margin: 2vh auto;
+  border-radius: 7px;
+  align-items: center;
+  border: 0.3px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin-top: 15px;
+  margin-left: 40px;
+}
+
+/* Search input field */
+.search input[type="search"] {
+  flex: 1;
+  height: 4.5vh;
+  min-height: 30px;
+  max-height: 30px;
+  border-radius: 7px;
+  background-color: transparent;
+  border: none;
+  padding: 0.7rem 3rem 0.7rem 2.5rem;
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Search input focus effect */
+.search input[type="search"]:focus {
+  border: 1px solid white;
+  box-shadow: 0px 0px 8px none;
+}
+
+
+/* Clear button */
+.clear-btn {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #666;
+  display: none; /* Hidden by default */
+}
+
+/* Show clear button when text is entered */
+.search input[type="search"]:valid ~ .clear-btn {
+  display: block;
+}
+
+
+/* Dark mode input */
+body.dark-mode .search input[type="search"] {
+  color: #fff;
+}
+
+/* Placeholder styling */
+.search input[type="search"]::placeholder {
+  color: #36454F;
+  font-size: 0.9rem; /* Ensures readability */
+}
+
+body.dark-mode .search input[type="search"]::placeholder {
+  color: #D3D3D3;
+}
+
+/* Search Icon Styling */
+.search .search-icon {
+  position: absolute;
+  right: 12px; /* Adjust distance for better alignment */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 20px;
+  min-height: 20px;
+  background-color:transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide the clear button across all browsers */
+.search input[type="search"]::-webkit-search-decoration,
+.search input[type="search"]::-webkit-search-cancel-button,
+.search input[type="search"]::-webkit-search-results-button,
+.search input[type="search"]::-webkit-search-results-decoration {
+  display: none; 
+}
+
+/* Prevent autofill background color change */
+.search input[type="search"]:-webkit-autofill,
+.search input[type="search"]:-webkit-autofill:hover,
+.search input[type="search"]:-webkit-autofill:focus,
+.search input[type="search"]:-webkit-autofill:active {
+  background-color:none !important;
+  color: #333 !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+  transition: background-color 5000s ease-in-out 0s; /* Prevent flickering */
+}
+
+
+
+.upload {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin-top: 0;
+  margin-left: 1vw;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+}
+
+/* Upload Icon */
+.upload img {
+  width: 2.4vw;
+  height: 2.4vw;
+  padding: 0.5vh;
+  object-fit: contain;
+
+}
+
+
+/* Tooltip Styling */
+.tooltip {
+  position: absolute;
+  top: 110%; /* Positioned below the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.3rem;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Show tooltip on hover */
+.upload:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(3px);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .upload {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .upload img {
+    width: 3.5vw;
+    height: 3.5vw;
+  }
+
+  .tooltip {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .upload {
+    width: 7vw;
+    height: 7vw;
+  }
+
+  .upload img {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  .tooltip {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+/* Notifications Icon */
+.Notifications {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin: 0.3125rem 0 0.1875rem 1.25rem; /* Top, Right, Bottom, Left */
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Icon inside the Notification button */
+.Notifications img {
+  width: 2vw;
+  height: 2vw;
+
+}
+
+
+
+/* Notification Dropdown */
+.Notification-container {
+  display: none; /* Hidden by default */
+  position: absolute;
+  width: 24%;
+  min-width: 11.25em; /* 180px */
+  height: auto;
+  max-height: 30em; /* Prevents excessive height */
+  background-color: #333; /* Dark mode background */
+  color: white;
+  top: 100%; /* Positioned below the icon */
+  right: 1%;
+  border-radius: 0.5em;
+  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Enables scrolling for multiple notifications */
+  z-index: 30;
+  padding: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Active class to show dropdown smoothly */
+.Notification-container.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .Notifications {
+    width: 4vw;
+    height: 4vw;
+  }
+
+  .Notifications img {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .Notification-container {
+    width: 40%;
+    right: 2%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Notifications {
+    width: 6vw;
+    height: 6vw;
+  }
+
+  .Notifications img {
+    width: 4vw;
+    height: 4vw;
+  }
+
+  .Notification-container {
+    width: 60%;
+    right: 5%;
+  }
+}
+/* Account Icon */
+.Account {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin: 0 1.5625rem 0.1875rem 0; /* Right, Bottom */
+
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  float: right;
+  margin-right: 1rem;
+
+}
+
+/* Profile Image inside Account Icon */
+.Account img {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+
+  margin-top: 6px;
+}
+
+.dark-mode .Account img
+{
+  filter: invert(1);
+}
+
+
+/* Dropdown Wrapper */
+.account-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 1%;
+  width: 24%;
+  min-width: 11.25em;
+  max-height: 25em;
+  background-color: #333;
+  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  z-index: 30;
+  padding: 0.5em 0;
+  text-align: left;
+  align-items: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) white;
+}
+
+.dropdown-content a {
+  
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; /* Make links block elements */
+}
+
+.account-dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Profile Section */
+.proofile {
+  width: 85%;
+  min-height: 1.875em; /* 30px */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: white;
+  padding: 0.625em; /* 10px */
+  border-radius: 0.4375em; /* 7px */
+  max-width: 90%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.proofile:hover {
+  background-color: grey; /* Subtle purple hover effect */
+  color: white;
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Profile Image */
+.proofile img {
+  width: 1.6875em; /* 27px */
+  height: 1.6875em;
+  border-radius: 50%;
+  margin-right: 0.625em; /* 10px */
+}
+
+/* Profile Name */
+.proofile label {
+  font-weight: bold;
+  font-size: 0.875em; /* 14px */
+  color: black;
+  margin-left: 0.3125em; /* 5px */
+  text-align: left;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Change text color on hover */
+.proofile:hover label {
+  color: white;
+}
+
+
+.dropdown-content li {
+  list-style: none; /* Remove bullet points */
+}
+
+
+/* Tooltip Base */
+.tooltip {
+  position: absolute;
+  bottom: -2rem; /* Positions below the icon */
+  left: 50%;
+  transform: translateX(-50%) translateY(5px); /* Subtle offset */
+  background-color: #333;/* Slightly darker for better contrast */
+  color: white;
+  z-index: 10;
+  padding: 0.5em 1em; /* More padding for readability */
+  border-radius: 0.375em; /* Smooth rounded corners */
+  white-space: nowrap;
+  font-size: 0.875em; /* Optimized for readability */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  pointer-events: none; /* Prevents accidental hover issues */
+}
+
+/* Tooltip Hover Effect */
+.upload:hover .tooltip, 
+.Notifications:hover .tooltip, 
+.Account:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .tooltip {
+    font-size: 0.75em; /* Reduce text size on smaller screens */
+    padding: 0.4em 0.6em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tooltip {
+    font-size: 0.6875em; /* Further reduce size for compact screens */
+    bottom: -1.75rem; /* Adjust positioning */
+  }
+}
+  
+  .login-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #F8F8FF; /* Ghost White */
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 5 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    margin: 150px auto 0 auto; /* Top margin + horizontal centering */
+    gap: 20px;
+    z-index: 11;
+  }
+
+  .dark-mode .login-container
+  {
+    background-color: #222;
+    color: white;
+  }
+
+  .login-container h1 {
+    color: #1877f2;
+    font-weight: bold;
+    font-weight: 750;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .login-container input {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 15px;
+
+
+  }
+
+  .login-container button.login-btn {
+    width: 100%;
+    background-color: #1877f2;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .login-container .forgot {
+    display: block;
+    margin: 15px 0;
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .divider {
+    margin: 20px 0;
+    height: 1px;
+    background-color: #dddfe2;
+  }
+
+  .create-account {
+    background-color: #42b72a;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 70%;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 1.5rem;
+      width: 90%;
+    }
+  }
+
+  h1 {
+    font-size: 0.5rem;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 800; /* Slightly bolder */
+  }
+
+
+  
+
+/* Extra large screens (≥1400px) */
+@media (min-width: 1400px) {
+  body {
+    font-size: 18px;
+    /* Additional styles for extra large screens */
+  }
+}
+
+/* Large screens (≥1200px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  body {
+    font-size: 17px;
+    /* Additional styles for large screens */
+  }
+
+
+
+}
+
+/* Medium screens (≥992px) */
+@media (min-width: 992px) and (max-width: 1199px) 
+{
+  body {
+    font-size: 16px;
+    /* Additional styles for medium screens */
+  }
+
+.login-container
+{
+background-color: transparent;
+margin: 200px auto 0 auto; /* Top margin + horizontal centering */
+}
+
+
+}
+
+/* Small screens (≥768px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    font-size: 15px;
+    /* Additional styles for small screens */
+  }
+
+
+
+
+}
+
+/* Extra small screens (≥576px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  body {
+    font-size: 14px;
+    /* Additional styles for extra small screens */
+  }
+}
+
+/* Very small screens (<576px) */
+@media (max-width: 575px) {
+  body {
+    font-size: 13px;
+    /* Additional styles for very small screens */
+  }
+}
+
+  
+  .net {
+    color: red;
+  }
+  
+  .toon {
+    color: black;
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode .toon {
+    color: yellow;
+  }
+  
+  body.dark-mode .net {
+    color: red;
+  }
+  
+  
+/* Light Mode Styles */
+.light-mode {
+    background-color:white; /* White background for Light Mode */
+    color: black; /* Black text for Light Mode */
+  }
+  
+  /* Dark Mode Styles */
+  .dark-mode {
+    background-color: #121212; /* Black background for Dark Mode */
+    color: white; /* White text for Dark Mode */
+  }
+  
+  
+.dark-mode .container .nav{
+    background-color: #121212; 
+     }
+  
+     .dark-mode .container .Table{
+      background-color: #121212; 
+       }
+  
+       .dark-mode .container .Table .overlay-text{
+        background-color: #121212; 
+         }
+  
+  
+  .dark-mode .container .search img,
+  .dark-mode .container .upload img,
+  .dark-mode .container .Notifications img,
+  .dark-mode .container .Settings img,
+  .dark-mode .container .Account img
+ 
+  
+  {
+    filter: invert(1);
+  
+  
+  }

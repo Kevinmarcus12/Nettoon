@@ -3,6 +3,11 @@ html {
   box-sizing: border-box; /* Ensures padding/border don’t break layout */
 }
 
+/* Apply box-sizing to all elements for consistency */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
   display: flex;
   flex-direction: column; /* Stack children vertically */
@@ -50,6 +55,7 @@ body::-webkit-scrollbar-thumb {
   padding-left: 0; /* make sure nothing pushes it */
   background-color:white;
   z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Logo/title section */
@@ -156,6 +162,7 @@ a, .net-text, .toon-text {
   align-items: center;
   border: 0.3px solid #ccc;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
   left: 2%;
 }
 
@@ -168,13 +175,14 @@ a, .net-text, .toon-text {
   background-color: transparent;
   border: none;
   padding: 0.7rem 3rem 0.7rem 2.5rem;
-  color: transparent;
+  color: #333;
   font-size: 1rem;
   outline: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .search input[type="search"]:focus {
-  border: 1px solid transparent;
+  border: 1px solid white;
   box-shadow: none;
 }
 
@@ -185,7 +193,7 @@ a, .net-text, .toon-text {
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
-  color: transparent;
+  color: #666;
   display: none;
 }
 
@@ -194,7 +202,7 @@ a, .net-text, .toon-text {
 }
 
 body.dark-mode .search input[type="search"] {
-  color: white;
+  color: #fff;
 }
 
 .search input[type="search"]::placeholder {
@@ -1552,7 +1560,7 @@ body.dark-mode textarea {
 /* Read-only or display mode */
 .commentt.display textarea {
   width: 100%;
-  background: tan;
+  background: #36454F;
   border: none;
   resize: none;
   pointer-events: none;
@@ -1577,7 +1585,7 @@ body.dark-mode textarea {
   width: 25%;
   max-width: 22%;
   height: 30px;
-  background-color:transparent;
+  background-color:fuchsia;
   margin-top: 5px;
   border-radius: 7px;
   display: flex;
@@ -1587,7 +1595,7 @@ body.dark-mode textarea {
   margin-left: auto;
   z-index: -1;
   padding: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 50px;
 }
 
 
@@ -1602,7 +1610,8 @@ body.dark-mode textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px;
+  margin-bottom: 0px;
+  padding: 5px;
   gap: 6px; /* ✅ ensures icon and text are spaced nicely */
 }
 
@@ -2190,7 +2199,7 @@ margin-left: 1%;
 .dark-mode .sectionn .option
 
 {
-  background-color: #353839;
+  background-color: #2a2d2f;
 
 }
 
@@ -2334,7 +2343,7 @@ margin-left: 1%;
 }
 
 .dark-mode .Playlist{
-  background-color: #353839;
+  background-color: #2a2d2f;
 }
 
 
@@ -2343,7 +2352,7 @@ margin-left: 1%;
 }
 
 .dark-mode .Sci-fi{
-  background-color: #353839;
+  background-color: #2a2d2f;
 }
 
 
@@ -2352,7 +2361,7 @@ margin-left: 1%;
 }
 
 .dark-mode .WatchMojo{
-  background-color: #353839;
+  background-color: #2a2d2f;
 }
 
 

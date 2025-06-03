@@ -78,19 +78,21 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   document.querySelectorAll('.kontainer').forEach(kontainer => {
-    let timeout;
     const video = kontainer.querySelector('video');
+    let hoverTimeout;
+    let lastTime = 0;
 
     kontainer.addEventListener('mouseenter', () => {
-      timeout = setTimeout(() => {
-        video.currentTime = 0;
+      hoverTimeout = setTimeout(() => {
+        video.currentTime = lastTime;
         video.play();
-      }, 500); // Delay in milliseconds (500ms like YouTube)
+      }, 300); // 300ms delay like YouTube
     });
 
     kontainer.addEventListener('mouseleave', () => {
-      clearTimeout(timeout);
+      clearTimeout(hoverTimeout);
+      lastTime = video.currentTime;
       video.pause();
-      video.currentTime = 0; // Reset so poster shows again
+      video.load(); // This resets the poster
     });
   });

@@ -583,7 +583,7 @@ h2 {
 
 /* ✅ TITLE AND DESCRIPTION CONTAINER */
 .dark-mode .title input, textarea {
-  background-color:white; /* Keeps the section clean */
+  background-color:transparent; /* Keeps the section clean */
 }
 
 
@@ -783,7 +783,7 @@ textarea {
 /* ✨ Hover Effect for Better Interactivity */
 .video:hover, .thumbnail:hover {
   border-color: goldenrod;
-  background-color: rgba(0, 123, 255, 0.1);
+  background-color: beige;
   transform: scale(1.02); /* Subtle zoom effect */
 }
 
@@ -1304,13 +1304,13 @@ button {
 
 /* 🎭 First Button in a Container */
 button:first-child {
-  background: beige;
+  background: green;
   color: black;
 }
 
 /* 🚀 Button Hover Effect */
 button:hover {
-  background: #0056b3;
+  background: green;
   transform: scale(1.05); /* Subtle hover animation */
 }
 

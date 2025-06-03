@@ -757,9 +757,14 @@ input, select, textarea {
 .reminder label {
   margin: 0; /* No need for auto margin if parent is flex-centered */
   font-weight: 750;
+  color: black;
 }
 
+.dark-mode .reminder label
+{
+color: white;
 
+}
 
 /* Extra large screens (≥1400px) */
 @media (min-width: 1400px) {

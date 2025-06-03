@@ -232,4 +232,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  
+  document.querySelectorAll('.kontainer').forEach(kontainer => {
+    const video = kontainer.querySelector('video');
+    let hoverTimeout;
+    let lastTime = 0;
+
+    kontainer.addEventListener('mouseenter', () => {
+      hoverTimeout = setTimeout(() => {
+        video.currentTime = lastTime;
+        video.play();
+      }, 300); // 300ms delay like YouTube
+    });
+
+    kontainer.addEventListener('mouseleave', () => {
+      clearTimeout(hoverTimeout);
+      lastTime = video.currentTime;
+      video.pause();
+      video.load(); // This resets the poster
+    });
+  });

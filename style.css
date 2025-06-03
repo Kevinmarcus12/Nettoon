@@ -603,7 +603,7 @@ opacity: 1;
   
   .home:hover,
   .dark-mode .home:hover {
-    background-color: #4a4b4d; /* Softer gray for dark mode */
+    background-color: #2a2d2f;
   }
 
 
@@ -663,7 +663,7 @@ opacity: 1;
 
 /* Dark Mode Hover */
 .dark-mode .rectanglee:hover {
-  background-color: #4a4b4d; /* Softer gray for dark mode */
+  background-color: #4a4b4d;
   color: white !important;
 }
 
@@ -742,9 +742,10 @@ opacity: 1;
   height: auto;
   background: transparent;
   border-radius: 0.5rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
 margin-left: 13px;
-padding-bottom:0px;
+padding-bottom: 0px;
 border-style: none;
 }
 
@@ -972,7 +973,7 @@ border-style: none;
   background-color: rgba(0, 0, 0, 0.65); /* Slightly darker for better contrast */
   color: white;
   left: 2%;
-  bottom: 4.5%; /* Adjusted for better alignment */
+  bottom: 4%; /* Adjusted for better alignment */
   border-radius: 0.4375rem; /* 7px */
   padding: 0.4rem 0.6rem; /* Slightly increased padding for better spacing */
   font-size: clamp(0.75rem, 1.2vw, 1rem); /* Responsive font size */
@@ -1010,7 +1011,7 @@ border-style: none;
 .sectiionn {
   display: flex;
   width: 100%;
-  background-color:transparent;
+  background: transparent;
   margin-top: 1px;
   border-radius: 7px;
   justify-content: space-between;
@@ -1025,7 +1026,7 @@ border-style: none;
   flex: 1 1 0;
   max-width: 33.3%;
   height: 1.8rem;
-  background-color: transparent;
+  background: transparent;
   margin: 0.1rem 0; /* Equal top and bottom margin */
   border-radius: 7px;
   display: flex;
@@ -1256,7 +1257,7 @@ gap: 0.5rem;
 
 
 .dark-mode .rectanglee{
-  background-color: #353839;
+  background-color: #2a2d2f;
   }
 
 .dark-mode .rectanglee span{

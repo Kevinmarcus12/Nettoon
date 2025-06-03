@@ -723,7 +723,7 @@ body.dark-mode .search input[type="search"]::placeholder {
 .controls {
   position: absolute;
   top: 50%;
-  right: 1.2rem;
+  right: 0.5rem;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -954,11 +954,13 @@ margin-right: 3%;
 
 }
 
-.caption-toggle:hover,
+.caption-toggle:hover {
+  color: yellow;
+}
+
 .caption-toggle:focus {
   text-decoration: none;
   outline: none;
-  color: #ffd700;
 }
 
 
@@ -1063,7 +1065,7 @@ margin-right: 3%;
 .comment:hover,
 .share:hover,
 .options:hover {
-  background-color: #e0e0e0;
+  background-color: gray;
 }
 
 /* Dark mode hover (add this if using a .dark-mode class on <body> or <html>) */
@@ -1107,7 +1109,7 @@ margin-right: 3%;
 .dark-mode .comment,
 .dark-mode .share,
 .dark-mode .options {
-  background-color: #353839;
+  background-color: #2a2d2f;
 }
 
 .dark-mode .like span,
@@ -1406,7 +1408,7 @@ cursor: pointer;
 .dislikee:hover,
 .commentss:hover,
 .sharee:hover {
-  background-color: #e0e0e0;
+  background-color: gray;
 }
 
 .dark-mode .viewss,
@@ -1414,7 +1416,7 @@ cursor: pointer;
 .dark-mode .dislikee,
 .dark-mode .commentss,
 .dark-mode .sharee {
-  background-color: #353839;
+  background-color: #2a2d2f;
 }
 
 /* Dark Mode Hover */

@@ -1,56 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<header>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,
-  minimum-scale=1.0, maximum-scale=3.0, user-scalable=yes">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=3.0, user-scalable=yes" />
 
   <link rel="icon" href="icons/logo.png" type="image/x-icon">
 
-<title>
-Nettoon.com
-</title>
+  <title>Nettoon.com</title>
 
-<link rel=“stylesheet” type=”text/css” href=“https://seobli.com/wl/structure.css”>
+  <link rel="stylesheet" href="style.css" />
 
-</header>
+</head>
 
 <body>
 
 <main>
 
-  <div class="container">
 
+  <div class="container">
     <div class="Table">
       <a href="index.html">
         <div class="overlay-text">
-          <span class="net-text">NET</span>
-          <span class="toon-text">TOON</span>
-          <span class="shorts-text">SHORTS</span>
+          <span class="net-text">NET</span><span class="toon-text">TOON</span>
         </div>
       </a>
     </div>
-    
-  
+   
+
   <div class="nav">
 
-    <div class="search">
-      <input type="search" id="search" placeholder="Search Cartoons and Animations">
-      <img src="icons/search (1).png" class="search-icon">
-      <span class="tooltip">Search</span>
-    </div>
+    <form action="index12.html" method="GET" class="search">
+      <input type="search" name="query" placeholder="Search Cartoons and Animations Series">
+        <a href="index12.html"><img src="search.png" class="search-icon" alt="Search"></a>
+    </form>
+    
 
 
-  <a href="index8.html">
+  <a href="index5.html">
     <div class="upload">
-        <img src="icons/upload.png" alt="Upload Icon">
+        <img src="upload.png" alt="Upload Icon">
         <div class="tooltip">Upload</div>
     </div>
 </a>
 
 <div class="Notifications" id="notification-icon">
-  <img src="icons/Notififcation.png">
+  <img src="sub-3.png">
   <div class="tooltip">Notifications</div>
 </div>
 
@@ -63,7 +59,7 @@ Nettoon.com
 <body class="light-mode">
   <a href="#" class="account-dropdown">
       <div class="Account">
-          <img src="collection/2 (2).png" alt="Account Icon">
+          <img src="14.png" alt="Account Icon">
       </div>
   </a>
   <div class="dropdown-content" id="accountDropdown">
@@ -71,32 +67,32 @@ Nettoon.com
 
           <a href="index4.html"><li>
               <div class="proofile">
-                  <img src="collection/2 (2).png" alt="Profile Image">
-                  <label>Afrilens</label>
+                  <img src="14.png" alt="Profile Image">
+                  <span>Guest</span>
               </div>
           </li></a>
 
           <a href="index8.html"><li>
               <div class="proofile">
-                  <img src="icons/categories.png" alt="Profile Image">
-                  <label>Series Section</label>
+                  <img src="categories.png" alt="Profile Image">
+                  <span>Series Section</span>
               </div>
           </li></a>
 
           <a href=""><li>
             <div class="proofile">
-                    <img id="theme-toggle-light" src="icons/theme.png" alt="Light Mode Icon" style="cursor: pointer; display: none;" />
-                    <img id="theme-toggle-dark" src="icons/theme 2.png" alt="Dark Mode Icon" style="cursor: pointer;" />
-                    <label>Theme</label>
+                    <img id="theme-toggle-light" src="theme.png" alt="Light Mode Icon" style="cursor: pointer; display: none;" />
+                    <img id="theme-toggle-dark" src="theme 2.png" alt="Dark Mode Icon" style="cursor: pointer;" />
+                    <span>Theme</span>
                 </div>
         </li></a>
 
-        <a href="index13.html"><li>
-          <div class="proofile">
-              <img src="settings 2.png" alt="Profile Image">
-              <span>Settings</span>
-          </div>
-      </li></a>
+          <a href="index13.html"><li>
+              <div class="proofile">
+                  <img src="settings 2.png" alt="Profile Image">
+                  <span>Settings</span>
+              </div>
+          </li></a>
 
 
       
@@ -107,46 +103,6 @@ Nettoon.com
         </div>
         
         </div>
-    <div class="shorts-upload-container">
-        <h2>Upload Your Short</h2>
-        
-        <!-- Video Upload Section -->
-        <label for="short-video">Select Short Video:</label>
-        <input type="file" id="short-video" accept="video/mp4, video/webm">
-        <video id="video-preview" controls></video>
-        
-        <!-- Thumbnail Upload -->
-        <label for="thumbnail">Upload Thumbnail:</label>
-        <input type="file" id="thumbnail" accept="image/png, image/jpeg">
-        <img id="thumbnail-preview" alt="Thumbnail Preview">
-        
-        <!-- Title & Description -->
-        <input type="text" id="title" placeholder="Enter video title">
-        <textarea id="description" placeholder="Enter video description..."></textarea>
-        
-        <!-- Upload Button -->
-        <button id="upload-btn">Upload</button>
-    </div>
-    
-    <script>
-        document.getElementById('short-video').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const videoPreview = document.getElementById('video-preview');
-                videoPreview.src = URL.createObjectURL(file);
-                videoPreview.style.display = 'block';
-            }
-        });
-        
-        document.getElementById('thumbnail').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const thumbnailPreview = document.getElementById('thumbnail-preview');
-                thumbnailPreview.src = URL.createObjectURL(file);
-                thumbnailPreview.style.display = 'block';
-            }
-        });
-    </script>
 </body>
 </html>
 

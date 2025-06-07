@@ -264,3 +264,48 @@ document.addEventListener("DOMContentLoaded", function () {
       video.load(); // This resets the poster
     });
   });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('.short-video');
+    const playOverlay = document.querySelector('.play-overlay');
+
+    // Ensure video is unmuted
+    video.muted = false;
+
+    // Attempt to autoplay with sound
+    const attemptPlay = () => {
+      video.play().then(() => {
+        playOverlay.style.opacity = '0';
+      }).catch((error) => {
+        // If autoplay with sound fails (browser blocks it), wait for user interaction
+        console.warn('Autoplay with sound failed:', error);
+        playOverlay.style.opacity = '1';
+
+        // Allow manual play
+        playOverlay.addEventListener('click', () => {
+          video.play();
+        });
+      });
+    };
+
+    // Try autoplay once DOM is ready
+    attemptPlay();
+
+    // Toggle overlay visibility on play/pause
+    video.addEventListener('play', () => {
+      playOverlay.style.opacity = '0';
+    });
+
+    video.addEventListener('pause', () => {
+      playOverlay.style.opacity = '1';
+    });
+
+    // Click overlay to toggle play/pause
+    playOverlay.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  });

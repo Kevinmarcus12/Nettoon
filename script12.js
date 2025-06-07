@@ -96,3 +96,23 @@ document.addEventListener("DOMContentLoaded", function () {
       video.load(); // This resets the poster
     });
   });
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.captionn-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        // Find this caption and its short-video wrapper
+        const caption = button.closest('.captionn');
+        const profile = button.closest('.short-video').querySelector('.profile');
+  
+        // Toggle the expanded state
+        const isExpanded = captionn.classList.toggle('expanded');
+  
+        // Toggle profile shift
+        profile.classList.toggle('shift-up', isExpanded);
+  
+        // Update button text
+        button.textContent = isExpanded ? 'see less' : 'see more';
+      });
+    });
+  });

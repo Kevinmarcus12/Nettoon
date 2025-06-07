@@ -646,21 +646,21 @@ html {
 
 /* ==== Base Container ==== */
 .container-1 {
-  position: absolute;
+  position: relative;
   width: 100%;
   max-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: transparent;
-  padding: 10px;
+  padding: 0px;
   margin: 0;
   box-sizing: border-box;
   z-index: 2;
   margin-top: 3.0rem;
   border-radius: 0px;
   border: 0.1px solid transparent;
-  padding-bottom: 50px;
-  padding-top:10px;
+  padding-bottom: 0px;
+  padding-top:1rem;
   border-style: ridge;
 }
 
@@ -676,7 +676,7 @@ html {
   width: 100%;
   height: auto;
   height: 30px;
-  background-color: transparent;
+  background-color:white;
   z-index: 10;
   display: flex;
   padding: 0px;
@@ -706,21 +706,69 @@ html {
   color: #ffffff;
 }
 
+
+
+/* ==== Scrollable Section ==== */
+.Scroller {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y:scroll;
+  overflow-x: hidden;
+  scrollbar-width: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+  background-color: transparent;
+  border-radius: 0px;
+  border: 1px solid transparent;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+/* Dark mode adjustments */
+.dark-mode .Scroller {
+  scrollbar-color: rgba(7, 4, 4, 0.5) grey;
+}
+
+
+
+
+/* ==== Playlist Layout ==== */
+.Playlist {
+  position: relative;
+  display: flex;
+  height:auto;
+  max-height: 650px;
+  flex-direction:column;
+  width: 100%;
+  background-color: transparent;
+  padding: 0px;
+  gap: 1rem;
+  border-style: ridge;
+  margin-top: 20px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  border: 0.1px solid transparent;
+}
+
+
+
 .Segment
 {
-position: relative;
-top: 0;
-width: 99%;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+width: 100%;
 height: 30px;
 background-color: #F5F5F5;
-z-index: 10;
 display: flex;
 padding: 0px;
 margin: 0;
 align-items: center;
 padding-left: 0%;
 border-radius: 0px;
-margin-top:20px;
+margin-top:0px;
 padding-top: 0px;
 padding-bottom: 0px;
 margin-bottom: 0px;
@@ -746,64 +794,98 @@ margin-bottom: 0px;
   color:#FFFFFF;
 }
 
-
-/* ==== Scrollable Section ==== */
-.Scroller {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
-  background-color: transparent;
-  border-radius: 0px;
-  border: 1px solid transparent;
+.Heading, .Segment {
+  padding: 0.5rem 0.5rem;
+  height: auto;
 }
 
-/* Dark mode adjustments */
-.dark-mode .Scroller {
-  scrollbar-color: rgba(7, 4, 4, 0.5) grey;
+
+.Playlist:first-of-type > .Segment:first-of-type {
+  margin-top: 1rem;
+  background: white;
 }
 
-/* ==== Playlist Layout ==== */
-.Playlist {
+.dark-mode .Playlist:first-of-type > .Segment:first-of-type {
+  margin-top: 1rem;
+  background-color: #2a2d2f;
+}
+
+
+
+
+.playlist-item {
   position: relative;
   display: flex;
-  height:100% ;
   flex-direction: row;
-  width: 99.5%;
+  width: 100%;
   background-color: transparent;
-  padding: 0px;
+  margin-bottom: 0rem;
+  padding-bottom: 0px;
+  padding: 0.5rem;
   gap: 1rem;
-  border-style: ridge;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  border-radius: 7px;
-  border: 0.1px solid transparent;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-.scroll {
+/* Optional responsiveness */
+@media (max-width: 768px) {
+  .playlist-item {
+    flex-direction: column;
+  }
+}
+
+.left-section {
+  flex: 1;
+  margin-top: 0px;
+  max-width: 45%;
+  background-color: transparent;
+  margin-bottom: 0px;
+}
+
+
+
+.Container
+{
+width: 100%;
+height: 100%; /* or a defined px/rem/vh */
+background-color: transparent;
+display: flex;
+flex-direction: row;
+margin-top: 0px;
+flex-wrap: wrap;
+padding-top: 0px;
+padding-bottom: 0px;
+padding: 0px;
+}
+
+
+.scroll-area {
   width: 100%;
   height: 100%;
-  overflow-x: auto;
+  overflow-x:scroll;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   background-color: transparent;
   z-index: 0;
+ padding-bottom: 0px;
+ margin-bottom:0px;
   gap: 0.3rem; /* Slight space between items */
-  padding: 0 0.5rem;
+  padding: 0rem 0rem;
   scrollbar-width: thin;
+  overflow-y:hidden;
+  overflow-x: auto;
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
   scroll-snap-type: x mandatory; /* changed to x for horizontal */
 }
 
 /* Dark mode adjustments */
-.dark-mode .scroll {
+.dark-mode .scroll-area {
   scrollbar-color: rgba(7, 4, 4, 0.5) grey;
 }
+
+
 
 .shorts {
   position: relative;
@@ -815,8 +897,10 @@ margin-bottom: 0px;
   overflow: hidden;
   border-radius: 12px;
   flex-shrink: 0;
+  padding: 20px;
+  margin-bottom: 0px;
   scroll-snap-align: start;
-  background-color: #000; /* optional: improves video contrast */
+  background-color: transparent;
 }
   
   /* 🔷 Video Element */
@@ -828,12 +912,34 @@ margin-bottom: 0px;
     display: block;
   }
   
+
+
+/* Play overlay button */
+.play-overlay {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
 /*
-.dark-mode .Playlist hr
+.dark-mode .play-overlay
 {
-  border: 100px solid red;
+  filter: invert(1);
 }
   */
+
+.overlay-link {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
 
 .dark-mode .Playlist {
   border: 1px solid transparent;
@@ -857,12 +963,41 @@ margin-bottom: 0px;
   margin-top:0%;
   padding: 0px;
   height: 100%;
+  flex: 2;
+  margin-bottom: 0px;
 }
+
+
+.Playlist {
+  gap: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+.Segment {
+  padding: 0;
+  margin: 0;
+}
+
+.Heading, .Segment {
+  padding: 0;
+  margin: 0;
+  height: 30px;
+}
+
+.playlist-item {
+  margin: 0;
+  padding: 0.5rem; /* optional */
+}
+
+.playlist-item:not(:first-child) {
+  margin-top: 1rem;
+}
+
 
 /* ==== About Section ==== */
 .About {
   height: auto;
-
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -874,11 +1009,25 @@ margin: 0;
 padding-bottom: 0px;
 }
 
+/* 1st Playlist (Series) */
+.Playlist:nth-of-type(1) .About {
+  background-color: transparent;
+  max-height: 160px;
+}
+
+/* 1st Playlist (Series) */
+.Playlist:nth-of-type(3) .About {
+  background-color: transparent;
+  max-height: 300px;
+}
+
+
+
 /* ==== Description Area ==== */
 .description {
   height: auto;
   width: 100%;
-  height: auto;
+  height:100%;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
   scroll-behavior: smooth;
@@ -890,13 +1039,20 @@ padding-bottom: 0px;
 padding: 0px;
 }
 
-/* 
+
 .description span
 {
   position: relative;
-top: 1%;
+margin-top: 3%;
 }
-*/
+
+/* 1st Playlist (Series) */
+.Playlist:nth-of-type(3) .description span
+{
+  background-color: transparent;
+margin-top: 3%;
+}
+
 
 /* ==== Horizontal Scroll Video Row ==== */
 .vidoes {
@@ -908,8 +1064,8 @@ top: 1%;
   max-height: 200px;
   flex-direction: row;
   justify-content: flex-start;
-  gap: 16rem;
-  overflow-x: scroll;
+  gap: 1rem;
+  overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
@@ -932,17 +1088,64 @@ top: 1%;
 
 /* ==== Card Styling ==== */
 .cards {
-  position: absolute;
-  width: 33%;
+  position: relative; /* or remove this line entirely */
+  width: 200px; /* fixed width ensures spacing behaves as expected */
   padding: 0px;
   height: 120px;
   background-color: transparent;
   border-radius: 7px;
   cursor: pointer;
   top:11%;
-  margin-left: 0.1%;
+  margin-left: 3%;
   flex-shrink: 0; /* Don't shrink in horizontal layout */
 }
+
+
+/* 1st Playlist (Series) */
+.Playlist:nth-of-type(1) .right-section {
+  background-color: transparent;
+}
+.Playlist:nth-of-type(1) .vidoes .cards {
+  border: 0px solid transparent;
+}
+
+/* 2nd Playlist (Shorts) */
+.Playlist:nth-of-type(2) .right-section {
+  background-color: transparent;
+}
+.Playlist:nth-of-type(2) .vidoes .cards {
+  border: 0px  solid transparent;
+}
+
+/* 3rd Playlist (Movies) */
+.Playlist:nth-of-type(3) .right-section {
+  background: transparent;
+}
+.Playlist:nth-of-type(3) .vidoes .cards {
+  border: 0px  solid transparent;
+}
+
+/* 4th Playlist (Playlist) */
+.Playlist:nth-of-type(4) .right-section {
+  background: transparent;
+}
+
+.Playlist:nth-of-type(4) .vidoes {
+  background-color: transparent;
+  margin-top: 5%;
+  min-height: 250px;
+  max-height: 300px;
+}
+
+
+.Playlist:nth-of-type(4) .vidoes .cards {
+  border: 0px  solid transparent;
+  margin-top: 8%;
+  margin-left: 3%;
+  height: 150px;
+  width: 250px; /* fixed width ensures spacing behaves as expected */
+}
+
 
 .overlay-textttt {
   position: absolute;
@@ -1028,17 +1231,22 @@ border-radius: 7px;
   /* Individual Video Containers */
   .kontainer {
     position: relative;
-    width: clamp(95%, 30%, 32%);
+    width: clamp(100%, 30%, 32%);
     height: auto;
     background-color: transparent;
     border-radius: 0.5rem;
     cursor: pointer;
-  margin-left: 10px;
+  margin-left: 0px;
   margin-bottom:10px;
-  margin-top:7%;
+  margin-top:10%;
   cursor: pointer;
   }
   
+.kontainer:nth-child(3)
+{
+  margin-bottom: 50px;
+}
+
   
   /* Video Thumbnails */
   .kontainer img {

@@ -240,7 +240,6 @@ body.dark-mode .search input[type="search"]::placeholder {
   transform: translateY(-50%);
   width: 1.5rem;
   height: 1.5rem;
-  pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -425,12 +424,12 @@ opacity: 1;
   justify-content: flex-start;
   white-space: nowrap;
   overflow: hidden;
+  margin: 0 0rem 0 0rem;
   text-overflow: ellipsis;
   background-color: white;
   padding: 0.625em; /* 10px */
   border-radius: 0.4375em; /* 7px */
   max-width: 90%;
-  transition: all 0.3s ease-in-out;
 }
 
 /* Hover Effect */
@@ -751,6 +750,20 @@ margin-top: 0px;
   display: block; /* Removes any unwanted whitespace below */
 }/* Section container for child elements */
 
+.play-overlay {
+  position: absolute;
+  top: 47%;
+  left: 51%;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  opacity: 1; /* Start visible in case video doesn't autoplay */
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+
 
 .sectionn {
   width: 100%;
@@ -887,6 +900,8 @@ background-color: transparent; /* Maintain clean UI */
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
   justify-content: flex-start;
   border-style:none;
+  z-index: 2; 
+
 }
 
 /* Dark mode adjustments */
@@ -900,7 +915,7 @@ background-color: transparent; /* Maintain clean UI */
   background-color: #F5F5F5; /* Pale Grey */
   border-radius: 0.4375rem; /* Smooth rounded edges */
   border: none; /* Remove unnecessary border */
-  z-index: 0; /* Ensure it's above other elements */
+  z-index: 1; /* Ensure it's above other elements */
   position: sticky; /* Keeps it visible when scrolling */
   top: 0; /* Stick to the top */
   display: flex; /* Use flexbox for proper alignment */
@@ -923,19 +938,42 @@ background-color: transparent; /* Maintain clean UI */
 }
 
 
+.scroller {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin-bottom: 0px;
+  border-radius: 0rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px; /* 5px vertically, 10px horizontally */
+  margin-top: 0px;
+  background-color: transparent;
+  justify-content: flex-start;
+}
+
+
 .card {
   position: relative;
   width: 30%; /* Maintain original width */
+  max-height: 230px;
   background-color: transparent;/* Keep background clean */
   flex: 0 1 47%; /* Keep original flex behavior */
-  height: auto; /* Auto height for dynamic content */
   border: none; /* Remove unnecessary borders */
   border-radius: 0.4375rem; /* Smooth rounded edges */
-  margin: 20px 0 15px 10px; /* Maintain original positioning */
+  margin: 15px 0 15px 6px; /* Maintain original positioning */
   cursor: pointer; /* Indicates interactivity */
-  z-index: -1;
+  z-index: 0; 
+  line-height: 1; /* Optional: helps tighten layout */
+  box-sizing: border-box;
   border-style:none;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding: 0px;
+  justify-content: flex-start;
 }
+
 
 /* Subtle hover effect without changing position */
 .card:hover {
@@ -944,10 +982,19 @@ background-color: transparent; /* Maintain clean UI */
 
 /* First card special styling */
 .card:nth-child(1) {
-  background-color: grey; /* Special background for first card */
-  border: 4px solid red; /* Red border highlight */
+  background-color:gainsboro; /* Special background for first card */
+  border: 0.1px solid transparent; /* Red border highlight */
   border-radius: 0.4375rem; /* Maintain consistent rounding */
 }
+
+/* First card special styling */
+.dark-mode .card:nth-child(1) {
+  background-color:gray; /* Special background for first card */
+  border: 0.1px solid transparent; /* Red border highlight */
+  border-radius: 0.4375rem; /* Maintain consistent rounding */
+}
+
+
 
 .captiion {
   width: 100%; /* Ensures full width inside the card */
@@ -993,7 +1040,7 @@ background-color: transparent; /* Maintain clean UI */
   align-items: center; /* Centers video */
   justify-content: center;
   margin-top: 5px;
-  background-color: black; /* Adds a fallback background for better contrast */
+  background-color: gray; /* Adds a fallback background for better contrast */
 }
 
 /* Video inside .pichaa */
@@ -1002,13 +1049,8 @@ background-color: transparent; /* Maintain clean UI */
   height: 100%;
   object-fit: cover; /* Ensures video fills the container without distortion */
   border-radius: 7px;
-  transition: transform 0.3s ease-in-out; /* Smooth scaling on hover */
 }
 
-/* Hover Effect for Better Engagement */
-.pichaa:hover video {
-  transform: scale(1.03); /* Slight zoom-in for a subtle effect */
-}
 
 /* 📱 Mobile Optimization */
 @media (max-width: 768px) {
@@ -1071,7 +1113,7 @@ background-color: transparent; /* Maintain clean UI */
 /* 🟡 Views Section */
 .viewsss {
   position: relative;
-  width: 40%;
+  max-width: 41%;
   height: 25px;
   margin: 4px 0; /* Equal top and bottom margins */
   background-color: transparent;
@@ -1232,15 +1274,16 @@ background-color: #F5F5F5;
 }
 
 
+
 .comment-scroll-area {
   height: auto;
-  overflow-y: auto;
+  overflow-y: hidden;
   border: none;
   padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  z-index: -1;
+  z-index:1000;
   background-color: transparent;
 }
 
@@ -1249,18 +1292,19 @@ background-color: #F5F5F5;
   border-color: grey;
 }
 
+
 .commentt.display {
   display:block;
   position: relative;
-  width: 90%;
+  width: 100%;
   height: auto;
   background-color:transparent;
   border-radius: 7px;
   border: none;
   margin-top: 10px; /* Adjusted for better spacing */
-  z-index: -1;
-  max-height: 350px;
   float: left;
+  overflow-y: hidden;
+  z-index:0;
   margin-left: 0px;
   margin-bottom: 20px;
 }
@@ -1361,8 +1405,8 @@ font-size: 14px;
   z-index: 10;
   padding: 10px;
   border: none;
+  overflow-y: hidden;
 }
-
 .dark-mode .commentt.new 
 {
   background-color: #181818;; /* Black background for Dark Mode */
@@ -1373,38 +1417,53 @@ font-size: 14px;
   width: 100%;
   min-height: 60px;
   resize: vertical;
+  
 }
 
 
-
-.commentt textarea {
+/* Scrollable and dynamically expanding textarea */
+.commentt.display textarea {
   width: 100%;
-  min-height: 30px;
-  max-height: 200px;
+  height: auto;
+  overflow-y: scroll; /* allow vertical scroll if needed */
   resize: none;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 10px;
-  font-size: 0.95rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  border: none;
+  font-size: 1rem;
   font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  padding: 10px;
+  color: #111;
   background-color:transparent;
-  color: #333;
   box-sizing: border-box;
-  outline: none;
-  transition: border-color 0.3s ease;
-  margin-bottom: 0px;
-  margin-top: 20px;
+  line-height: 2;
 }
 
+.dark-mode  .commentt textarea
+{
+  color: white;
+}
+
+/* Focus state */
 .commentt textarea:focus {
-  border-color: grey;
+  border-color: transparent;
 }
 
-.dark-mode .commentt textarea {
-  background-color: transparent;
-  color: #fff;
-  border: 1px solid #666;
+/* Light Mode (default) */
+body:not(.dark-mode) textarea {
+  background-color: white;
+  color: black;
+
 }
+
+/* Dark Mode */
+body.dark-mode textarea {
+  background-color: #222;
+  color: white;
+
+}
+
 
 .comment-actions {
   display: none;
@@ -1448,19 +1507,26 @@ font-size: 14px;
   margin-top: 4px; /* Or whatever aligns with the input version */
 }
 
+.comment-container {
+  overflow-x: hidden;
+}
+
+.commentt.display {
+  overflow-x: hidden;
+}
+
 
 /* Read-only or display mode */
 .commentt.display textarea {
   width: 100%;
-  background: transparent;
+  background-color:transparent;
   border: none;
   resize: none;
-  background: tan;
   font-size: 1rem;
   color: #111;
   font-weight: 400;
   padding: 6px 9px;
-  line-height: 1.5;
+  height: auto;
   margin: 0 0 1px 0;
   z-index: 1;
   overflow-x: hidden;
@@ -1502,9 +1568,13 @@ font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px;
+  cursor: pointer;
+  margin-bottom: 0px;
+  padding: 12px;
   gap: 6px; /* ✅ ensures icon and text are spaced nicely */
 }
+
+
 
 /* Dark mode background */
 .dark-mode .like,
@@ -1546,7 +1616,7 @@ font-size: 14px;
   height: 20rem; /* Use fixed height instead of just min/max */
   background-color:transparent;
   border-radius: 0.4375rem;
-  margin-top: 1rem;
+  margin-top:2rem;
   padding: 0px;
   padding-bottom: 0rem; /* or whatever spacing you want */
   border-style:none;

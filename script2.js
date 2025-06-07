@@ -114,6 +114,35 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".optionn > div");
+    const sections = document.querySelectorAll(".video-group");
+
+    buttons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        sections.forEach((sec, i) => {
+          sec.style.display = i === index ? "flex" : "none";
+        });
+      });
+    });
+
+    // Default: Show "All" only
+    sections.forEach((sec, i) => {
+      sec.style.display = i === 0 ? "flex" : "none";
+    });
+  });
+
+
+  const tabs = document.querySelectorAll('.optionn > div');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active')); // remove from all
+      tab.classList.add('active'); // add to clicked
+    });
+  });
+  
+
   document.addEventListener('DOMContentLoaded', () => {
     const textareas = document.querySelectorAll('.commentt textarea');
 
@@ -249,5 +278,57 @@ document.addEventListener("DOMContentLoaded", function () {
       lastTime = video.currentTime;
       video.pause();
       video.load(); // This resets the poster
+    });
+  });
+
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.video').forEach(container => {
+      const video = container.querySelector('video');
+      const overlay = container.querySelector('.play-overlay');
+
+      if (!video) return;
+
+      video.muted = false; // Unmute
+      video.controls = true;
+
+      // Try to autoplay with sound
+      const tryPlay = () => {
+        video.play()
+          .then(() => {
+            if (overlay) overlay.style.opacity = '0';
+          })
+          .catch(err => {
+            if (overlay) overlay.style.opacity = '1';
+            // Retry on user click
+            if (overlay) {
+              overlay.addEventListener('click', () => {
+                video.play();
+              });
+            }
+          });
+      };
+
+      tryPlay();
+
+      // Show/hide overlay based on play state
+      video.addEventListener('pause', () => {
+        if (overlay) overlay.style.opacity = '1';
+      });
+
+      video.addEventListener('play', () => {
+        if (overlay) overlay.style.opacity = '0';
+      });
+
+      // Also toggle video on overlay click
+      if (overlay) {
+        overlay.addEventListener('click', () => {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      }
     });
   });

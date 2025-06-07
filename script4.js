@@ -165,6 +165,45 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.tab.my-videos').classList.add('active-tab');
     document.querySelector('.container-1').style.display = 'flex';
   });
-  
 
-  
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.shorts').forEach(container => {
+      const video = container.querySelector('video');
+      const overlay = container.querySelector('.play-overlay');
+
+      if (!video || !overlay) return;
+
+      video.controls = false;
+      video.muted = true; // autoplay requires muted
+
+      // Try autoplay
+      video.play().catch(err => {
+        console.warn('Autoplay failed:', err);
+        overlay.style.opacity = '1';
+      });
+
+      // Handle overlay click to unmute and toggle playback
+      overlay.addEventListener('click', () => {
+        video.muted = false;
+        if (video.paused) {
+          video.play().then(() => {
+            overlay.style.opacity = '0';
+          }).catch(err => {
+            console.error('Play failed after click:', err);
+          });
+        } else {
+          video.pause();
+        }
+      });
+
+      // Sync overlay with video state
+      video.addEventListener('pause', () => {
+        overlay.style.opacity = '1';
+      });
+
+      video.addEventListener('play', () => {
+        overlay.style.opacity = '0';
+      });
+    });
+  });

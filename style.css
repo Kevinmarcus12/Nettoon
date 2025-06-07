@@ -164,6 +164,7 @@ a, .net-text, .toon-text {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   left: 2%;
+  z-index: 2;
 }
 
 .search input[type="search"] {
@@ -186,16 +187,6 @@ a, .net-text, .toon-text {
   box-shadow: none;
 }
 
-.clear-btn {
-  position: absolute;
-  right: 1rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  color: #666;
-  display: none;
-}
 
 .search input[type="search"]:valid ~ .clear-btn {
   display: block;
@@ -240,27 +231,30 @@ body.dark-mode .search input[type="search"]::placeholder {
   transform: translateY(-50%);
   width: 1.5rem;
   height: 1.5rem;
-  pointer-events: none;
+  border-radius: 50%;
   display: flex;
+  padding: 1px;
+  background-color: transparent;
   align-items: center;
   justify-content: center;
 }
 
+
 /* Clear button to the right */
 .clear-btn {
   position: absolute;
-  right: 0.8rem;
+  right: 1rem;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
-  color: #666;
+  color: red;
   display: none;
 }
 
 .search input[type="search"] {
-  padding-left: 2.5rem; /* make room for icon */
-  padding-right: 2.5rem; /* make room for clear button */
+  padding-left: 2rem; /* make room for icon */
+  padding-right: 3.5rem; /* make room for clear button */
 }
 
 
@@ -430,7 +424,7 @@ opacity: 1;
   padding: 0.625em; /* 10px */
   border-radius: 0.4375em; /* 7px */
   max-width: 90%;
-  transition: all 0.3s ease-in-out;
+  margin: 0 0rem 0 0rem;
 }
 
 /* Hover Effect */
@@ -660,6 +654,52 @@ opacity: 1;
   background-color: grey;
   color: white !important;
 }
+
+/* Light Mode Hover */
+.rectanglee:hover {
+  background-color: gray;
+}
+
+.rectanglee:hover span {
+  color: white;
+}
+
+/* Dark Mode Defaults */
+.dark-mode .rectanglee {
+  background-color: #2a2a2a; /* Neutral dark background */
+}
+
+.dark-mode .rectanglee span {
+  color: white;
+}
+
+/* Dark Mode Hover */
+.dark-mode .rectanglee:hover {
+  background-color: #4a4b4d;
+}
+
+.dark-mode .rectanglee:hover span {
+  color: white;
+}
+
+/* Active Style (Shared) */
+.rectanglee.active {
+  background-color: black;
+}
+
+.rectanglee.active span {
+  color: white;
+}
+
+/* Dark Mode Active Style */
+.dark-mode .rectanglee.active {
+  background-color: white;
+}
+
+.dark-mode .rectanglee.active span {
+  color: black;
+}
+
 
 /* Dark Mode Hover */
 .dark-mode .rectanglee:hover {

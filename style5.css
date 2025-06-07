@@ -1,179 +1,302 @@
 html {
-  scroll-behavior: smooth; /* Smooth scrolling for better UX */
+  scroll-behavior: smooth; /* Enables smooth scrolling on anchor links */
+  box-sizing: border-box; /* Ensures padding/border don’t break layout */
 }
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 body {
-  display: flex; /* Missing flex display */
-  flex-direction: column; /* Ensures content flows properly */
-  justify-content: center; /* Centers content vertically */
-  align-items: center; /* Centers content horizontally */
-  text-align: center; /* Keeps text centered */
-  background-color: white;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Vertical centering (usually better for specific containers) */
+  align-items: center;     /* Horizontal centering */
+  text-align: center;
+  background-color: #ffffff; /* Explicit hex code is more robust */
   font-family: 'Poppins', sans-serif;
   overflow-y: auto;
   overflow-x: hidden;
   margin: 0;
-  min-height: 100vh; /* Ensures full height on all screens */
-  scrollbar-width: thin;
+  min-height: 100vh;
+
+  /* Cross-browser scrollbar styling */
+  scrollbar-width: thin; /* Firefox */
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+
+  /* WebKit scrollbar styling */
+  -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
+}
+
+/* Optional: WebKit scrollbar styling (Chrome, Edge, Safari) */
+body::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
 }
 
 .container {
   position: fixed;
-  background-color:white;
-  display: flex;
-  flex: 1;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  object-fit: cover;
-  top: 0px;
-  float: left;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  max-height:54px ;
-  border-radius: 0px;
-  left: 0px;
-  border-style: none;
-  z-index: 1;
-  margin-bottom: 0px;
-  justify-content: space-between;
-}
-
-
-
-.Table {
-  position: relative; /* Positioning context for child elements */
-  min-width: 12%; /* Allow slight flexibility */
-  max-width: 16%; /* Prevent excessive stretching */
-  height: 2.8rem; /* Maintain proportional height */
-  background-color: transparent;/* Debugging background */
+  height: 3.375rem;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center; /* Ensure vertical alignment */
-  justify-content: center; /* Ensure horizontal centering */
+  align-items: center;
+  padding-left: 0; /* make sure nothing pushes it */
+  background-color:white;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Logo/title section */
+.Table {
+  flex: 0 0 15%; /* Prevent it from growing/shrinking unexpectedly */
+  height: 100%; /* Match height of container */
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+  left: 0%;
+}
+
+/* Text inside Table */
 .overlay-text {
-  position: absolute; /* Keep it overlaid inside .Table */
-  width: 94%; /* Full width */
-  height: auto; /* Allow flexible height */
-  background-color: transparent;/* Debugging background */
-  padding: 0;
-  text-align: center;
-  font-size: 15px; /* Standard text size */
-  font-weight:700;
-  color: white; /* Ensure visibility */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Improve readability */
-  z-index: 3; /* Higher than .Table to stay visible */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Perfect centering */
-  white-space: nowrap; /* Prevent wrapping */
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  z-index: 3;
+  padding-left: 0px;
+  background-color: transparent;
 }
 
 
-/* Remove underline from the anchor tag */
-a {
-  text-decoration: none; /* Ensure no underline on the anchor tag */
+/* NET and TOON Styling */
+.net-text {
+  background:red;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3em;
+  letter-spacing: 2px;
 }
 
-/* Optional: Ensure no underline on spans if needed */
-.net-text, .toon-text {
-  text-decoration: none; /* Ensure no underline on spans */
+.toon-text {
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3em;
+  margin-left: 5px;
 }
 
+/* Dark Mode */
+.dark-mode .net-text {
+  background:red;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .toon-text {
+  background:yellow;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .shorts-text {
+  background:red;
+  color: white;
+}
+
+
+/* Remove underline from anchor tags */
+a, .net-text, .toon-text {
+  text-decoration: none;
+}
+
+/* Remaining space: .nav */
+.nav {
+  flex-grow: 1;         /* Take up the rest */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5vw;
+  background-color: transparent;;
+  margin-left: 0px;
+}
+.container {
+  display: flex;
+  flex-direction: row; /* change to row if you want nav and others side by side */
+}
 
 .nav {
-  position: absolute;
-  width: 84.5%;
-  float: left;
-  margin-left: 15.3vw; /* Adjusted for responsiveness */
-  height: auto;
-  background-color: transparent;
-  margin-top: 0;
-  display: flex;
-  flex: 1;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: center; /* Center items vertically */
-  justify-content: space-around; /* Center items horizontally */
-  gap: 5vw;
-  max-height: 5.4vh; /* Adjusted for better height scaling */
-  margin-bottom: 1vh;
+  flex-grow: 1;
+  height: 100%;
 }
 
 
 .search {
   display: flex;
-  position: relative; /* Make the container relative for absolute positioning */
+  position: relative;
   width: 90%;
-  height: auto;
+  max-width: 850px;
+  height: 30px;
   background-color: transparent;
-  margin: 2vh auto;
-  border-radius: 0.5rem;
-  margin-left: 3vw;
+  margin: 15px auto; /* Centered, consistent spacing */
+  border-radius: 7px;
   align-items: center;
+  border: 0.3px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  left: 2%;
 }
 
 .search input[type="search"] {
-  flex: 1;
-  height: 3.5vh;
-  border-radius: 0.5rem;
+  width: 100%;
+max-width: 100%;
+  height: 4.5vh;
+  min-height: 30px;
+  max-height: 30px;
+  border-radius: 7px;
   background-color: transparent;
-  border: 0.01rem solid #ccc;
-  max-width: 100%;
-  padding-left: 2.5rem; /* Ensure space for the icon */
-  color: #36454F;
+  border: none;
+  padding: 0rem;
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Dark mode input */
+.search input[type="search"]:focus {
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #666;
+  display: none;
+}
+
+.search input[type="search"]:valid ~ .clear-btn {
+  display: block;
+}
+
 body.dark-mode .search input[type="search"] {
   color: #fff;
 }
 
-/* Placeholder styling */
 .search input[type="search"]::placeholder {
   color: #36454F;
+  font-size: 0.9rem;
 }
 
 body.dark-mode .search input[type="search"]::placeholder {
   color: #D3D3D3;
 }
 
-.dark-mode .nav input[type="text"]  {
-  color:   #F5F5DC; 
+/* Optional mobile support */
+@media (max-width: 480px) {
+  .search {
+    width: 95%;
+    padding: 0.25rem;
+  }
+
+  .search input[type="search"] {
+    font-size: 0.95rem;
+    padding: 0.5rem 2rem 0.5rem 1.5rem;
+  }
+
+  .clear-btn {
+    font-size: 1rem;
+    right: 0.75rem;
+  }
 }
 
-.dark-mode .nav input[type="text"]::placeholder  {
-  color:   #F5F5DC; 
-}
-
-
-/* Search Icon Styling */
+/* Search icon to the left */
 .search .search-icon {
   position: absolute;
-  right: 10px; /* Adjusts distance from the left */
-  top: 51%;
+  right: 0.8rem;
+  top: 50%;
   transform: translateY(-50%);
   width: 1.5rem;
   height: 1.5rem;
-  min-width: 20px;
-  min-height: 20px;
-  background-color: transparent;
-  border-radius: 50%;
-  cursor: pointer;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.search input[type="search"]::-webkit-search-decoration,
-.search input[type="search"]::-webkit-search-cancel-button,
-.search input[type="search"]::-webkit-search-results-button,
-.search input[type="search"]::-webkit-search-results-decoration {
-  display: none; /* Hide the clear button */
+.search .search-icon:hover
+{
+
+box-shadow: 0px 4px 8px transparent; /* Soft shadow on hover */
+
+}
+/* Clear button to the right */
+.clear-btn {
+  position: absolute;
+  right: 0.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #666;
+  display: none;
+}
+
+.search input[type="search"] {
+  padding-left: 2.5rem; /* make room for icon */
+  padding-right: 2.5rem; /* make room for clear button */
+}
+
+
+.upload {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin-top: 0;
+  margin-left: 1vw;
+  border-radius: 50%;
+}
+
+.upload img {
+  width: 3vw;
+  height:3vw;
+  margin-top: 0.2vh;
+  padding: 0.5vh;
+  margin-left: 0vw;
+}
+
+
+.upload:hover .tooltip
+{
+visibility: visible;
+opacity: 1;
+
 }
 
 /* Notifications Icon */
@@ -182,9 +305,7 @@ body.dark-mode .search input[type="search"]::placeholder {
   width: 3vw;
   height: 3vw;
   background-color: transparent;
-  margin-top: 0.3125rem; /* Converted from 5px */
-  margin-left: 1.25rem; /* Converted from 20px */
-  margin-bottom: 0.1875rem; /* Converted from 3px */
+  margin: 0.3125rem 0 0.1875rem 1.25rem; /* top right bottom left */
   border-radius: 50%;
   cursor: pointer;
 }
@@ -192,28 +313,30 @@ body.dark-mode .search input[type="search"]::placeholder {
 .Notifications img {
   width: 2vw;
   height: 2vw;
-  margin-top: 0.4375rem; /* Converted from 7px */
+  margin-top: 0.4375rem;
 }
 
 /* Notification Dropdown */
 .Notification-container {
-  display: none; /* Hidden by default */
+  display: none;
   position: absolute;
+  top: 100%;
+  right: 1%;
   width: 24%;
-  height: auto;
-  background-color: #333; /* Dark mode background */
-  min-width: 11.25em; /* 180px */
-  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
-  top: 100%; /* Always appears below the icon */
-  right: 1%; /* Align to the right edge of the icon */
-  border-radius: 0.5em; /* Rounded corners */
-  max-height: 30em; /* Prevents excessive height */
-  overflow-y: auto; /* Enables scrolling if too many notifications */
-  z-index: 30;
+  min-width: 11.25em;
+  max-height: 30em;
   padding: 1rem;
+
+  background-color: #333;
+  color: white;
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+
+  overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
-  color: white;
+
+  z-index: 30;
 }
 
 /* Active class to show the container */
@@ -221,58 +344,49 @@ body.dark-mode .search input[type="search"]::placeholder {
   display: block;
 }
 
-
 .Theme {
-  display: flex; /* Flexbox for alignment */
-  align-items: center; /* Center vertically */
-  cursor: pointer; /* Pointer for hover effect */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
-
 
 .Theme img {
-  width: 1.6875em; /* Converted from 27px */
+  width: 1.6875em;
   height: 1.6875em;
-  border-radius: 50%; /* Circular profile image */
-  margin-left: 1em; /* Converted from 10px */
+  border-radius: 50%;
+  margin-left: 1em;
 }
-
-.dark-mode .Theme img
-{
-  filter: invert(1);
-}
-
-
 .Account {
   position: relative;
   width: 3vw;
   height: 3vw;
   background-color: transparent;
-  margin: 0 1.5625rem 0.1875rem 0; /* Converted from 25px, 3px */
-  display: flex; /* Flexbox for alignment */
+  margin-top: 0.3125rem; /* 5px */
+  margin-right: 1rem;     /* 16px */
+  margin-bottom: 0.1875rem; /* 3px */
+  display: flex;
   align-items: center;
   border-radius: 50%;
-  margin-top: 0.3125rem; /* Converted from 5px */
   float: right;
-  margin-right: 1rem;/* Converted from 30px */
 }
 
 .Account img {
   width: 2vw;
   height: 2vw;
-  float: left;
-  margin-left: 0.4rem; /* Converted from 5px */
+  margin-left: 0.4rem; /* 5px */
   border-radius: 50%;
+  object-fit: cover; /* Ensures proper scaling inside circle */
 }
 
-.dark-mode .Account img
-{
+/* Dark mode adjustment */
+.dark-mode .Account img {
   filter: invert(1);
 }
 
-
+/* Dropdown wrapper */
 .account-dropdown {
-  position: relative; /* Position for dropdown */
-  display: inline-block; /* Align with other elements */
+  position: relative;
+  display: inline-block;
 }
 
 
@@ -280,7 +394,7 @@ body.dark-mode .search input[type="search"]::placeholder {
   display: none;
   position: absolute;
   top: 100%;
-  right: 1%;
+  right: 0.5%;
   width: 24%;
   min-width: 11.25em;
   max-height: 25em;
@@ -288,7 +402,7 @@ body.dark-mode .search input[type="search"]::placeholder {
   box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
   border-radius: 0.5em;
   z-index: 30;
-  padding: 0.5em 0;
+  padding: 0em 0;
   text-align: left;
   align-items: flex-start;
   overflow-y: auto;
@@ -313,7 +427,7 @@ body.dark-mode .search input[type="search"]::placeholder {
 
 /* Profile Section */
 .proofile {
-  width: 85%;
+  width: 100%;
   min-height: 1.875em; /* 30px */
   display: flex;
   align-items: center;
@@ -325,7 +439,7 @@ body.dark-mode .search input[type="search"]::placeholder {
   padding: 0.625em; /* 10px */
   border-radius: 0.4375em; /* 7px */
   max-width: 90%;
-  transition: all 0.3s ease-in-out;
+  margin: 0 auto;
 }
 
 /* Hover Effect */
@@ -348,7 +462,7 @@ body.dark-mode .search input[type="search"]::placeholder {
 }
 
 /* Profile Name */
-.proofile label {
+.proofile span {
   font-weight: bold;
   font-size: 0.875em; /* 14px */
   color: black;
@@ -362,7 +476,7 @@ body.dark-mode .search input[type="search"]::placeholder {
 }
 
 /* Change text color on hover */
-.proofile:hover label {
+.proofile:hover span{
   color: white;
 }
 
@@ -372,27 +486,50 @@ body.dark-mode .search input[type="search"]::placeholder {
 }
 
 
+
 .tooltip {
   position: absolute;
-  background: rgba(0, 0, 0, 0.7);
+  top: 100%; /* Show below the upload icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
   color: white;
-  z-index: 1;
-  margin-top: 0;
-  padding: 0.3125em; /* Converted from 5px */
-  border-radius: 0.25em; /* Slight rounding for better UI */
+  padding: 0.4em 0.6em;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
-  transform: translateY(5px); /* Smooth pop-up effect */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
 }
 
+
+/* Tooltip Hover Effect */
 .upload:hover .tooltip, 
 .Notifications:hover .tooltip, 
 .Account:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .tooltip {
+    font-size: 0.75em; /* Reduce text size on smaller screens */
+    padding: 0.4em 0.6em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tooltip {
+    font-size: 0.6875em; /* Further reduce size for compact screens */
+    bottom: -1.75rem; /* Adjust positioning */
+  }
+}
+
+
 /* 🔥 Overlay Background (Blurs Everything Behind) */
 .upload-overlay {
   position: fixed;
@@ -400,9 +537,7 @@ body.dark-mode .search input[type="search"]::placeholder {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5) ; /* Semi-transparent black */
-  backdrop-filter: blur(8px); /* Blurs background for depth effect */
-  z-index: 10; /* Ensures it covers everything */
+  z-index: 0; /* Ensures it covers everything */
   display: flex;
   justify-content: center;
   align-items: center;

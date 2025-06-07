@@ -240,7 +240,6 @@ body.dark-mode .search input[type="search"]::placeholder {
   transform: translateY(-50%);
   width: 1.5rem;
   height: 1.5rem;
-  pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;

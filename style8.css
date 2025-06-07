@@ -600,12 +600,25 @@ opacity: 1;
     text-overflow: ellipsis; /* Ensures long text is truncated */
   }
   
+    
+  .home img:hover {
+  filter: invert(1);
+  }
   
-  .home:hover,
+  
+  .home:hover {
+    background-color: #2a2d2f;
+    color: white;
+  }
+  
+  .home:hover span {
+    color: white;
+  }
+  
   .dark-mode .home:hover {
     background-color: #2a2d2f;
   }
-
+  
 
 .suggestionss {
   position: fixed;

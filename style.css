@@ -1,14 +1,29 @@
+/* ==== GLOBAL RESET AND BOX-SIZING ==== */
 html {
-  scroll-behavior: smooth; /* Enables smooth scrolling on anchor links */
-  box-sizing: border-box; /* Ensures padding/border don’t break layout */
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Apply box-sizing to all elements for consistency */
 *, *::before, *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: inherit;
 }
 
+/* ==== ROOT VARIABLES ==== */
+:root {
+  --spacing: 1.5rem;
+  --container-width: 1200px;
+  --text-color: #333;
+  --bg-color: #f9f9f9;
+}
+
+/* ==== GENERAL BODY STYLING ==== */
 body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
   display: flex;
   flex-direction: column; /* Stack children vertically */
   justify-content: center; /* Vertical centering (usually better for specific containers) */
@@ -43,6 +58,14 @@ body::-webkit-scrollbar-thumb {
   border-radius: 0.25rem;
 }
 
+/* ==== HEADER/FOOTER ==== */
+.header, .footer {
+  background-color: #2a2d2f;
+  color: white;
+  padding: var(--spacing) 0;
+}
+
+
 .container {
   position: fixed;
   top: 0;
@@ -53,10 +76,15 @@ body::-webkit-scrollbar-thumb {
   flex-direction: row;
   align-items: center;
   padding-left: 0; /* make sure nothing pushes it */
-  background-color:white;
+  background-color: #ffffff; /* Explicit hex code is more robust */
   z-index: 10;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+justify-content: flex-start;
+  margin-inline: auto;
+
 }
+
+
 
 /* Logo/title section */
 .Table {
@@ -424,7 +452,7 @@ opacity: 1;
   padding: 0.625em; /* 10px */
   border-radius: 0.4375em; /* 7px */
   max-width: 90%;
-  margin: 0 0rem 0 0rem;
+  margin: 0 auto;
 }
 
 /* Hover Effect */
@@ -619,10 +647,10 @@ opacity: 1;
 .suggestionss {
   position: fixed;
   display: flex;
-  width: calc(100% - 10%); 
+  left: 9.5%;           /* Beside the sidebar (9.4% + spacing) */
+  width: calc(100% - 9.6%); /* Leaves space for the sidebar */
   height: 3.75rem; /* Converted from 60px */
   background-color:white;
-  left:9.6%;
   top: 2.5rem;
   flex-wrap: nowrap;
   justify-content:space-evenly;
@@ -775,7 +803,7 @@ opacity: 1;
   position: absolute; /* Or 'fixed' depending on your layout needs */
   top: 6.3rem;         /* Below the header */
   left: 9.5%;           /* Beside the sidebar (9.4% + spacing) */
-  width: calc(100% - 10%); /* Leaves space for the sidebar */
+  width: calc(100% - 9.6%); /* Leaves space for the sidebar */
   height: auto;
   display: flex;
   flex-wrap: wrap;
@@ -855,7 +883,7 @@ border-style: none;
 
 /* Profile Section */
 .profilee {
-  width: 90.8%;
+  width: 100%;
   height: 2rem; /* 40px */
   border-radius: 0rem; /* 7px */
   background-color: transparent;
@@ -941,7 +969,7 @@ border-style: none;
 }
 
 .caption {
-  width: 94%;
+  width: 100%;
   height: 1.875rem; /* 30px */
   display: flex;
   align-items: center;
@@ -949,6 +977,7 @@ border-style: none;
   overflow: hidden;
   background-color: transparent;
   padding: 0 0.625rem; /* Adds slight padding for better spacing */
+  padding-top: 5px;
 }
 
 /* Caption Text */
@@ -1066,7 +1095,7 @@ border-style: none;
 .sectiionn {
   display: flex;
   width: 100%;
-  background: transparent;
+  background-color: transparent;
   margin-top: 1px;
   border-radius: 7px;
   justify-content: space-between;

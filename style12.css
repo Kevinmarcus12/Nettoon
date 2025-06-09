@@ -1,462 +1,416 @@
+/* ==== GLOBAL RESET AND BOX-SIZING ==== */
 html {
-  scroll-behavior: smooth; /* Enables smooth scrolling on anchor links */
-  box-sizing: border-box; /* Ensures padding/border don’t break layout */
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* ==== ROOT VARIABLES ==== */
+:root {
+  --spacing: 1.5rem;
+  --container-width: 1200px;
+  --text-color: #333;
+  --bg-color: #f9f9f9;
+}
+
+/* ==== GENERAL BODY STYLING ==== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Vertical centering (usually better for specific containers) */
+  align-items: center;     /* Horizontal centering */
+  text-align: center;
+  background-color: #ffffff; /* Explicit hex code is more robust */
+  font-family: 'Poppins', sans-serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh;
+
+  /* Cross-browser scrollbar styling */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+
+  /* WebKit scrollbar styling */
+  -webkit-overflow-scrolling: touch; /* iOS smooth scroll */
+}
+
+/* Optional: WebKit scrollbar styling (Chrome, Edge, Safari) */
+body::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
+}
+
+/* ==== HEADER/FOOTER ==== */
+.header, .footer {
+  background-color: #2a2d2f;
+  color: white;
+  padding: var(--spacing) 0;
 }
 
 
-  
-  body {
-    justify-content: center; /* Centers content vertically if needed */
-    align-items: center; /* Centers content horizontally */
-    text-align: center; /* Keeps text centered */
-    background-color: white; 
-    font-family: 'Poppins', sans-serif;
-    overflow-y:hidden;
-    overflow-x: hidden;
-    margin: 0; 
-    min-height: 100vh; /* Ensures full height on all screens */
-  }
-  
-  
-  .container {
-    position: fixed;
-    background-color: white; 
-    display: flex;
-    flex: 1;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    object-fit: cover;
-    top: 0px;
-    float: left;
-    width: 100%;
-    height: auto;
-    max-height:54px ;
-    border-radius: 0px;
-    left: 0px;
-    border-style: none;
-    z-index: 10;
-    margin-bottom: 0px;
-    justify-content: space-between;
-  }
-  
-  .Table {
-    position: relative;
-    min-width: 10%;  /* Slightly increased for better proportions */
-    max-width: 13.1%;
-    height: 3rem;  /* Adjusted for better spacing */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-  }
-  
-  .overlay-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 1.25rem; /* Increased size for better readability */
-    font-weight: 800; /* Slightly bolder */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    z-index: 3;
-    background-color:transparent;
-    margin-left: 0px;
-  }
-  
-  /* NET and TOON Styling */
-  .net-text {
-    background:red;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.3em;
-    letter-spacing: 2px;
-  }
-  
-  .toon-text {
-    background: black;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1.3em;
-    margin-left: 5px;
-  }
-  
-  /* Dark Mode */
-  .dark-mode .net-text {
-    background:red;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .dark-mode .toon-text {
-    background:yellow;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .dark-mode .shorts-text {
-    background:red;
-    color: white;
-  }
-  
-  
-  /* Remove underline from anchor tags */
-  a, .net-text, .toon-text {
-    text-decoration: none;
-  }
-  
-  .nav {
-    position: absolute;
-    width: 87%;
-    float: left;
-    margin-left: 13vw; /* Keeps navigation aligned on all screen sizes */
-    height: auto;
-    background-color:transparent; 
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: center; /* Center items vertically */
-    justify-content: space-around; /* Ensure equal spacing */
-    gap: 5vw; /* Adjusts dynamically */
-    max-height: 5.3vh; /* Scales well across different devices */
-    margin-bottom: 1vh;
-  }
-  
-  /* Main search container */
-  .search {
-    display: flex;
-    position: relative;
-    width: 90%;
-    max-width: 850px; /* was 600px */
-    height: auto;
-    background-color:transparent; 
-    margin: 2vh auto;
-    border-radius: 7px;
-    align-items: center;
-    border: 0.3px solid #ccc;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-    margin-top: 15px;
-    margin-left: 40px;
-  }
-  
-  /* Search input field */
-  .search input[type="search"] {
-    flex: 1;
-    height: 4.5vh;
-    min-height: 30px;
-    max-height: 30px;
-    border-radius: 7px;
-    background-color: transparent;
-    border: none;
-    padding: 0.7rem 3rem 0.7rem 2.5rem;
-    color: #333;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Search input focus effect */
-  .search input[type="search"]:focus {
-    border: 1px solid white;
-    box-shadow: 0px 0px 8px none;
-  }
-  
-  
-  /* Clear button */
-  .clear-btn {
-    position: absolute;
-    right: 1rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: #666;
-    display: none; /* Hidden by default */
-  }
-  
-  /* Show clear button when text is entered */
-  .search input[type="search"]:valid ~ .clear-btn {
-    display: block;
-  }
-  
-  
-  /* Dark mode input */
-  body.dark-mode .search input[type="search"] {
-    color: #fff;
-  }
-  
-  /* Placeholder styling */
-  .search input[type="search"]::placeholder {
-    color: #36454F;
-    font-size: 0.9rem; /* Ensures readability */
-  }
-  
-  body.dark-mode .search input[type="search"]::placeholder {
-    color: #D3D3D3;
-  }
-  
-  /* Search Icon Styling */
-  .search .search-icon {
-    position: absolute;
-    right: 12px; /* Adjust distance for better alignment */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1.5rem;
-    height: 1.5rem;
-    min-width: 20px;
-    min-height: 20px;
-    background-color:transparent;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Hide the clear button across all browsers */
-  .search input[type="search"]::-webkit-search-decoration,
-  .search input[type="search"]::-webkit-search-cancel-button,
-  .search input[type="search"]::-webkit-search-results-button,
-  .search input[type="search"]::-webkit-search-results-decoration {
-    display: none; 
-  }
-  
-  /* Prevent autofill background color change */
-  .search input[type="search"]:-webkit-autofill,
-  .search input[type="search"]:-webkit-autofill:hover,
-  .search input[type="search"]:-webkit-autofill:focus,
-  .search input[type="search"]:-webkit-autofill:active {
-    background-color:none !important;
-    color: #333 !important;
-    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-    box-shadow: 0 0 0px 1000px white inset !important;
-    transition: background-color 5000s ease-in-out 0s; /* Prevent flickering */
-  }
-  
-  
-  
-  .upload {
-    position: relative;
-    width: 3vw;
-    height: 3vw;
-    background-color: transparent;
-    margin-top: 0;
-    margin-left: 1vw;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  
-  }
-  
-  /* Upload Icon */
-  .upload img {
-    width: 2.4vw;
-    height: 2.4vw;
-    padding: 0.5vh;
-    object-fit: contain;
-  
-  }
-  
-  
-  /* Tooltip Styling */
-  .tooltip {
-    position: absolute;
-    top: 110%; /* Positioned below the icon */
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    font-size: 0.9rem;
-    padding: 0.4rem 0.7rem;
-    border-radius: 0.3rem;
-    white-space: nowrap;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
-  }
-  
-  /* Show tooltip on hover */
-  .upload:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(3px);
-  }
-  
-  /* Responsive Adjustments */
-  @media screen and (max-width: 768px) {
-    .upload {
-      width: 5vw;
-      height: 5vw;
-    }
-  
-    .upload img {
-      width: 3.5vw;
-      height: 3.5vw;
-    }
-  
-    .tooltip {
-      font-size: 0.8rem;
-      padding: 0.3rem 0.6rem;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .upload {
-      width: 7vw;
-      height: 7vw;
-    }
-  
-    .upload img {
-      width: 5vw;
-      height: 5vw;
-    }
-  
-    .tooltip {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.5rem;
-    }
-  }
-  /* Notifications Icon */
-  .Notifications {
-    position: relative;
-    width: 3vw;
-    height: 3vw;
-    background-color: transparent;
-    margin: 0.3125rem 0 0.1875rem 1.25rem; /* Top, Right, Bottom, Left */
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-  }
-  
-  /* Icon inside the Notification button */
-  .Notifications img {
-    width: 2vw;
-    height: 2vw;
-  
-  }
-  
-  
-  
-  /* Notification Dropdown */
-  .Notification-container {
-    display: none; /* Hidden by default */
-    position: absolute;
-    width: 24%;
-    min-width: 11.25em; /* 180px */
-    height: auto;
-    max-height: 30em; /* Prevents excessive height */
-    background-color: #333; /* Dark mode background */
-    color: white;
-    top: 100%; /* Positioned below the icon */
-    right: 1%;
-    border-radius: 0.5em;
-    box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
-    overflow-y: auto; /* Enables scrolling for multiple notifications */
-    z-index: 30;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
-    padding: 1rem;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
-  }
-  
-  /* Active class to show dropdown smoothly */
-  .Notification-container.active {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* Responsive Adjustments */
-  @media screen and (max-width: 768px) {
-    .Notifications {
-      width: 4vw;
-      height: 4vw;
-    }
-  
-    .Notifications img {
-      width: 3vw;
-      height: 3vw;
-    }
-  
-    .Notification-container {
-      width: 40%;
-      right: 2%;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .Notifications {
-      width: 6vw;
-      height: 6vw;
-    }
-  
-    .Notifications img {
-      width: 4vw;
-      height: 4vw;
-    }
-  
-    .Notification-container {
-      width: 60%;
-      right: 5%;
-    }
-  }
-  /* Account Icon */
-  .Account {
-    position: relative;
-    width: 3vw;
-    height: 3vw;
-    background-color: transparent;
-    margin: 0 1.5625rem 0.1875rem 0; /* Right, Bottom */
-  
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
-    float: right;
-    margin-right: 1rem;
-  
-  }
-  
-  /* Profile Image inside Account Icon */
-  .Account img {
-    width: 2vw;
-    height: 2vw;
-    border-radius: 50%;
-  
-    margin-top: 6px;
-  }
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.375rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 0; /* make sure nothing pushes it */
+  background-color: #ffffff;  /* Explicit hex code is more robust */
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+justify-content: flex-start;
+  margin-inline: auto;
 
-  .dark-mode .Account img
+}
+
+
+
+/* Logo/title section */
+.Table {
+  flex: 0 0 15%; /* Prevent it from growing/shrinking unexpectedly */
+  height: 100%; /* Match height of container */
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+  left: 0%;
+}
+
+/* Text inside Table */
+.overlay-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 3;
+  padding-left: 0px;
+  background-color: transparent;
+}
+
+
+/* NET and TOON Styling */
+.net-text {
+  background:red;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3em;
+  letter-spacing: 2px;
+}
+
+.toon-text {
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3em;
+  margin-left: 5px;
+}
+
+/* Dark Mode */
+.dark-mode .net-text {
+  background:red;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .toon-text {
+  background:yellow;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .shorts-text {
+  background:red;
+  color: white;
+}
+
+
+/* Remove underline from anchor tags */
+a, .net-text, .toon-text {
+  text-decoration: none;
+}
+
+/* Remaining space: .nav */
+.nav {
+  flex-grow: 1;         /* Take up the rest */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5vw;
+  background-color:transparent;
+  margin-left: 0px;
+}
+.container {
+  display: flex;
+  flex-direction: row; /* change to row if you want nav and others side by side */
+}
+
+.nav {
+  flex-grow: 1;
+  height: 100%;
+}
+
+
+.search {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  height:30px;
+  left: 2%;
+  background-color: #f5f5f5;
+  margin: 15px auto;
+  border-radius: 7px;
+  align-items: center;
+  border: 0.3px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures hidden children don't leak out */
+}
+
+.dark-mode .search
 {
-  filter: invert(1);
+  background-color: transparent;
 }
 
-  
-  /* Dropdown Wrapper */
-  .account-dropdown {
-    position: relative;
-    display: inline-block;
+.search input[type="search"] {
+  flex: 1;
+  height: 4.5vh;
+height: 100%;
+  border-radius: 7px;
+  background-color:transparent;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.search input[type="search"]:focus {
+  border: 1px solid white;
+  box-shadow: none;
+}
+
+
+.search input[type="search"]:valid ~ .clear-btn {
+  display: block;
+}
+
+body.dark-mode .search input[type="search"] {
+  color: #fff;
+}
+
+.search input[type="search"]::placeholder {
+  color: #36454F;
+  font-size: 0.9rem;
+}
+
+body.dark-mode .search input[type="search"]::placeholder {
+  color: #D3D3D3;
+}
+
+/* Optional mobile support */
+@media (max-width: 480px) {
+  .search {
+    width: 95%;
+    padding: 0.25rem;
   }
-  
-  
-.dropdown-content {
+
+  .search input[type="search"] {
+    font-size: 0.95rem;
+    padding: 0.5rem 2rem 0.5rem 1.5rem;
+  }
+
+  .clear-btn {
+    font-size: 1rem;
+    right: 0.75rem;
+  }
+}
+
+/* Search icon to the left */
+.search .search-icon {
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  padding: 1px;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Clear button to the right */
+.clear-btn {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: red;
+  display: none;
+}
+
+.search input[type="search"] {
+  padding-left: 2rem; /* make room for icon */
+  padding-right: 3.5rem; /* make room for clear button */
+}
+
+
+.upload {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin-top: 0;
+  margin-left: 1vw;
+  border-radius: 50%;
+}
+
+.upload img {
+  width: 3vw;
+  height:3vw;
+  margin-top: 0.2vh;
+  padding: 0.5vh;
+  margin-left: 0vw;
+}
+
+
+.upload:hover .tooltip
+{
+visibility: visible;
+opacity: 1;
+
+}
+
+/* Notifications Icon */
+.Notifications {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin: 0.3125rem 0 0.1875rem 1.25rem; /* top right bottom left */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.Notifications img {
+  width: 2vw;
+  height: 2vw;
+  margin-top: 0.4375rem;
+}
+
+/* Notification Dropdown */
+.Notification-container {
   display: none;
   position: absolute;
   top: 100%;
   right: 1%;
+  width: 24%;
+  min-width: 11.25em;
+  max-height: 30em;
+  padding: 1rem;
+
+  background-color: #333;
+  color: white;
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+
+  z-index: 30;
+}
+
+/* Active class to show the container */
+.Notification-container.active {
+  display: block;
+}
+
+.Theme {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Theme img {
+  width: 1.6875em;
+  height: 1.6875em;
+  border-radius: 50%;
+  margin-left: 1em;
+}
+.Account {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin-top: 0.3125rem; /* 5px */
+  margin-right: 1rem;     /* 16px */
+  margin-bottom: 0.1875rem; /* 3px */
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  float: right;
+}
+
+.Account img {
+  width: 2vw;
+  height: 2vw;
+  margin-left: 0.4rem; /* 5px */
+  border-radius: 50%;
+  object-fit: cover; /* Ensures proper scaling inside circle */
+}
+
+/* Dark mode adjustment */
+.dark-mode .Account img {
+  filter: invert(1);
+}
+
+/* Dropdown wrapper */
+.account-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0.5%;
   width: 24%;
   min-width: 11.25em;
   max-height: 25em;
@@ -464,7 +418,7 @@ html {
   box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
   border-radius: 0.5em;
   z-index: 30;
-  padding: 0.5em 0;
+  padding: 0em 0;
   text-align: left;
   align-items: flex-start;
   overflow-y: auto;
@@ -489,7 +443,7 @@ html {
 
 /* Profile Section */
 .proofile {
-  width: 85%;
+  width: 100%;
   min-height: 1.875em; /* 30px */
   display: flex;
   align-items: center;
@@ -501,7 +455,7 @@ html {
   padding: 0.625em; /* 10px */
   border-radius: 0.4375em; /* 7px */
   max-width: 90%;
-  transition: all 0.3s ease-in-out;
+  margin: 0 auto;
 }
 
 /* Hover Effect */
@@ -524,7 +478,7 @@ html {
 }
 
 /* Profile Name */
-.proofile label {
+.proofile span {
   font-weight: bold;
   font-size: 0.875em; /* 14px */
   color: black;
@@ -538,7 +492,7 @@ html {
 }
 
 /* Change text color on hover */
-.proofile:hover label {
+.proofile:hover span{
   color: white;
 }
 
@@ -547,102 +501,49 @@ html {
   list-style: none; /* Remove bullet points */
 }
 
-  
-  /* Tooltip Base */
+
+
+.tooltip {
+  position: absolute;
+  top: 100%; /* Show below the upload icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 0.4em 0.6em;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 10;
+}
+
+
+/* Tooltip Hover Effect */
+.upload:hover .tooltip, 
+.Notifications:hover .tooltip, 
+.Account:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
   .tooltip {
-    position: absolute;
-    bottom: -2rem; /* Positions below the icon */
-    left: 50%;
-    transform: translateX(-50%) translateY(5px); /* Subtle offset */
-    background-color: #333;/* Slightly darker for better contrast */
-    color: white;
-    z-index: 10;
-    padding: 0.5em 1em; /* More padding for readability */
-    border-radius: 0.375em; /* Smooth rounded corners */
-    white-space: nowrap;
-    font-size: 0.875em; /* Optimized for readability */
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
-    pointer-events: none; /* Prevents accidental hover issues */
+    font-size: 0.75em; /* Reduce text size on smaller screens */
+    padding: 0.4em 0.6em;
   }
-  
-  /* Tooltip Hover Effect */
-  .upload:hover .tooltip, 
-  .Notifications:hover .tooltip, 
-  .Account:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
+}
+
+@media screen and (max-width: 480px) {
+  .tooltip {
+    font-size: 0.6875em; /* Further reduce size for compact screens */
+    bottom: -1.75rem; /* Adjust positioning */
   }
-  
-  /* Responsive Adjustments */
-  @media screen and (max-width: 768px) {
-    .tooltip {
-      font-size: 0.75em; /* Reduce text size on smaller screens */
-      padding: 0.4em 0.6em;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .tooltip {
-      font-size: 0.6875em; /* Further reduce size for compact screens */
-      bottom: -1.75rem; /* Adjust positioning */
-    }
-  }
-  .overlay {
-    position: absolute; /* Ensures it stays positioned over its parent */
-    bottom: 1.875rem; /* 30px */
-    width: 12.5rem; /* 200px */
-    height: 3.125rem; /* 50px */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    border-radius: 0.4375rem; /* 7px */
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(10px); /* Subtle movement effect */
-  }
-  
-  /* Overlay Text Styling */
-  .overlay h3 {
-    color: white;
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 0;
-    padding: 0 0.5rem; /* Adds a bit of spacing inside */
-  }
-  
-  /* Show overlay on hover */
-  .parent-container:hover .overlay {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* ✅ Responsive Adjustments */
-  @media screen and (max-width: 768px) {
-    .overlay {
-      width: 10rem; /* Slightly smaller for tablets */
-      height: 2.8rem;
-      font-size: 0.9rem;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .overlay {
-      width: 8.5rem; /* Adjust for smaller screens */
-      height: 2.5rem;
-      font-size: 0.8rem;
-      bottom: 1rem; /* Adjust positioning */
-    }
-    .overlay h3 {
-      font-size: 0.75rem;
-    }
-  }
-  
+}
 
 /* ==== Base Container ==== */
 .container-1 {

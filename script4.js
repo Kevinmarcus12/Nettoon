@@ -93,6 +93,27 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
 
+  document.addEventListener('DOMContentLoaded', () => {
+    // For container-3 follow
+    document.querySelectorAll('.container-3 .follow').forEach(followBox => {
+      const followDefaultImg = followBox.querySelector('.follow-icon.default');
+      const followActiveImg = followBox.querySelector('.follow-icon.active');
+      const followLabel = followBox.querySelector('.follow-label:not(.active)');
+      const followingLabel = followBox.querySelector('.follow-label.active');
+      let isFollowing = false;
+
+      followBox.addEventListener('click', () => {
+        isFollowing = !isFollowing;
+        followDefaultImg.classList.toggle('hidden', isFollowing);
+        followActiveImg.classList.toggle('hidden', !isFollowing);
+        followLabel.classList.toggle('hidden', isFollowing);
+        followingLabel.classList.toggle('hidden', !isFollowing);
+      });
+    });
+  });
+
+
+
         // 
         document.addEventListener("click", () => {
             const video = document.querySelector(".short-video video");

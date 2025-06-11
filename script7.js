@@ -145,3 +145,97 @@ document.querySelectorAll('.shorts').forEach(shortsContainer => {
       });
     });
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Loop through each short video block
+    document.querySelectorAll(".shorts").forEach((short) => {
+      const likeBtn = short.querySelector(".like");
+      const dislikeBtn = short.querySelector(".dislike");
+  
+      const likeIcon = likeBtn.querySelector(".like-icon");
+      const likedIcon = likeBtn.querySelector(".liked-icon");
+      const likeCountSpan = likeBtn.querySelector("span");
+  
+      const dislikeIcon = dislikeBtn.querySelector(".dislike-icon");
+      const dislikedIcon = dislikeBtn.querySelector(".disliked-icon");
+      const dislikeCountSpan = dislikeBtn.querySelector("span");
+  
+      let isLiked = false;
+      let isDisliked = false;
+  
+      likeBtn.addEventListener("click", () => {
+        isLiked = !isLiked;
+  
+        if (isLiked) {
+          likeIcon.classList.remove("visible");
+          likedIcon.classList.add("visible");
+          likeCountSpan.textContent = parseInt(likeCountSpan.textContent) + 1;
+        } else {
+          likedIcon.classList.remove("visible");
+          likeIcon.classList.add("visible");
+          likeCountSpan.textContent = Math.max(0, parseInt(likeCountSpan.textContent) - 1);
+        }
+      });
+  
+      dislikeBtn.addEventListener("click", () => {
+        isDisliked = !isDisliked;
+  
+        if (isDisliked) {
+          dislikeIcon.classList.remove("visible");
+          dislikedIcon.classList.add("visible");
+          dislikeCountSpan.textContent = parseInt(dislikeCountSpan.textContent) + 1;
+        } else {
+          dislikedIcon.classList.remove("visible");
+          dislikeIcon.classList.add("visible");
+          dislikeCountSpan.textContent = Math.max(0, parseInt(dislikeCountSpan.textContent) - 1);
+        }
+      });
+    });
+  });
+
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.section').forEach(section => {
+      const likeBox = section.querySelector('.likess');
+      const dislikeBox = section.querySelector('.dislikee');
+  
+      const likeDefault = likeBox.querySelector('.like-icon-sec.default');
+      const likeActive = likeBox.querySelector('.like-icon-sec.active');
+      const likeCount = likeBox.querySelector('.like-count-sec');
+  
+      const dislikeDefault = dislikeBox.querySelector('.dislike-icon-sec.default');
+      const dislikeActive = dislikeBox.querySelector('.dislike-icon-sec.active');
+      const dislikeCount = dislikeBox.querySelector('.dislike-count-sec');
+  
+      let liked = false;
+      let disliked = false;
+  
+      likeBox.addEventListener('click', () => {
+        liked = !liked;
+  
+        if (liked) {
+          likeDefault.classList.add('hidden');
+          likeActive.classList.remove('hidden');
+          likeCount.textContent = parseInt(likeCount.textContent) + 1;
+        } else {
+          likeDefault.classList.remove('hidden');
+          likeActive.classList.add('hidden');
+          likeCount.textContent = Math.max(0, parseInt(likeCount.textContent) - 1);
+        }
+      });
+  
+      dislikeBox.addEventListener('click', () => {
+        disliked = !disliked;
+  
+        if (disliked) {
+          dislikeDefault.classList.add('hidden');
+          dislikeActive.classList.remove('hidden');
+          dislikeCount.textContent = parseInt(dislikeCount.textContent) + 1;
+        } else {
+          dislikeDefault.classList.remove('hidden');
+          dislikeActive.classList.add('hidden');
+          dislikeCount.textContent = Math.max(0, parseInt(dislikeCount.textContent) - 1);
+        }
+      });
+    });
+  });

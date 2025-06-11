@@ -788,71 +788,6 @@ color: white;
 
 }
 
-/* Extra large screens (≥1400px) */
-@media (min-width: 1400px) {
-  body {
-    font-size: 18px;
-    /* Additional styles for extra large screens */
-  }
-}
-
-/* Large screens (≥1200px) */
-@media (min-width: 1200px) and (max-width: 1399px) {
-  body {
-    font-size: 17px;
-    /* Additional styles for large screens */
-  }
-
-
-
-}
-
-/* Medium screens (≥992px) */
-@media (min-width: 992px) and (max-width: 1199px) 
-{
-  body {
-    font-size: 16px;
-    /* Additional styles for medium screens */
-  }
-
-.signup-container
-{
-background-color:transparent;
-margin: 100px auto 0 auto; /* Top margin + horizontal centering */
-}
-
-
-}
-
-/* Small screens (≥768px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  body {
-    font-size: 15px;
-    /* Additional styles for small screens */
-  }
-
-
-
-
-}
-
-/* Extra small screens (≥576px) */
-@media (min-width: 576px) and (max-width: 767px) {
-  body {
-    font-size: 14px;
-    /* Additional styles for extra small screens */
-  }
-}
-
-/* Very small screens (<576px) */
-@media (max-width: 575px) {
-  body {
-    font-size: 13px;
-    /* Additional styles for very small screens */
-  }
-}
-
-
 /* Light Mode Styles */
 .light-mode {
     background-color:  #FAFAFA; /* White background for Light Mode */
@@ -909,3 +844,60 @@ filter: invert(1);
 
 }
 
+
+/* Mobile-first default styles (<=320px) */
+
+/* Small phones (up to 480px) */
+@media (max-width: 480px) {
+  .navbar { /* hide menu items, show hamburger */ }
+  .sidebar { display: none; }
+  .main-content { display: flex; flex-direction: column; }
+  .video-player { width: 100%; height: auto; }
+  button, .button { padding: 1rem; min-width: 48px; min-height: 48px; }
+}
+
+/* Medium phones / small tablets (481px–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .navbar { /* show expanded nav or hamburger */ }
+  .layout { display: grid;
+             grid-template-columns: 1fr 1fr; 
+             grid-gap: 16px; }
+  .sidebar { display: block; /* optional sidebar view */ }
+  .main-content, .video-container { width: 100%; }
+}
+
+/* Tablets / small laptops (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr 2fr; } 
+  .navbar { /* full nav, horizontal */ }
+  .sidebar { /* visible with full functionality */ }
+  .video-player { max-width: 100%; height: auto; }
+}
+
+/* Desktops (1025px–1279px) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .layout { grid-template-columns: 200px 3fr 1fr; }
+  .navbar { /* large nav layout */ }
+  .sidebar { padding: 20px; }
+  .main-content { max-width: 100%; }
+}
+
+/* Large desktops (1280px–1599px) */
+@media (min-width: 1280px) and (max-width: 1599px) {
+  .layout { grid-template-columns: 250px 4fr 2fr; }
+  .navbar, .sidebar, .content { padding: 2rem; }
+}
+
+/* Ultra-wide (1600px and up) */
+@media (min-width: 1600px) {
+  .layout { grid-template-columns: 300px 5fr 3fr; }
+  .header, .footer { padding: 3rem 5rem; }
+  .video-player { width: auto; height: 900px; /* larger fixed height or aspect fit */ }
+}
+
+/* Dark mode override */
+@media (prefers-color-scheme: dark) {
+  body { background: #121212; color: #e0e0e0; }
+  .navbar { background: #1f1f1f; }
+  /* etc. */
+}

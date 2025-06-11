@@ -309,3 +309,54 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+
+
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.sectionn').forEach(section => {
+      // LIKE logic
+      const likeBox = section.querySelector('.likess');
+      const likeDefault = likeBox.querySelector('.like-icon.default');
+      const likeActive = likeBox.querySelector('.like-icon.active');
+      const likeCount = likeBox.querySelector('.like-count');
+      let liked = false;
+
+      likeBox.addEventListener('click', () => {
+        liked = !liked;
+        likeDefault.classList.toggle('hidden', liked);
+        likeActive.classList.toggle('hidden', !liked);
+        let count = parseInt(likeCount.textContent);
+        likeCount.textContent = liked ? count + 1 : Math.max(0, count - 1);
+      });
+
+      // DISLIKE logic
+      const dislikeBox = section.querySelector('.dislikee');
+      const dislikeDefault = dislikeBox.querySelector('.dislike-icon.default');
+      const dislikeActive = dislikeBox.querySelector('.dislike-icon.active');
+      const dislikeCount = dislikeBox.querySelector('.dislike-count');
+      let disliked = false;
+
+      dislikeBox.addEventListener('click', () => {
+        disliked = !disliked;
+        dislikeDefault.classList.toggle('hidden', disliked);
+        dislikeActive.classList.toggle('hidden', !disliked);
+        let count = parseInt(dislikeCount.textContent);
+        dislikeCount.textContent = disliked ? count + 1 : Math.max(0, count - 1);
+      });
+
+      // FOLLOW logic
+      const followBox = section.querySelector('.follow');
+      const followDefault = followBox.querySelector('.follow-icon.default');
+      const followActive = followBox.querySelector('.follow-icon.active');
+      const followLabel = followBox.querySelector('.follow-label');
+      let following = false;
+
+      followBox.addEventListener('click', () => {
+        following = !following;
+        followDefault.classList.toggle('hidden', following);
+        followActive.classList.toggle('hidden', !following);
+        followLabel.textContent = following ? 'Following' : 'Follow';
+      });
+    });
+  });

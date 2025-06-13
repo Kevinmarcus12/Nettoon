@@ -551,7 +551,7 @@ opacity: 1;
     width: 13%; 
     max-width: 14.1%; /* Converted from 80px */
     height: 100vh; /* Full viewport height */
-    background-color: #ffffff;
+    background-color: #FFFFFF;
     top: 2.7rem;
     left: 0;
     overflow-x: hidden;
@@ -748,7 +748,7 @@ overflow-y: hidden;
 overflow-x: hidden;
 border-style:none;
 margin-bottom: 0px;
-padding-top: 0px;
+padding-top: 5px;
 padding-bottom: 0px;
 }
 
@@ -964,7 +964,7 @@ margin-right: 3%;
   border-radius: 0.75rem;
   gap: 1.5rem;
   padding: 0;
-  z-index: 2000;
+  z-index: 0;
 }
 
 /* 👇 Move both to left when comments are shown */
@@ -1095,7 +1095,7 @@ margin-right: 3%;
   top: 4rem;
   right: 7%; /* Position when shown */
   width: 37%;
-  max-width: 300px;
+  max-width: 400px;
   aspect-ratio: 9 / 16;
   min-height: 90vh;
   max-height: 95vh;
@@ -1606,50 +1606,660 @@ overflow: hidden;
 
 /* Small phones (up to 480px) */
 @media (max-width: 480px) {
-  .navbar { /* hide menu items, show hamburger */ }
-  .sidebar { display: none; }
-  .main-content { display: flex; flex-direction: column; }
-  .video-player { width: 100%; height: auto; }
-  button, .button { padding: 1rem; min-width: 48px; min-height: 48px; }
+
+   
+/* Mobile-first default styles (<=320px) */
+.container
+{
+  background-color: gray;
+  z-index: 1000;
+  width: 100%;
+  top:0%;
+  left: 0%;
+  border-radius: 0px;
+}
+
+
+.nav
+{
+background-color: pink;
+}
+
+.overlay-text
+{
+font-size: 0.5rem;
+}
+
+.search input[type="search"] {
+  
+  min-height: 5px;
+  max-height: 10px;
+
+}
+
+
+.upload
+{
+background-color: transparent;
+width: 3.3vw;
+height: 3.3vw;
+}
+
+
+.Notifications
+{
+background-color: transparent;
+width: 3.3vw;
+height: 3.3vw;
+}
+
+
+.Account 
+{
+background-color: transparent;
+width: 3.3vw;
+height: 3.3vw;
+}
+
+
+.upload img {
+width: 100%;
+height:  100%;
+margin: 0 auto;
+}
+
+.Notifications img {
+width: 100%;
+height:  100%;
+margin: 0 auto;
+}
+
+
+
+.Account img {
+width: 100%;
+height:  100%;
+margin: 0 auto;
+}
+
+.sidebar
+{
+background-color: transparent;
+display: none;
+width: 7%;
+}
+
+.sidebar:hover
+{
+width: 50%;
+}
+
+
+/* 🔷 Shorts Container */
+.shorts-container {
+
+width: calc(100% - 0%);
+left: 0%;
+gap: 1rem;
+height:50vh;
+
+justify-content: center;
+background-color: red;
+border: 1px solid transparent; /* TEMP: remove in production */
+margin: 0rem auto 0 0rem;
+
+}
+
+
+/* 🔷 Control Buttons */
+.controls {
+  position: absolute;
+  top: 50%;
+  float: right;
+  margin-right: 0.5rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.controls img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  cursor: pointer;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.6));
+  transition: transform 0.2s ease;
+}
+
+.scroll-area
+{
+background-color:violet;
+border-style: ridge;
+padding: 0px;
+padding-top: 0px;
+}
+
+.short-video {
+
+width:100%;
+aspect-ratio: 9 / 16;
+height:100%;
+max-height: 100vh;
+margin:0rem auto 0 0rem;
+
+
+}
+
+/* 🔷 Metadata Container */
+.metadata {
+position: absolute;
+top: 22vh;
+right: 4vw;
+width: 5vw;
+padding: 30px;
+}
+
+/* 👇 Move both to left when comments are shown */
+.shorts.show-comments .short-video {
+margin-left: 0px;
+}
+
+.shorts.show-comments .metadata {
+margin-right: 42.5%;
+right: 10px;
+}
+
+.comment-container {
+  transform: translateX(10%);
+ 
+}
+
+
+.comment-container {
+background-color: transparent;
+top:9.5rem;
+right: 7%; /* Position when shown */
+width: 37%;
+max-width: 400px;
+aspect-ratio: 9 / 16;
+min-height: 69vh;
+max-height: 75vh;
+
+}
+
+
 }
 
 /* Medium phones / small tablets (481px–768px) */
 @media (min-width: 481px) and (max-width: 768px) {
-  .navbar { /* show expanded nav or hamburger */ }
-  .layout { display: grid;
-             grid-template-columns: 1fr 1fr; 
-             grid-gap: 16px; }
-  .sidebar { display: block; /* optional sidebar view */ }
-  .main-content, .video-container { width: 100%; }
+  .container
+  {
+    background-color: transparent;
+  }
+
+.sidebar
+{
+  background-color: transparent;
+}
+
+.nav
+{
+  background-color: transparent;
+}
+
+.overlay-text
+{
+  font-size: 0.856789rem;
+}
+
+
+  
+.upload
+{
+  background-color: transparent;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Notifications
+{
+  background-color: transparent;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Account 
+{
+  background-color: transparent;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
+.sidebar
+{
+  background-color: transparent;
+  width: 7%;
+}
+
+.sidebar:hover
+{
+  width: 50%;
+}
+
+
+/* 🔷 Shorts Container */
+.shorts-container {
+
+  width: calc(100% - 7%);
+  left: 7%;
+  gap: 1rem;
+  height:50vh;
+
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid transparent; /* TEMP: remove in production */
+  margin: 3.5rem auto 0 0rem;
+
+}
+
+.scroll-area
+{
+  background-color: transparent;
+  border-style: ridge;
+}
+
+.short-video {
+
+  max-width: 350px;
+  aspect-ratio: 9 / 16;
+  max-height: 100vh;
+  margin:9rem auto 0 8rem;
+
+
+}
+
+/* 🔷 Metadata Container */
+.metadata {
+  position: absolute;
+  top: 22vh;
+  right: 24vw;
+  width: 5vw;
+}
+
+/* 👇 Move both to left when comments are shown */
+.shorts.show-comments .short-video {
+  margin-left: 5px;
+}
+
+.shorts.show-comments .metadata {
+  margin-right: 42.5%;
+  right: 10px;
+}
+
+
+.comment-container {
+  background-color: transparent;
+  top:9.5rem;
+  right: 7%; /* Position when shown */
+  width: 37%;
+  max-width: 400px;
+  aspect-ratio: 9 / 16;
+  min-height: 69vh;
+  max-height: 75vh;
+
+}
+
+
+
+.commentt {
+  background-color: #FFFFFF;
+  padding: 0px 0px;
+}
+
+.commentt textarea {
+
+  padding: 0px;
+  background-color: #FFFFFF;
+}
+
+.profile {
+  position: absolute;
+  bottom: 18%;
+  left: 0;
+}
+
+/* Move the profile up when caption expands */
+.profile.shift-up {
+  margin-bottom: 0.5rem; /* ~15px, tweak to taste */
+}
+
+
+
 }
 
 /* Tablets / small laptops (769px–1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .layout { grid-template-columns: 1fr 2fr; } 
-  .navbar { /* full nav, horizontal */ }
-  .sidebar { /* visible with full functionality */ }
-  .video-player { max-width: 100%; height: auto; }
+
+.container
+{
+  background-color: #F5F5F5;
+}
+
+.overlay-text
+{
+  font-size: 1.1rem;
+}
+
+.nav
+{
+  background-color: transparent;
+}
+  
+.upload
+{
+  background-color: transparent;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Notifications
+{
+  background-color: transparent;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Account 
+{
+  background-color: transparent;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
+.sidebar
+{
+  background-color: transparent;
+  width: 6%;
+}
+
+.sidebar:hover
+{
+  width: 50%;
+}
+
+
+/* 🔷 Shorts Container */
+.shorts-container {
+
+  width: calc(100% - 5.7%);
+  left: 6.1%;
+  gap: 1rem;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid transparent; /* TEMP: remove in production */
+  margin: 0rem auto 0 0rem;
+
+}
+
+.short-video {
+
+  max-width: 450px;
+  aspect-ratio: 9 / 16;
+  max-height: 90vh;
+  margin:4.3rem auto 0 16rem;
+
+
+}
+
+/* 🔷 Metadata Container */
+.metadata {
+  position: absolute;
+  top: 24vh;
+  right: 20vw;
+  width: 5vw;
+}
+
+.comment-container {
+background-color: transparent;
+  top: 4rem;
+  right: 7%; /* Position when shown */
+  width: 37%;
+  max-width: 400px;
+  aspect-ratio: 9 / 16;
+  min-height: 90vh;
+  max-height: 95vh;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 /* Desktops (1025px–1279px) */
 @media (min-width: 1025px) and (max-width: 1279px) {
-  .layout { grid-template-columns: 200px 3fr 1fr; }
-  .navbar { /* large nav layout */ }
-  .sidebar { padding: 20px; }
-  .main-content { max-width: 100%; }
+
+  .container
+  {
+    background-color: #F5F5F5;
+  }
+  
+  .Table
+  {
+    background-color: transparent;
+  }
+  
+  .overlay-text
+  {
+    background-color: transparent;
+    font-size: 1.2rem;
+  }
+  
+  .nav
+  {
+    background-color: transparent;
+  }
+  
+  .search input[type="search"] {
+  
+    min-height: 20px;
+    max-height: 25px;
+  
+  }
+  
+  
+  .upload
+  {
+    background-color: transparent;
+    width: 3.3vw;
+    height: 3.3vw;
+  }
+  
+  
+  .Notifications
+  {
+    background-color: transparent;
+    width: 3.3vw;
+    height: 3.3vw;
+  }
+  
+  
+  .Account 
+  {
+    background-color: transparent;
+    width: 3.3vw;
+    height: 3.3vw;
+  }
+  
+  
+  .upload img {
+    width: 100%;
+    height:  100%;
+    margin: 0 auto;
+  }
+  
+  .Notifications img {
+    width: 100%;
+    height:  100%;
+    margin: 0 auto;
+  }
+  
+  
+  
+  .Account img {
+    width: 100%;
+    height:  100%;
+  margin: 0 auto;
+  }
+
+  
+
+.sidebar
+{
+  background-color: transparent;
+  width:5.5%; 
+}
+
+.sidebar:hover {
+  width: 18%; /* Expands slightly on hover for better UX */
+}
+
+.scroll-area
+{
+  background-color: transparent;
+}
+
+/* 🔷 Shorts Container */
+.shorts-container {
+
+  width: calc(100% - 5.7%);
+  left: 5.6%;
+  gap: 1rem;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid transparent; /* TEMP: remove in production */
+  margin: 0rem auto 0 0rem;
+
+}
+
+.short-video {
+
+  max-width: 450px;
+  aspect-ratio: 9 / 16;
+  max-height: 90vh;
+  margin:4.3rem auto 0 16rem;
+
+
+}
+
+/* 🔷 Metadata Container */
+.metadata {
+  position: absolute;
+  top: 24vh;
+  right: 20vw;
+  width: 5vw;
+}
+
+.comment-container {
+
+  top: 4rem;
+  right: 7%; /* Position when shown */
+  width: 37%;
+  max-width: 400px;
+  aspect-ratio: 9 / 16;
+  min-height: 90vh;
+  max-height: 95vh;
+
+}
+
+
+
+
+
 }
 
 /* Large desktops (1280px–1599px) */
 @media (min-width: 1280px) and (max-width: 1599px) {
-  .layout { grid-template-columns: 250px 4fr 2fr; }
-  .navbar, .sidebar, .content { padding: 2rem; }
+  .container
+  {
+    background-color: #F5F5F5;
+  }
+  
+  .shorts-container
+  {
+    background-color: transparent;
+  }
+  
+.sidebar
+{
+  background-color: transparent;
+}
+
 }
 
 /* Ultra-wide (1600px and up) */
 @media (min-width: 1600px) {
-  .layout { grid-template-columns: 300px 5fr 3fr; }
-  .header, .footer { padding: 3rem 5rem; }
-  .video-player { width: auto; height: 900px; /* larger fixed height or aspect fit */ }
+
+
+  
 }
 
 /* Dark mode override */

@@ -1941,10 +1941,108 @@ border-style: none;
 
 /* Desktops (1025px–1279px) */
 @media (min-width: 1025px) and (max-width: 1279px) {
-  .layout { grid-template-columns: 200px 3fr 1fr; }
-  .navbar { /* large nav layout */ }
-  .sidebar { padding: 20px; }
-  .main-content { max-width: 100%; }
+  .container
+  {
+    background-color: violet; 
+  
+  }
+  
+  .nav
+  {
+    background-color: firebrick; 
+  }
+
+.overlay-text
+{
+  font-size: 0.7589rem;
+}
+
+.search input[type="search"] {
+
+  min-height: 10px;
+  max-height: 15px;
+
+}
+.upload
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+.Notifications
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+.Account 
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
+.container-2
+{
+  background-color: gainsboro;
+}
+
+.container-3
+{
+  background-color: darkblue;
+}
+
+.video-container
+{
+  background-color: gray;
+}
+
+.containerr
+{
+  background-color: firebrick;
+  flex: 1 1 320px;
+  max-width: 400px;
+  min-width: 280px;
+  aspect-ratio: 16 / 9;
+}
+
+.rectangle
+{
+  background-color: forestgreen;
+}
+
+
+
+
+
+
+
+
+
 }
 
 /* Large desktops (1280px–1599px) */
@@ -1955,9 +2053,20 @@ border-style: none;
 
 /* Ultra-wide (1600px and up) */
 @media (min-width: 1600px) {
-  .layout { grid-template-columns: 300px 5fr 3fr; }
-  .header, .footer { padding: 3rem 5rem; }
-  .video-player { width: auto; height: 900px; /* larger fixed height or aspect fit */ }
+
+  .container-1
+  {
+  gap: 3rem;
+  background-color: grey;
+  }
+
+  .kontainer
+  {
+    background-color: pink;
+    width: clamp(28%, 35%, 30%);
+    margin-left: 0.6%;
+  }
+  
 }
 
 /* Dark mode override */

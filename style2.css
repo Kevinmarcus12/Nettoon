@@ -636,7 +636,7 @@ opacity: 1;
   border-radius: 7px;
   margin-top: 60px;
   padding: 0px;
-  border-style:none;
+  border-style:ridge;
   align-items: flex-start;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -653,7 +653,7 @@ opacity: 1;
   background-color: transparent;
   border-radius: 7px;
   margin-top: 0px;
-  border-style:none;
+  border-style:ridge;
   flex-grow: 1; /* Ensures it takes up remaining space */
   padding-bottom: 0px;
   padding-top: 0px;
@@ -913,7 +913,7 @@ margin-top:2px ;
   flex-basis: 38%; /* Allows dynamic width */
   max-width: 37vw; /* Responsive width */
   height: auto;
-  max-height: 533px; /* Set max height for scrolling */
+  max-height: 550px; /* Set max height for scrolling */
   float: right;
   margin-top: 0px;
 float: right;
@@ -930,7 +930,7 @@ background-color: transparent; /* Maintain clean UI */
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
   justify-content: flex-start;
-  border-style:none;
+  border-style:ridge;
   z-index: 2; 
 
 }
@@ -942,7 +942,7 @@ background-color: transparent; /* Maintain clean UI */
 .optionn {
   width: 100%;
   height: 50px;
-  background-color: white;
+  background-color: #F5F5F5;
   border-radius: 0.4375rem; /* 7px / 16 = 0.4375rem */
   margin-top: 0;
   border-style: none;
@@ -953,7 +953,7 @@ background-color: transparent; /* Maintain clean UI */
   justify-content:space-evenly;
   align-items: center;
   overflow: hidden;
-  padding: 0 5px; /* Add padding for spacing */
+  padding: 0 0px; /* Add padding for spacing */
 }
 
 /* Make sure all items inside optionn are evenly distributed */
@@ -1109,11 +1109,11 @@ background-color: transparent; /* Maintain clean UI */
   position: relative;
   width: 30%; /* Maintain original width */
   max-height: 230px;
-  background-color: transparent;/* Keep background clean */
+  background-color: gray;/* Keep background clean */
   flex: 0 1 47%; /* Keep original flex behavior */
   border: none; /* Remove unnecessary borders */
   border-radius: 0.4375rem; /* Smooth rounded edges */
-  margin: 1px 0 8px 8px; /* Maintain original positioning */
+  margin: 1px 0 12px 8px; /* Maintain original positioning */
   cursor: pointer; /* Indicates interactivity */
   z-index:0; 
   line-height: 1; /* Optional: helps tighten layout */
@@ -1826,13 +1826,13 @@ body.dark-mode textarea {
   flex-wrap: wrap;
   background-color:transparent;
   border-radius: 7px;
-  top: 0.4em;
+  top: 2rem;
   overflow: hidden;
   padding: 1rem 0;
   gap:3rem;
   justify-content: flex-start;
   clear: both; /* 💥 This line makes it ignore container-2's float */
-  border-style:none;
+  border-style:ridge;
 }
 
 /* Individual Video Containers */
@@ -2523,21 +2523,63 @@ body {
 @media (min-width: 1025px) and (max-width: 1279px) {
   .container
   {
-    background-color: transparent; 
+    background-color: forestgreen; 
   
   }
   
   .nav
   {
-    background-color: transparent; 
+    background-color: saddlebrown; 
   }
 
-.overlay-text
+  .overlay-text
+  {
+    font-size: 1.2rem;
+
+  }
+  
+
+.upload
 {
-  font-size: 1rem;
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+.Notifications
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+.Account 
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
 }
 
 
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
 
   .video-container 
   { 
@@ -2554,24 +2596,82 @@ body {
   background-color: transparent; 
 }
 
+
+.captionn h3
+{
+  font-size: clamp(1rem, 1.1vw, 1.5rem);
+}
+
+/* Increase space for time and follow buttons */
+.viewss {
+  flex: 2.1;
+}
+
+/* Increase space for time and follow buttons */
+.follow {
+  flex: 2.1;
+}
+
+.timee {
+  flex: 2;
+}
+
+
 .container-2
 {
   background-color: transparent; 
   max-height: 465px;
 }
 
+.sectiion
+{
+  background-color: darksalmon;
+  gap:0.1rem;
+    padding: 0px 0px;
+}
+
+.viewsss
+{
+  background-color: firebrick;
+width: 30%;
+  height: 25px;
+  border-radius: 7px;
+}
+
+.timmee
+{
+
+  background-color: firebrick;
+  border-radius: 7px;
+}
+
+.viewsss span {
+  font-weight: 300;
+  flex: 2;
+}
 
 
 .container-1
 {
 background-color: transparent; 
-left: 0.1rem;
+left: 0rem;
 }
 
 .kontainer
 {
-  background-color: transparent; 
-  margin-left: 0px;
+  background-color: gray; 
+  margin-left: 0rem;
+}
+
+.videoo {
+  width: 100%;
+  height: auto;
+}
+
+.videoo video {
+  width: 100%;
+  height: 10rem; /* 200px */
+
 }
 
 
@@ -2579,17 +2679,29 @@ left: 0.1rem;
 
 /* Large desktops (1280px–1599px) */
 @media (min-width: 1280px) and (max-width: 1599px) {
-  .layout { grid-template-columns: 250px 4fr 2fr; }
-  .navbar, .sidebar, .content { padding: 2rem; }
+ 
 
   .video-container 
   { 
     max-width: 100%; height: auto; 
   
-    background-color: grey;
+    background-color: transparent;
   
   
   
+  }
+
+  .container-1
+  {
+  gap: 3rem;
+  background-color: transparent;
+  }
+
+  .kontainer
+  {
+    background-color: goldenrod;
+    width: clamp(28%, 35%, 30%);
+    margin-left: 0.6%;
   }
 
 

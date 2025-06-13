@@ -545,7 +545,7 @@ opacity: 1;
 .sidebar {
     display:block;
     position: fixed;
-    width:9.4%;
+    width:4.7%;
     max-width: 12em; /* Converted from 80px */
     height: 100vh; /* Full viewport height */
     background-color:white;
@@ -833,6 +833,7 @@ scrollbar-color: gre;
 margin-left: 0px;
 padding-bottom: 0px;
 border-style: none;
+margin-left: 0.1%;
 }
 
 
@@ -1324,21 +1325,188 @@ body {
   
   }
 
+.suggestionss
+{
+  display: none;
+  background-color: fuchsia;
+}
+
+.sidebar
+{
+  display: none;
+}
+
+.container-1
+{
+    top: 3.4rem;  
+  background-color: darkgoldenrod;
+  width: 100%;
+  gap: 0rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+.kontainer
+{
+  background-color: darkgreen;
+width: 100%;
+margin-bottom: 0px;
+border-radius: 0px;
+
+}
+
+.profilee
+{
+  background-color: darkblue;
+}
+
+
+.caption {
+  width: 100%;
+  height: 1.875rem; /* 30px */
+  background-color: khaki;
+  padding: 0 0.625rem; /* Adds slight padding for better spacing */
+}
+
+/* Caption Text */
+.caption span {
+  color: black;
+  height: 100%;
+  font-weight: 700;
+  font-size: 0.96875rem; /* 15.5px */
+  margin-top: 1%;
+}
+
+
+.videoo {
+  width: 100%;
+  height: auto;
+  border-radius: 0px;
+}
+
+.videoo video {
+  width: 100%;
+  height: 15rem; /* 200px */
+  border-radius: 0px;
+}
+
+.sectiionn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap; /* allow wrap for better mobile layout */
+  width: 100%;
+  background-color: firebrick;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  gap: 0.5rem;
+  box-sizing: border-box;
+}
+
+.views {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  background-color: salmon;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  flex: 1 1 auto;
+}
+
+.views img {
+  width: clamp(24px, 5vw, 30px);
+  height: clamp(24px, 5vw, 30px);
+  background-color: blueviolet;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.views span {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  line-height: 1.2;
+  color: #fff;
+}
+
+.time {
+  background-color: darkgreen;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  border-radius: 0.375rem;
+  white-space: nowrap;
+}
+
+
+
+
+
 }
 
 /* Medium phones / small tablets (481px–768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   .container
   {
-    background-color: #ffffff;
+    background-color: violet;
   
-  
+  }
+
+  .nav
+  {
+    background-color: cadetblue;
   }
 
   .overlay-text
   {
     font-size: 0.8rem;
   }
+
+  
+.upload
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Notifications
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Account 
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
 
 .suggestionss
 {
@@ -1392,7 +1560,7 @@ left:7.1%;
 
 .container-1
 {
-  background-color: transparent;
+  background-color: rebeccapurple;
 width: 92.9%;
 margin-left: 4.6%;
 justify-content: flex-start;
@@ -1446,13 +1614,13 @@ justify-content: flex-start;
 
 .container
 {
-  background-color: #ffffff;
+  background-color: firebrick;
 
 }
 
 .nav
 {
-  background-color: transparent;
+  background-color: bisque;
 }
 
 
@@ -1474,6 +1642,52 @@ justify-content: flex-start;
   font-size: 1.1rem;
 }
 
+
+.upload
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Notifications
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Account 
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
+
 .suggestionss
 {
   background-color: #ffffff;
@@ -1490,7 +1704,7 @@ justify-content: flex-start;
 
 .container-1
 {
-  background-color: transparent;
+  background-color: violet;
   gap:0.5rem;
   width: 94.5%;
   margin-left: 0.8%;
@@ -1499,10 +1713,12 @@ justify-content: flex-start;
 
 .kontainer
 {
-  background-color: transparent;
+  background-color: gray;
   width: clamp(28%, 37%, 32%);
-margin-left: 5px;
+margin-left: 1px;
 }
+
+
 
 .sidebar
 {
@@ -1570,6 +1786,50 @@ width:5.7%;
 }
 
 
+.upload
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+.Notifications
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Account 
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
 .suggestionss
 {
   background-color: #ffffff;
@@ -1598,7 +1858,7 @@ width:5.7%;
 
   .container-1
   {
-    background-color: transparent;
+    background-color: gray;
   gap: 0.6rem;
   width: calc(100% - 5.8%); 
   left: 3.6rem;
@@ -1606,7 +1866,7 @@ width:5.7%;
 
   .kontainer
   {
-    background-color: transparent;
+    background-color: hotpink;
     width: clamp(28%, 37%, 32%);
 margin-left: 5px;
   }
@@ -1624,7 +1884,7 @@ margin-left: 5px;
 
 .videoo video {
   width: 100%;
-  height: 12rem; /* 200px */
+  height: 11.5rem; /* 200px */
 
 }
 
@@ -1634,21 +1894,37 @@ margin-left: 5px;
 
 /* Large desktops (1280px–1599px) */
 @media (min-width: 1280px) and (max-width: 1599px) {
-  .layout { grid-template-columns: 250px 4fr 2fr; }
-  .navbar, .sidebar, .content { padding: 2rem; }
+
+.sidebar
+{
+  width:4.7%;
+  background-color:#FFFFFF;
+}
+
+.sidebar:hover {
+  width: 12%; /* Expands slightly on hover for better UX */
+}
+
+.suggestionss
+{
+      left:4.788%;           /* Beside the sidebar (9.4% + spacing) */
+    width: calc(100% - 4.9%); /* Leaves space for the sidebar */
+}
 
   .container-1
   {
-    background-color: transparent;
-  gap: 0.8rem;
+    left:4.788%;           /* Beside the sidebar (9.4% + spacing) */
+    width: calc(100% - 4.9%); /* Leaves space for the sidebar */
+    background-color: grey;
+  gap: 3.5rem;
   
   }
   
   .kontainer
   {
-    background-color: transparent;
-    width: clamp(28%, 37%, 32%);
-margin-left: 5px;
+    background-color: pink;
+    width: clamp(28%, 35%, 30%);
+
   }
   
 

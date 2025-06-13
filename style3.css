@@ -321,7 +321,6 @@ opacity: 1;
   width: 3vw;
   height: 3vw;
   background-color: transparent;
-  margin: 0.3125rem 0 0.1875rem 1.25rem; /* top right bottom left */
   border-radius: 50%;
   cursor: pointer;
 }
@@ -637,7 +636,7 @@ opacity: 1;
   border-radius: 7px;
   margin-top: 60px;
   padding: 0px;
-  border-style:none;
+  border-style:ridge;
   align-items: flex-start;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -654,7 +653,7 @@ opacity: 1;
   background-color:transparent; 
   border-radius: 7px;
   margin-top: 0px;
-  border-style:none;
+  border-style:ridge;
   flex-grow: 1; /* Ensures it takes up remaining space */
   padding-bottom: 0px;
   padding-top: 0px;
@@ -729,7 +728,6 @@ margin-top: 0px;
 .captionn {
   position: relative;
   width:100%;
-  max-width: 100%;
   height: auto; /* Allow dynamic height */
   background-color: transparent;
   margin-top: 0px;
@@ -914,12 +912,12 @@ margin-top:2px ;
   flex-basis: 38%; /* Allows dynamic width */
   max-width: 37vw; /* Responsive width */
   height: auto;
-  max-height: 537px; /* Set max height for scrolling */
+  max-height: 555px; /* Set max height for scrolling */
   float: right;
   margin-top: 0px;
 float: right;
 margin-right: 0.5%;
-background-color:transparent; /* Maintain clean UI */
+background-color:green; /* Maintain clean UI */
   border-radius: 0.4375rem; /* Rounded edges */
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Hide horizontal scrolling */
@@ -931,7 +929,7 @@ background-color:transparent; /* Maintain clean UI */
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
   justify-content: flex-start;
-  border-style:none;
+  border-style:ridge;
   z-index: 2; 
 
 }
@@ -943,7 +941,7 @@ background-color:transparent; /* Maintain clean UI */
 .optionn {
   
   width: 100%;
-  height: 40px;
+  height: 30px;
   background-color: #F5F5F5; /* Pale Grey */
   border-radius: 0.4375rem; /* Smooth rounded edges */
   border: none; /* Remove unnecessary border */
@@ -979,9 +977,9 @@ background-color:transparent; /* Maintain clean UI */
   border-radius: 0rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 5px 10px; /* 5px vertically, 10px horizontally */
+  gap: 10px 10px; /* 5px vertically, 10px horizontally */
   margin-top: 0px;
-  background-color: transparent;
+  background-color: violet;
   justify-content: flex-start;
 }
 
@@ -990,11 +988,11 @@ background-color:transparent; /* Maintain clean UI */
   position: relative;
   width: 30%; /* Maintain original width */
   max-height: 230px;
-  background-color: transparent;/* Keep background clean */
+  background-color: gray;/* Keep background clean */
   flex: 0 1 47%; /* Keep original flex behavior */
   border: none; /* Remove unnecessary borders */
   border-radius: 0.4375rem; /* Smooth rounded edges */
-  margin: 15px 0 15px 6px; /* Maintain original positioning */
+  margin: 15px 0 15px 10px; /* Maintain original positioning */
   cursor: pointer; /* Indicates interactivity */
   z-index: 0; 
   line-height: 1; /* Optional: helps tighten layout */
@@ -1003,7 +1001,6 @@ background-color:transparent; /* Maintain clean UI */
   padding-top: 0px;
   padding-bottom: 0px;
   padding: 0px;
-  justify-content: flex-start;
 }
 
 
@@ -1630,23 +1627,19 @@ body.dark-mode textarea {
 }
 
 
-
 .container-3 {
-  position: relative; /* Not absolute */
+  position: relative;
   display: flex;
   flex-direction: row;
+  align-items: center; /* ✅ Vertically center children */
+  justify-content: flex-start; /* Or center if needed */
   width: 100%;
-  height: 20rem; /* Use fixed height instead of just min/max */
-  background-color:transparent;
+  height: 20rem;
+  background-color: transparent;
   border-radius: 0.4375rem;
-  margin-top:2rem;
-  padding: 0px;
-  padding-bottom: 0rem; /* or whatever spacing you want */
-  border-style:none;
-}
-
-.comment-container {
-  transition: display 0.3s ease-in-out;
+  margin-top: 2rem;
+  padding: 0;
+  border-style: ridge;
 }
 
 
@@ -1660,6 +1653,7 @@ body.dark-mode textarea {
   display: flex;
   align-items: center; /* Align content vertically */
 border-style:none;
+z-index: 3;
   overflow: hidden;
   border-radius: 0rem; /* 7px */
 }
@@ -1675,35 +1669,29 @@ border-style:none;
   margin-left: 10px;
 }
 
+
 .channel {
-  position:relative;
-  width: 30%;
-  height: 100%; /* Fully inherit from container-3 */
-  border-radius: 0px;
-  background-color:transparent;
+  position: relative;
+  width: clamp(150px, 30%, 300px);
+  height: auto; /* Let content size it */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  margin-top: 2rem; /* 50px */
-  margin-bottom: 0px;
+  justify-content: center; /* ✅ Vertical alignment inside */
 }
 
 
 .channel img {
-  position:absolute;
-  width: 60%;
-    margin: 0 0rem;
+  width: 80%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
-  margin-top:1rem;
-  bottom:5rem;
-  left:4.5rem;
+  margin-top: 10px; /* ✅ No extra spacing */
+  position: relative;
 }
 
-/* Dark mode adjustment */
+
+/* Dark mode image invert */
 .dark-mode .channel img {
   filter: invert(1);
 }
@@ -1713,11 +1701,11 @@ border-style:none;
   position: absolute;
   width: 100%;
   height: auto; /* Adjusts based on content */
-  background-color:transparent;
+  background-color:saddlebrown;
   margin-top: 8.5rem; /* 15px in rem */
   min-height: 2.1875rem; /* 35px in rem */
   display: flex;
-  margin: 17.8rem auto 0 auto;
+  margin: 17.7rem auto 0 auto;
   justify-content: space-between;
   flex-wrap: nowrap; /* Prevents wrapping */
   align-items: center; /* Centers items vertically */
@@ -1806,31 +1794,27 @@ html {
 .Tablee {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
-  flex-direction: row; /* 👈 Change from row to column for vertical scroll */
-  background-color: transparent;
-  margin-left: 0;
-  justify-content: flex-start;
-  overflow-y: hidden; /* ✅ Enable vertical scroll */
-  overflow-x: auto; /* Optional: disable horizontal scroll */
+  flex-direction: row;
+  background-color: green;
+  overflow-x: auto;
+  overflow-y: hidden;
   gap: 0.625rem;
-  border-style: none;
-  margin-top: 2rem;
-  padding-bottom: 0;
-  margin-bottom: 0rem;
-  border-radius: 0px;
+  padding: 1rem 0;
+  z-index:0;
+  scroll-behavior: smooth;
 }
 
 
 .series {
   position: relative;
-  flex: 1; /* Allows it to grow and shrink */
-  min-width: 40%; /* Ensures consistent sizing */
+  flex: 0 0 auto; /* Prevents it from shrinking or stretching */
+  min-width: 40%;
   max-width: 40%;
   height: auto;
   margin-left: 0.625rem; /* 10px */
-  margin-top: 2.2rem; /* Previously 2rem */
+  margin-top: 2rem; /* Previously 2rem */
   background-color:transparent;
   border-radius: 0.4375rem; /* 7px */
   max-height: 15rem; /* 220px */
@@ -1900,11 +1884,11 @@ z-index:10;
   flex-wrap: wrap;
   background-color: transparent;
   border-radius: 7px;
-  top:5rem;
+  top:2rem;
   overflow: hidden;
   padding: 1rem 0; /* Adds some top and bottom spacing */
-  gap:1.5rem; /* Creates spacing between videos */
-  border-style:none;
+  gap:1rem; /* Creates spacing between videos */
+  border-style:ridge;
 justify-content: flex-start;
 }
 
@@ -1917,7 +1901,7 @@ justify-content: flex-start;
   border-radius: 0.5rem;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
-margin-left: 13px;
+margin-left: 1.5rem;
 padding-bottom: 0px;
 border-style: none;
 }
@@ -1974,7 +1958,7 @@ border-style: none;
   width: 100%;
   height: 2rem; /* 40px */
   border-radius: 0rem; /* 7px */
-  background: transparent;
+  background: violet;
   display: flex;
   align-items: center;
   gap: 0.625rem; /* 10px */
@@ -1987,6 +1971,8 @@ border-style: none;
 .profilee img {
   width: 2.2rem; /* 35px converted to rem */
   height: 2.2rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
   border-radius: 50%;
   margin-left: 1%;
   object-fit: cover;
@@ -2538,6 +2524,11 @@ body {
   
   }
 
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
 }
 
 /* Medium phones / small tablets (481px–768px) */
@@ -2556,13 +2547,55 @@ body {
 
   .video-container 
   { 
-    max-width: 100%; height: auto; 
-  
+    width: 70%; height: auto; 
+  padding: 0px;
     background-color: violet;
+    margin-left: 7rem;
+  }
+
+
+  .container-1
+  {
+    background-color: rebeccapurple;
+  width: 100%;
+ 
+  justify-content: flex-start;
+  }
+  
+
+  .kontainer
+  {
+    background-color: gray;
+    width: clamp(28%, 45%, 50%);
+  margin-left: 1.5rem;
+  }
   
   
+  .videoo {
+    width: 100%;
+    height: auto;
+  }
+  
+  .videoo video {
+    width: 100%;
+    height: 11rem; /* 200px */
   
   }
+  
+  
+  .sectiionn
+  {
+    background-color: transparent;
+    padding: 0px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.2rem;
+    padding: 0 0rem; /* Optional: adds horizontal padding for breathing space */
+  }
+  
+
 
 }
 
@@ -2573,6 +2606,11 @@ body {
     background-color: violet;
   
   }
+
+  .overlay-text
+  {
+    font-size: 1.1rem;
+  }
   
   .nav
   {
@@ -2582,9 +2620,9 @@ body {
   .video-container 
   { 
     max-width: 100%; height: auto; 
-  
+  width: 100%;
     background-color: #007BFF;
-  
+  flex-shrink: 0;
   
   
   }
@@ -2600,74 +2638,308 @@ body {
 @media (min-width: 1025px) and (max-width: 1279px) {
   .container
   {
-    background-color: transparent; 
+    background-color: violet; 
   
   }
   
   .nav
   {
-    background-color: transparent; 
+    background-color: firebrick; 
   }
 
 .overlay-text
 {
-  font-size: 1rem;
+  font-size: 1.2rem;
+}
+
+.search input[type="search"] {
+
+  min-height: 10px;
+  max-height: 15px;
+
+}
+.upload
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+.Notifications
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+.Account 
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
 }
 
 
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
 
   .video-container 
   { 
     max-width: 100%; height: auto; 
     margin-top: 60px;
-    background-color: transparent; 
+    background-color: gold; 
   width: 100%;
-  max-width: 100%;
   flex-shrink:0;
   }
 
 .containerr
 {
-  background-color: transparent; 
+  background-color: indianred; 
+}
+
+
+.profillee
+{
+  background-color: darkkhaki;
+  width: 100%;
+  height: 2rem; /* Flexible height */
+
+}
+
+
+/* Profile Image */
+.profillee img {
+  width:2rem; /* 35px converted to rem */
+  height: 2rem;
+}
+
+.captionn
+{
+  background-color: darkmagenta;
+  height: 30px;
+}
+
+.captionn h3
+{
+  font-size: clamp(1rem, 1.1vw, 1.5rem);
+}
+
+/* Increase space for time and follow buttons */
+.viewss {
+  flex: 2.1;
+}
+
+/* Increase space for time and follow buttons */
+.follow {
+  flex: 2.1;
+}
+
+.timee {
+  flex: 2;
 }
 
 .container-2
 {
-  background-color: transparent; 
-  max-height: 465px;
+  background-color: gray; 
+  max-height: 442px;
+  gap:8px;
 }
 
+
+.card {
+  position: relative;
+  margin: 0px 0 8px 6px; /* Maintain original positioning */
+background-color: fuchsia;
+}
+
+.pichaa {
+  width: 100%;
+  height: 120px;
+  margin-top: 0px;
+  background-color: gray; /* Adds a fallback background for better contrast */
+}
+
+
+
+.captiion {
+  width: 100%; /* Ensures full width inside the card */
+  height: auto; /* Adjusts based on content */
+  background-color: indianred;
+  padding: 0px 0; /* Adds slight spacing without breaking alignment */
+}
+
+.sectiion {
+  background-color: yellow;
+
+  padding: 0px 0px;
+
+}
+
+.viewsss
+{
+  background-color: firebrick;
+  max-width: 45%;
+  height: 25px;
+  border-radius: 7px;
+}
+
+.Episode
+{
+  background-color: firebrick;
+  border-radius: 7px;
+}
+
+.container-3
+{
+  background-color: gray;
+  height: auto;
+  padding: 0px;
+}
+
+.optionnn
+{
+  position: absolute;
+width: 100%;
+height: 30px;
+  background-color: darksalmon;
+  z-index: 3;
+}
+
+.channel {
+
+  height: 100%; /* Fully inherit from container-3 */
+  background-color:rebeccapurple;
+  margin: 0 auto;
+  margin-top: 1.9rem; /* 50px */
+  margin-bottom: 0px;
+}
+
+.channel img
+{
+  margin-right: 3%;
+}
+
+.profile
+{
+  position: relative;
+  margin-top: 0rem; /* 15px in rem */
+}
+
+.profile-name span  {
+    font-size: 1rem;
+}
+
+/* Followers label styling */
+.followers span  {
+  font-size: 1rem;
+}
+
+.Table
+{
+  padding-bottom: 0rem;
+padding: 0px;
+}
+
+.series 
+{
+margin-top: 1.5rem;
+  min-width: 40%;
+  max-width: 40%;
+  height: 11.5rem; /* 200px */
+  margin-bottom: 0px;
+}
 
 
 .container-1
 {
 background-color: transparent; 
-left: 0.1rem;
+left: 0.5rem;
 }
 
 .kontainer
 {
-  background-color: transparent; 
-  margin-left: 0px;
+  background-color: gray; 
+  margin-left: 1rem;
+}
+
+.videoo {
+  width: 100%;
+  height: auto;
+}
+
+.videoo video {
+  width: 100%;
+  height: 10rem; /* 200px */
+
 }
 
 
+
+
+
+
+
+
+
+
+
 }
+
+
 
 /* Large desktops (1280px–1599px) */
 @media (min-width: 1280px) and (max-width: 1599px) {
-  .layout { grid-template-columns: 250px 4fr 2fr; }
-  .navbar, .sidebar, .content { padding: 2rem; }
 
-  .video-container 
-  { 
-    max-width: 100%; height: auto; 
+.container-3
+{
+  background-color: darkolivegreen;
+}
+
+.optionnn
+{
+  background-color: darkgoldenrod;
+}
+
   
-    background-color: grey;
-  
-  
-  
+.channel
+{
+  position:relative;
+  background-color: darkseagreen;
+
+}
+
+
+  .container-1
+  {
+  gap: 3rem;
+  background-color: grey;
   }
+
+  .kontainer
+  {
+    background-color: pink;
+    width: clamp(28%, 35%, 30%);
+    margin-left: 0.6%;
+  }
+  
 
 
 }

@@ -906,7 +906,6 @@ border-style: none;
   border-radius: 50%;
   margin-left: 1%;
   object-fit: cover;
-    margin-top: 10px;
   background-color: transparent;
 }
 
@@ -938,7 +937,6 @@ border-style: none;
   text-overflow: ellipsis;
   max-width: 100%;
   padding: 0.3125rem;
-      margin-top: 10px;
   margin-left: 0px;
 }
 
@@ -1938,6 +1936,8 @@ margin-left: 5px;
 
 /* Ultra-wide (1600px and up) */
 @media (min-width: 1600px) {
+  .layout { grid-template-columns: 300px 5fr 3fr; }
+  .header, .footer { padding: 3rem 5rem; }
 
 .container
 {
@@ -2070,7 +2070,7 @@ margin-left: 6px;
 
 }
 
-  .views
+    .views
   {
     background-color: transparent;
   }
@@ -2083,6 +2083,7 @@ margin-left: 6px;
   border-radius: 50%;
   object-fit: cover;
 }
+
 
 
 

@@ -1939,13 +1939,151 @@ margin-left: 5px;
   .layout { grid-template-columns: 300px 5fr 3fr; }
   .header, .footer { padding: 3rem 5rem; }
 
+.container
+{
+  background-color: brown;
+}
+
+.Table
+{
+  background-color: honeydew;
+}
+
+.overlay-text
+{
+  background-color: navajowhite;
+  font-size: 1.5rem;
+}
+
+.nav
+{
+  background-color: transparent;
+}
+
+.search input[type="search"] {
+
+  min-height: 20px;
+  max-height: 25px;
+
+}
+
+
+.upload
+{
+  background-color: transparent;
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+.Notifications
+{
+  background-color: transparent;
+  width: 2vw;
+  height: 2vw;
+}
+
+.Account 
+{
+  background-color: transparent;
+  width: 2vw;
+  height: 2vw;
+}
+
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
+
+.suggestionss
+{
+  background-color: hotpink;
+  overflow-x: hidden;
+  overflow-y: hidden;
+   width: calc(100% - 10.2%); 
+  left: 12.1rem;
+}
+
+.rectanglee
+{
+  background-color: yellow;
+}
+
+
+.sidebar
+{
+  background-color: khaki;
+  width:10%; 
+}
+
+.sidebar:hover {
+  width: 14.9%; /* Expands slightly on hover for better UX */
+}
+
+
   .container-1
   {
-  background-color: #1f1f1f;
-  
-  
+    background-color: gray;
+  gap: 1.5rem;
+  width: calc(100% - 10.2%); 
+  left: 12.1rem;
   }
-  
+
+  .kontainer
+  {
+    background-color: navy;
+    width: clamp(28%, 37%, 32%);
+margin-left: 6px;
+  }
+
+/* Caption Text */
+.caption span {
+  font-weight: 700;
+  font-size: 0.9rem; /* 15.5px */
+}
+
+.videoo {
+  width: 100%;
+  height: auto;
+}
+
+.videoo video {
+  width: 100%;
+  height: 17.5rem; /* 200px */
+
+}
+
+    .views
+  {
+    background-color: transparent;
+  }
+
+
+.views img {
+  width: clamp(24px, 4.5vw, 30px);
+  height: clamp(24px, 4.5vw, 30px);
+  background-color: transparent;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 
 
 

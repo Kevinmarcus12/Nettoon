@@ -2287,6 +2287,166 @@ margin: 0 auto;
 /* Ultra-wide (1600px and up) */
 @media (min-width: 1600px) {
 
+.container
+{
+  background-color: brown;
+}
+
+.Table
+{
+  background-color: honeydew;
+}
+
+.overlay-text
+{
+  background-color: navajowhite;
+  font-size: 1.5rem;
+}
+
+.nav
+{
+  background-color: transparent;
+}
+
+.search input[type="search"] {
+
+  min-height: 20px;
+  max-height: 25px;
+
+}
+
+
+.upload
+{
+  background-color: transparent;
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+.Notifications
+{
+  background-color: transparent;
+  width: 2vw;
+  height: 2vw;
+}
+
+.Account 
+{
+  background-color: transparent;
+  width: 2vw;
+  height: 2vw;
+}
+
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
+
+.sidebar
+{
+  background-color: khaki;
+  width:10%; 
+}
+
+.sidebar:hover {
+  width: 14.9%; /* Expands slightly on hover for better UX */
+}
+
+.profile
+{
+  bottom: 16%;
+}
+/* Move the profile up when caption expands */
+.profile.shift-up {
+  margin-bottom: 1rem; /* ~15px, tweak to taste */
+}
+
+
+
+.scroll-area
+{
+  background-color:violet transparent;
+}
+
+/* 🔷 Shorts Container */
+.shorts-container {
+
+  width: calc(100% - 10%);
+  left: 10%;
+  gap: 1rem;
+  justify-content: center;
+  background-color: lawngreen;
+  border: 1px solid transparent; /* TEMP: remove in production */
+  margin: 3.3rem auto 0 0rem;
+
+}
+
+.shorts
+{
+  background-color: darkgreen;
+}
+
+.short-video {
+
+  max-width: 450px;
+  aspect-ratio: 9 / 16;
+  max-height: 90vh;
+  margin:5rem auto 0 35rem;
+
+
+}
+
+/* 👇 Move both to left when comments are shown */
+.shorts.show-comments .short-video {
+  margin-left:20rem;
+}
+
+.shorts.show-comments .metadata {
+  margin-right: 49%;
+  right: 10px;
+}
+
+
+/* 🔷 Metadata Container */
+.metadata {
+  position: absolute;
+  top: 24vh;
+  right: 32vw;
+  width: 5vw;
+}
+
+.comment-container {
+
+  top: 4rem;
+  right: 7%; /* Position when shown */
+  width: 37%;
+  max-width: 400px;
+  aspect-ratio: 9 / 16;
+  min-height: 90vh;
+  max-height: 95vh;
+
+}
+
+
+
 
   
 }

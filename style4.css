@@ -2238,14 +2238,22 @@ margin-left: 5px;
 
 
 /* Ultra-wide (1600px and up) */
-@media (min-width: 1600px) {
+@media (min-width: 1600px)
+{ 
+.container
+{
+  background-color: #000d;
+}
 
-  
+  .container-2
+  {
+    background-color: darkblue;
+  }
 
   .container-1
   {
   gap: 3rem;
-  background-color: transparent;
+  background-color: gray;
   }
 
   .kontainer
@@ -2254,12 +2262,22 @@ margin-left: 5px;
     width: clamp(28%, 35%, 30%);
     margin-left: 1rem;
   }
+
+    .views
+  {
+    background-color: transparent;
+  }
+
+
+.views img {
+  width: clamp(24px, 4.5vw, 30px);
+  height: clamp(24px, 4.5vw, 30px);
+  background-color: transparent;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
   
 }
 
-/* Dark mode override */
-@media (prefers-color-scheme: dark) {
-  body { background: #121212; color: #e0e0e0; }
-  .navbar { background: #1f1f1f; }
-  /* etc. */
 }

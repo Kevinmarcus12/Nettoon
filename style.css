@@ -1615,7 +1615,7 @@ justify-content: flex-start;
 
   .container
   {
-    background-color: #F5F5F5;
+    background-color:gray;
   
   }
   
@@ -1760,7 +1760,7 @@ width:5.7%;
 
 .container
 {
-  background-color: #ffffff;
+  background-color:gray;
 }
 
 .Table
@@ -1896,10 +1896,14 @@ margin-left: 5px;
 /* Large desktops (1280px–1599px) */
 @media (min-width: 1280px) and (max-width: 1599px) {
 
+  .container
+  {
+    background-color: goldenrod;
+  }
 .sidebar
 {
   width:4.7%;
-  background-color:#FFFFFF;
+  background-color:gray;
 }
 
 .sidebar:hover {

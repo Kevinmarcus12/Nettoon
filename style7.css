@@ -800,6 +800,12 @@ padding-bottom: 0px;
   background-color: rgba(255, 255, 255, 0.05);
 }
 
+/* Move the profile up when caption expands */
+.profile.shift-up {
+  margin-bottom: 3.9rem; /* ~15px, tweak to taste */
+}
+
+
 
 .profile-info {
   display: flex;
@@ -931,10 +937,6 @@ margin-right: 3%;
   display: block;  /* show the “more” text */
 }
 
-/* Move the profile up when caption expands */
-.profile.shift-up {
-  margin-bottom: 3.9rem; /* ~15px, tweak to taste */
-}
 
 
 .hidden {
@@ -1611,8 +1613,10 @@ overflow: hidden;
 /* Mobile-first default styles (<=320px) */
 .container
 {
-  background-color: gray;
+  display: none;
+  background-color: #FFFFFF;
   z-index: 1000;
+margin-bottom: 0px;
   width: 100%;
   top:0%;
   left: 0%;
@@ -1622,7 +1626,7 @@ overflow: hidden;
 
 .nav
 {
-background-color: pink;
+  background-color: transparent;
 }
 
 .overlay-text
@@ -1702,9 +1706,9 @@ width: calc(100% - 0%);
 left: 0%;
 gap: 1rem;
 height:50vh;
-
+padding-top: 0px;
 justify-content: center;
-background-color: red;
+background-color: transparent;
 border: 1px solid transparent; /* TEMP: remove in production */
 margin: 0rem auto 0 0rem;
 
@@ -1735,7 +1739,7 @@ margin: 0rem auto 0 0rem;
 
 .scroll-area
 {
-background-color:violet;
+  background-color: transparent;
 border-style: ridge;
 padding: 0px;
 padding-top: 0px;
@@ -1745,10 +1749,9 @@ padding-top: 0px;
 
 width:100%;
 aspect-ratio: 9 / 16;
-height:100%;
-max-height: 100vh;
-margin:0rem auto 0 0rem;
 
+margin:0rem auto 0 0rem;
+top: 0px;
 
 }
 
@@ -2049,23 +2052,52 @@ margin: 0 auto;
 
 }
 
+.scroll-area
+{
+  background-color: transparent;
+}
+
 .short-video {
 
   max-width: 450px;
   aspect-ratio: 9 / 16;
   max-height: 90vh;
-  margin:4.3rem auto 0 16rem;
+  margin:3.5rem auto 0 16rem;
 
 
 }
+
+.profile {
+  position: absolute;
+  bottom: 16%;
+
+}
+
+/* Move the profile up when caption expands */
+.profile.shift-up {
+  margin-bottom: 0.5rem; /* ~15px, tweak to taste */
+}
+
+
 
 /* 🔷 Metadata Container */
 .metadata {
   position: absolute;
   top: 24vh;
-  right: 20vw;
+  right: 18vw;
   width: 5vw;
 }
+
+/* 👇 Move both to left when comments are shown */
+.shorts.show-comments .short-video {
+  margin-left: 10px;
+}
+
+.shorts.show-comments .metadata {
+  margin-right: 44%;
+  right: 10px;
+}
+
 
 .comment-container {
 background-color: transparent;
@@ -2125,52 +2157,49 @@ background-color: transparent;
   
   }
   
-  
-  .upload
-  {
-    background-color: transparent;
-    width: 3.3vw;
-    height: 3.3vw;
-  }
-  
-  
-  .Notifications
-  {
-    background-color: transparent;
-    width: 3.3vw;
-    height: 3.3vw;
-  }
-  
-  
-  .Account 
-  {
-    background-color: transparent;
-    width: 3.3vw;
-    height: 3.3vw;
-  }
-  
-  
-  .upload img {
-    width: 100%;
-    height:  100%;
-    margin: 0 auto;
-  }
-  
-  .Notifications img {
-    width: 100%;
-    height:  100%;
-    margin: 0 auto;
-  }
-  
-  
-  
-  .Account img {
-    width: 100%;
-    height:  100%;
-  margin: 0 auto;
-  }
+.upload
+{
+  background-color: transparent;
+  width: 3vw;
+  height: 3vw;
+}
 
-  
+.Notifications
+{
+  background-color: transparent;
+  width: 3vw;
+  height: 3vw;
+}
+
+.Account 
+{
+  background-color: transparent;
+  width: 3vw;
+  height: 3vw;
+}
+
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
 
 .sidebar
 {

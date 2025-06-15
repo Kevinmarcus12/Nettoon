@@ -915,9 +915,8 @@ margin-top:2px ;
   max-height: 555px; /* Set max height for scrolling */
   float: right;
   margin-top: 0px;
-float: right;
 margin-right: 0.5%;
-background-color:green; /* Maintain clean UI */
+background-color: transparent; /* Maintain clean UI */
   border-radius: 0.4375rem; /* Rounded edges */
   overflow-y: auto; /* Enable vertical scrolling */
   overflow-x: hidden; /* Hide horizontal scrolling */
@@ -979,7 +978,7 @@ background-color:green; /* Maintain clean UI */
   flex-wrap: wrap;
   gap: 10px 10px; /* 5px vertically, 10px horizontally */
   margin-top: 0px;
-  background-color: violet;
+  background-color: transparent;
   justify-content: flex-start;
 }
 
@@ -988,7 +987,7 @@ background-color:green; /* Maintain clean UI */
   position: relative;
   width: 30%; /* Maintain original width */
   max-height: 230px;
-  background-color: gray;/* Keep background clean */
+  background-color: transparent;/* Keep background clean */
   flex: 0 1 47%; /* Keep original flex behavior */
   border: none; /* Remove unnecessary borders */
   border-radius: 0.4375rem; /* Smooth rounded edges */
@@ -1701,7 +1700,7 @@ z-index: 3;
   position: absolute;
   width: 100%;
   height: auto; /* Adjusts based on content */
-  background-color:saddlebrown;
+  background-color: transparent;
   margin-top: 8.5rem; /* 15px in rem */
   min-height: 2.1875rem; /* 35px in rem */
   display: flex;
@@ -1797,7 +1796,7 @@ html {
   height: auto;
   display: flex;
   flex-direction: row;
-  background-color: green;
+  background-color: transparent;
   overflow-x: auto;
   overflow-y: hidden;
   gap: 0.625rem;
@@ -1902,6 +1901,7 @@ justify-content: flex-start;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
 margin-left: 1.5rem;
+margin-bottom: 10px;
 padding-bottom: 0px;
 border-style: none;
 }
@@ -1958,7 +1958,7 @@ border-style: none;
   width: 100%;
   height: 2rem; /* 40px */
   border-radius: 0rem; /* 7px */
-  background: violet;
+  background-color: transparent;
   display: flex;
   align-items: center;
   gap: 0.625rem; /* 10px */
@@ -2517,8 +2517,7 @@ body {
   .video-container 
   { 
     max-width: 100%; height: auto; 
-  
-    background-color: gold;
+    background-color: transparent;
   
   
   
@@ -2535,13 +2534,13 @@ body {
 @media (min-width: 481px) and (max-width: 768px) {
   .container
   {
-    background-color:rebeccapurple;
+    background-color:#FFFFFF;
   
   }
   
   .nav
   {
-    background-color: gold;
+    background-color: transparent;
   }
   
 
@@ -2549,14 +2548,14 @@ body {
   { 
     width: 70%; height: auto; 
   padding: 0px;
-    background-color: violet;
+  background-color: transparent;
     margin-left: 7rem;
   }
 
 
   .container-1
   {
-    background-color: rebeccapurple;
+    background-color: transparent;
   width: 100%;
  
   justify-content: flex-start;
@@ -2565,7 +2564,7 @@ body {
 
   .kontainer
   {
-    background-color: gray;
+    background-color: transparent;
     width: clamp(28%, 45%, 50%);
   margin-left: 1.5rem;
   }
@@ -2601,84 +2600,49 @@ body {
 
 /* Tablets / small laptops (769px–1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
+  
   .container
   {
-    background-color: violet;
-  
-  }
-
-  .overlay-text
-  {
-    font-size: 1.1rem;
-  }
-  
-  .nav
-  {
-    background-color: darkblue;
-  }
-  
-  .video-container 
-  { 
-    max-width: 100%; height: auto; 
-  width: 100%;
-    background-color: #007BFF;
-  flex-shrink: 0;
-  
-  
-  }
-
-
-
-
-
-
-}
-
-/* Desktops (1025px–1279px) */
-@media (min-width: 1025px) and (max-width: 1279px) {
-  .container
-  {
-    background-color: violet; 
+    background-color:#FFFFFF;
   
   }
   
   .nav
   {
-    background-color: firebrick; 
+    background-color: transparent;
   }
-
-.overlay-text
-{
-  font-size: 1.2rem;
-}
+  
 
 .search input[type="search"] {
 
-  min-height: 10px;
-  max-height: 15px;
+  min-height: 20px;
+  max-height: 25px;
 
 }
+
+
 .upload
 {
-  background-color: rebeccapurple;
+  background-color: transparent;
   width: 3.3vw;
   height: 3.3vw;
 }
+
 
 .Notifications
 {
-  background-color: rebeccapurple;
+  background-color: transparent;
   width: 3.3vw;
   height: 3.3vw;
 }
+
 
 .Account 
 {
-  background-color: rebeccapurple;
+  background-color: transparent;
   width: 3.3vw;
   height: 3.3vw;
 }
-
 
 
 .upload img {
@@ -2701,115 +2665,96 @@ body {
 margin: 0 auto;
 }
 
-  .video-container 
-  { 
-    max-width: 100%; height: auto; 
-    margin-top: 60px;
-    background-color: gold; 
-  width: 100%;
-  flex-shrink:0;
-  }
+
+.Table
+{
+  background-color: transparent;
+}
+
+.overlay-text 
+{
+  background-color: transparent;
+  font-size: 1.1rem;
+}
+.video-container 
+{ 
+  max-width: 100%; height: auto; 
+  margin-top: 60px;
+  background-color: transparent; 
+width: 100%;
+max-width: 100%;
+flex-shrink:0;
+}
 
 .containerr
 {
-  background-color: indianred; 
+background-color: transparent; 
 }
 
-
-.profillee
-{
-  background-color: darkkhaki;
-  width: 100%;
-  height: 2rem; /* Flexible height */
-
-}
-
-
-/* Profile Image */
-.profillee img {
-  width:2rem; /* 35px converted to rem */
-  height: 2rem;
-}
-
-.captionn
-{
-  background-color: darkmagenta;
-  height: 30px;
-}
 
 .captionn h3
 {
-  font-size: clamp(1rem, 1.1vw, 1.5rem);
+font-size: clamp(1rem, 1.1vw, 1.5rem);
 }
 
 /* Increase space for time and follow buttons */
 .viewss {
-  flex: 2.1;
+flex: 2.1;
 }
 
 /* Increase space for time and follow buttons */
 .follow {
-  flex: 2.1;
+flex: 2.1;
 }
 
 .timee {
-  flex: 2;
+flex: 2;
 }
+
 
 .container-2
 {
-  background-color: gray; 
-  max-height: 442px;
-  gap:8px;
+background-color: transparent; 
+max-height: 455px;
 }
 
-
-.card {
-  position: relative;
-  margin: 0px 0 8px 6px; /* Maintain original positioning */
-background-color: fuchsia;
+.card
+{
+  margin: 3px 0 3px 10px; /* Maintain original positioning */
 }
 
-.pichaa {
-  width: 100%;
-  height: 120px;
-  margin-top: 0px;
-  background-color: gray; /* Adds a fallback background for better contrast */
-}
-
-
-
-.captiion {
-  width: 100%; /* Ensures full width inside the card */
-  height: auto; /* Adjusts based on content */
-  background-color: indianred;
-  padding: 0px 0; /* Adds slight spacing without breaking alignment */
-}
-
-.sectiion {
-  background-color: yellow;
-
+.sectiion
+{
+  background-color: transparent;
+gap:0.1rem;
   padding: 0px 0px;
-
 }
 
 .viewsss
 {
-  background-color: firebrick;
-  max-width: 45%;
-  height: 25px;
-  border-radius: 7px;
+  background-color: transparent;
+max-width: 45%;
+height: 25px;
+border-radius: 7px;
 }
 
-.Episode
+
+.timmee
 {
-  background-color: firebrick;
-  border-radius: 7px;
+
+  background-color: transparent;
+border-radius: 7px;
 }
+
+.viewsss span {
+font-weight: 300;
+flex: 2;
+}
+
 
 .container-3
 {
-  background-color: gray;
+  background-color: transparent;
   height: auto;
   padding: 0px;
 }
@@ -2819,14 +2764,14 @@ background-color: fuchsia;
   position: absolute;
 width: 100%;
 height: 30px;
-  background-color: darksalmon;
+background-color: transparent;
   z-index: 3;
 }
 
 .channel {
 
   height: 100%; /* Fully inherit from container-3 */
-  background-color:rebeccapurple;
+  background-color: transparent;
   margin: 0 auto;
   margin-top: 1.9rem; /* 50px */
   margin-bottom: 0px;
@@ -2868,17 +2813,295 @@ margin-top: 1.5rem;
 }
 
 
+
+
+  .container-1
+  {
+    background-color: transparent;
+  gap: 0.6rem;
+  justify-content: flex-start;
+  margin: 0 auto; /* ✅ Centers the block */
+  }
+  
+  .kontainer
+  {
+    background-color: transparent;
+    width: clamp(28%, 37%, 32%);
+  margin-left: 5px;
+  }
+  
+  
+  .caption span {
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  
+  .videoo {
+    width: 100%;
+    height: auto;
+  }
+  
+  .videoo video {
+    width: 100%;
+    height: 10rem;
+  }
+
+
+
+}
+
+/* Desktops (1025px–1279px) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .container
+  {
+    background-color: #FFFFFF; 
+  
+  }
+  
+  .nav
+  {
+    background-color: transparent;
+  }
+
+.overlay-text
+{
+  font-size: 1.2rem;
+}
+
+.search input[type="search"] {
+
+  min-height: 10px;
+  max-height: 15px;
+
+}
+.upload
+{
+  background-color: transparent;
+  width: 3vw;
+  height: 3vw;
+}
+
+.Notifications
+{
+  background-color: transparent;
+  width: 3vw;
+  height: 3vw;
+}
+
+.Account 
+{
+  background-color: transparent;
+  width: 3vw;
+  height: 3vw;
+}
+
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
+
+  .video-container 
+  { 
+    max-width: 100%; height: auto; 
+    margin-top: 60px;
+    background-color: transparent;
+  width: 100%;
+  flex-shrink:0;
+  margin: 0 auto; /* ✅ Centers the block */
+  }
+
+.containerr
+{
+  background-color: transparent;
+}
+
+
+.profillee
+{
+  background-color: transparent;
+  width: 100%;
+  height: 2rem; /* Flexible height */
+
+}
+
+
+/* Profile Image */
+.profillee img {
+  width:2rem; /* 35px converted to rem */
+  height: 2rem;
+}
+
+.captionn
+{
+  background-color: transparent;
+  height: 30px;
+}
+
+.captionn h3
+{
+  font-size: clamp(1rem, 1.1vw, 1.5rem);
+}
+
+/* Increase space for time and follow buttons */
+.viewss {
+  flex: 2.1;
+}
+
+/* Increase space for time and follow buttons */
+.follow {
+  flex: 2.1;
+}
+
+.timee {
+  flex: 2;
+}
+
+.container-2
+{
+  background-color: transparent;
+  max-height: 442px;
+  gap:8px;
+  float: none;   
+}
+
+
+.card {
+  position: relative;
+  margin: 0px 0 8px 6px; /* Maintain original positioning */
+  background-color: transparent;
+}
+
+.pichaa {
+  width: 100%;
+  height: 120px;
+  margin-top: 0px;
+  background-color: transparent; /* Adds a fallback background for better contrast */
+}
+
+
+
+.captiion {
+  width: 100%; /* Ensures full width inside the card */
+  height: auto; /* Adjusts based on content */
+  background-color: transparent;
+  padding: 0px 0; /* Adds slight spacing without breaking alignment */
+}
+
+.sectiion {
+  background-color: transparent;
+
+  padding: 0px 0px;
+
+}
+
+.viewsss
+{
+  background-color: transparent;
+  max-width: 45%;
+  height: 25px;
+  border-radius: 7px;
+}
+
+.Episode
+{
+  background-color: transparent;
+  border-radius: 7px;
+}
+
+.container-3
+{
+  background-color: transparent;
+  height: auto;
+  padding: 0px;
+}
+
+.optionnn
+{
+  position: absolute;
+width: 100%;
+height: 30px;
+background-color: transparent;
+  z-index: 3;
+}
+
+.channel {
+
+  height: 100%; /* Fully inherit from container-3 */
+  background-color: transparent;
+  margin: 0 auto;
+  margin-top: 1.9rem; /* 50px */
+  margin-bottom: 0px;
+}
+
+.channel img
+{
+  margin-right: 3%;
+}
+
+.profile
+{
+  position: relative;
+  margin-top: 0rem; /* 15px in rem */
+}
+
+.profile-name span  {
+    font-size: 1rem;
+}
+
+/* Followers label styling */
+.followers span  {
+  font-size: 1rem;
+}
+
+.Table
+{
+  padding-bottom: 0rem;
+padding: 0px;
+}
+
+.series 
+{
+margin-top: 1.5rem;
+  min-width: 40%;
+  max-width: 40%;
+  height: 11.5rem; /* 200px */
+  margin-bottom: 0px;
+}
+
+
+
 .container-1
 {
-background-color: transparent; 
-left: 0.5rem;
+  background-color: transparent;
+gap: 0.6rem;
+margin: 0 auto; /* ✅ Centers the block */
 }
 
 .kontainer
 {
-  background-color: gray; 
-  margin-left: 1rem;
+  background-color: transparent;
+  width: clamp(28%, 37%, 32%);
+margin-left: 5px;
 }
+
 
 .videoo {
   width: 100%;
@@ -2910,19 +3133,19 @@ left: 0.5rem;
 
 .container-3
 {
-  background-color: darkolivegreen;
+  background-color: transparent;
 }
 
 .optionnn
 {
-  background-color: darkgoldenrod;
+  background-color: transparent;
 }
 
   
 .channel
 {
   position:relative;
-  background-color: darkseagreen;
+  background-color: transparent;
 
 }
 
@@ -2930,12 +3153,12 @@ left: 0.5rem;
   .container-1
   {
   gap: 3rem;
-  background-color: grey;
+  background-color: transparent;
   }
 
   .kontainer
   {
-    background-color: pink;
+    background-color: transparent;
     width: clamp(28%, 35%, 30%);
     margin-left: 0.6%;
   }
@@ -2955,7 +3178,7 @@ left: 0.5rem;
   { 
     max-width: 100%; height: auto; 
   
-    background-color: purple;
+    background-color: transparent;
   
   
   

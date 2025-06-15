@@ -544,7 +544,6 @@ opacity: 1;
     bottom: -1.75rem; /* Adjust positioning */
   }
 }
-
 /* 🔥 Overlay Background (Blurs Everything Behind) */
 .upload-overlay {
   position: fixed;
@@ -552,10 +551,11 @@ opacity: 1;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0; /* Ensures it covers everything */
+  z-index: 0;
+  margin: 7rem auto 0 auto; /* ✅ Margin-top now works */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* ✅ Allows margin-top to work */
 }
 
 /* 🔥 Floating Upload Container */
@@ -564,31 +564,29 @@ opacity: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Keeps content aligned to top */
+  justify-content: flex-start;
   width: 90vw;
   max-width: 750px;
   min-height: 700px;
   max-height: 700px;
   overflow-y: auto;
-  background-color: #fff;
+  background-color: transparent;
   padding: 2rem;
   border-radius: 0.8rem;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-  z-index: 11;
+  z-index: 1;
   opacity: 0;
-  transform: translateY(-50px); /* Starts slightly above */
+  transform: translateY(-50px); /* Animation start point */
   animation: popIn 0.5s ease-out forwards;
-  margin-top: 5px; /* Fixed: Added 'px' */
   text-align: center;
-  scrollbar-width: thin; /* Set scrollbar to thin */
-  scrollbar-color: rgba(0, 0, 0, 0.5) transparent; /* Color of the scrollbar thumb and track */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
 }
 
 a {
-  display: inline-block; /* Ensures it behaves like a block element */
-  text-decoration: none; /* Removes the default underline */
+  display: inline-block;
+  text-decoration: none;
 }
-
 
 /* 🎬 Smooth Pop-in Animation */
 @keyframes popIn {
@@ -1560,3 +1558,265 @@ button {
       color: red;  /* Yellow color for TOON in dark mode */
     }
 
+
+
+    
+  /* Mobile-first default styles (<=320px) */
+
+/* Small phones (up to 480px) */
+@media (max-width: 480px) {
+  .navbar { /* hide menu items, show hamburger */ }
+  .sidebar { display: none; }
+  .main-content { display: flex; flex-direction: column; }
+  .video-player { width: 100%; height: auto; }
+  button, .button { padding: 1rem; min-width: 48px; min-height: 48px; }
+}
+
+/* Medium phones / small tablets (481px–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .navbar { /* show expanded nav or hamburger */ }
+  .layout { display: grid;
+             grid-template-columns: 1fr 1fr; 
+             grid-gap: 16px; }
+  .sidebar { display: block; /* optional sidebar view */ }
+  .main-content, .video-container { width: 100%; }
+}
+
+/* Tablets / small laptops (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .container
+  {
+    background-color: #ffffff;
+  margin-bottom: 50rem;
+  }
+  
+  .nav
+  {
+    background-color: transparent;
+  }
+  
+
+.search input[type="search"] {
+
+  min-height: 20px;
+  max-height: 25px;
+
+}
+
+
+.upload
+{
+  background-color: transparent;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Notifications
+{
+  background-color: transparent;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Account 
+{
+  background-color: transparent;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
+
+.Table
+{
+  background-color: transparent;
+}
+
+.overlay-text 
+{
+  background-color: transparent;
+  font-size:0.7rem;
+}
+
+.upload-overlay
+{
+margin: 4.7rem auto 0 auto; /* ✅ Margin-top now works */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+/* Desktops (1025px–1279px) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+
+  .container
+  {
+    background-color:#F5F5DC;
+  }
+  
+  .Table
+  {
+    background-color: transparent;
+  }
+  
+  .overlay-text
+  {
+    background-color: transparent;
+    font-size: 0.8rem;
+  }
+  
+  .nav
+  {
+    background-color: transparent;
+  }
+  
+  .search input[type="search"] {
+  
+    min-height: 20px;
+    max-height: 25px;
+  
+  }
+  
+  
+  .upload
+  {
+    background-color: transparent;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  .Notifications
+  {
+    background-color: transparent;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  .Account 
+  {
+    background-color: transparent;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  
+  
+  .upload img {
+    width: 100%;
+    height:  100%;
+    margin: 0 auto;
+  }
+  
+  .Notifications img {
+    width: 100%;
+    height:  100%;
+    margin: 0 auto;
+  }
+  
+  
+  
+  .Account img {
+    width: 100%;
+    height:  100%;
+  margin: 0 auto;
+  }
+  
+  
+  
+  .suggestionss
+  {
+    background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: calc(100% - 5.8%); 
+    left: 3.6rem;
+  }
+  
+  .rectanglee
+  {
+    background-color: transparent;
+  }
+  
+  
+  .sidebar
+  {
+    background-color: #ffffff;
+    width:5.5%; 
+  }
+  
+  .sidebar:hover {
+    width: 14.9%; /* Expands slightly on hover for better UX */
+  }
+
+  .upload-container
+  {
+    background-color: transparent;
+  }
+
+
+
+
+
+
+
+
+
+
+}
+
+/* Large desktops (1280px–1599px) */
+@media (min-width: 1280px) and (max-width: 1599px) {
+  .layout { grid-template-columns: 250px 4fr 2fr; }
+  .navbar, .sidebar, .content { padding: 2rem; }
+}
+
+/* Ultra-wide (1600px and up) */
+@media (min-width: 1600px) {
+  .layout { grid-template-columns: 300px 5fr 3fr; }
+  .header, .footer { padding: 3rem 5rem; }
+  .video-player { width: auto; height: 900px; /* larger fixed height or aspect fit */ }
+}
+
+/* Dark mode override */
+@media (prefers-color-scheme: dark) {
+  body { background: #121212; color: #e0e0e0; }
+  .navbar { background: #1f1f1f; }
+  /* etc. */
+}

@@ -868,18 +868,221 @@ filter: invert(1);
 
 /* Tablets / small laptops (769px–1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .layout { grid-template-columns: 1fr 2fr; } 
-  .navbar { /* full nav, horizontal */ }
-  .sidebar { /* visible with full functionality */ }
-  .video-player { max-width: 100%; height: auto; }
+
+  .container
+  {
+    background-color: firebrick;
+  
+  }
+  
+  .nav
+  {
+    background-color: bisque;
+  }
+  
+
+.search input[type="search"] {
+
+  min-height: 20px;
+  max-height: 25px;
+
+}
+
+
+.upload
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Notifications
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.Account 
+{
+  background-color: rebeccapurple;
+  width: 3.3vw;
+  height: 3.3vw;
+}
+
+
+.upload img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+.Notifications img {
+  width: 100%;
+  height:  100%;
+  margin: 0 auto;
+}
+
+
+
+.Account img {
+  width: 100%;
+  height:  100%;
+margin: 0 auto;
+}
+
+
+.Table
+{
+  background-color: transparent;
+}
+
+.overlay-text 
+{
+  background-color: transparent;
+  font-size: 0.7rem;
+}
+
+ 
+.signup-container {
+  background-color: #F8F8FF; /* Ghost White */
+  z-index: 11;
+  width: 800px;
+  min-height: 700px;
+  max-height: 700px;
+
+  margin: 60px auto 0 auto; /* Top margin + horizontal centering */
+  padding-bottom: 20px;
+}
+
+h2
+{
+  font-size: 1.5rem;
+}
+
+.reminder {
+  width: 50%;
+  height: 30px;  /* Vertically center the label */
+  background:transparent;
+  margin: 10px auto 0 auto; /* Top margin + horizontal centering */
+  gap: 30px;
+}
+
+.reminder label {
+  margin: 0; /* No need for auto margin if parent is flex-centered */
+  font-weight: 750;
+  color: black;
+}
+
+
+
+
 }
 
 /* Desktops (1025px–1279px) */
 @media (min-width: 1025px) and (max-width: 1279px) {
-  .layout { grid-template-columns: 200px 3fr 1fr; }
-  .navbar { /* large nav layout */ }
-  .sidebar { padding: 20px; }
-  .main-content { max-width: 100%; }
+
+  .container
+  {
+    background-color:violet;
+  }
+  
+  .Table
+  {
+    background-color: transparent;
+  }
+  
+  .overlay-text
+  {
+    background-color: transparent;
+    font-size: 0.8rem;
+  }
+  
+  .nav
+  {
+    background-color: navy;
+  }
+  
+  .search input[type="search"] {
+  
+    min-height: 20px;
+    max-height: 25px;
+  
+  }
+  
+  
+  .upload
+  {
+    background-color: rebeccapurple;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  .Notifications
+  {
+    background-color: rebeccapurple;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  .Account 
+  {
+    background-color: rebeccapurple;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  
+  
+  .upload img {
+    width: 100%;
+    height:  100%;
+    margin: 0 auto;
+  }
+  
+  .Notifications img {
+    width: 100%;
+    height:  100%;
+    margin: 0 auto;
+  }
+  
+  
+  
+  .Account img {
+    width: 100%;
+    height:  100%;
+  margin: 0 auto;
+  }
+  
+  
+  
+  .suggestionss
+  {
+    background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: calc(100% - 5.8%); 
+    left: 3.6rem;
+  }
+  
+  .rectanglee
+  {
+    background-color: transparent;
+  }
+  
+  
+  .sidebar
+  {
+    background-color: #ffffff;
+    width:5.5%; 
+  }
+  
+  .sidebar:hover {
+    width: 14.9%; /* Expands slightly on hover for better UX */
+  }
+
 }
 
 /* Large desktops (1280px–1599px) */

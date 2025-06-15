@@ -636,7 +636,7 @@ opacity: 1;
   border-radius: 7px;
   margin-top: 60px;
   padding: 0px;
-  border-style:ridge;
+  border-style:none;
   align-items: flex-start;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -653,7 +653,7 @@ opacity: 1;
   background-color: transparent;
   border-radius: 7px;
   margin-top: 0px;
-  border-style:ridge;
+  border-style:none;
   flex-grow: 1; /* Ensures it takes up remaining space */
   padding-bottom: 0px;
   padding-top: 0px;
@@ -916,7 +916,6 @@ margin-top:2px ;
   max-height: 550px; /* Set max height for scrolling */
   float: right;
   margin-top: 0px;
-float: right;
 margin-right: 0.5%;
 background-color: transparent; /* Maintain clean UI */
   border-radius: 0.4375rem; /* Rounded edges */
@@ -930,7 +929,7 @@ background-color: transparent; /* Maintain clean UI */
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
   justify-content: flex-start;
-  border-style:ridge;
+  border-style:none;
   z-index: 2; 
 
 }
@@ -1109,7 +1108,7 @@ background-color: transparent; /* Maintain clean UI */
   position: relative;
   width: 30%; /* Maintain original width */
   max-height: 230px;
-  background-color: gray;/* Keep background clean */
+  background-color: transparent;/* Keep background clean */
   flex: 0 1 47%; /* Keep original flex behavior */
   border: none; /* Remove unnecessary borders */
   border-radius: 0.4375rem; /* Smooth rounded edges */
@@ -1819,7 +1818,7 @@ body.dark-mode textarea {
 .container-1 {
   position: relative;
   flex: 1;
-  width: 99.5%;
+  width: 100%;
   height: auto;
   margin-left: 0%;
   display: flex;
@@ -1831,11 +1830,10 @@ body.dark-mode textarea {
   padding: 1rem 0;
   gap:3rem;
   justify-content: flex-start;
-  clear: both; /* 💥 This line makes it ignore container-2's float */
-  border-style:ridge;
+  clear: both;
+  border-style:none;
 }
 
-/* Individual Video Containers */
 .kontainer {
   position: relative;
   width: clamp(28%, 30%, 32%);
@@ -1844,11 +1842,10 @@ body.dark-mode textarea {
   border-radius: 0.5rem;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
-margin-left: 13px;
-padding-bottom: 0px;
-border-style: none;
+  margin: 0; /* 🔥 Let flex gap do spacing */
+  padding-bottom: 0px;
+  border-style: none;
 }
-
 
 /* Video Thumbnails */
 .kontainer img {
@@ -2455,7 +2452,7 @@ body {
   { 
     max-width: 100%; height: auto; 
   
-    background-color: gold;
+    background-color: transparent;
   
   
   
@@ -2467,13 +2464,13 @@ body {
 @media (min-width: 481px) and (max-width: 768px) {
   .container
   {
-    background-color:rebeccapurple;
+    background-color:#FFFFFF;
   
   }
   
   .nav
   {
-    background-color: gold;
+    background-color: transparent;
   }
   
 
@@ -2481,7 +2478,7 @@ body {
   { 
     max-width: 100%; height: auto; 
   
-    background-color: violet;
+    background-color: transparent;
   
   
   
@@ -2491,71 +2488,46 @@ body {
 
 /* Tablets / small laptops (769px–1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
+  
   .container
   {
-    background-color: violet;
+    background-color: #FFFFFF;
   
   }
   
   .nav
   {
-    background-color: darkblue;
+    background-color: transparent;
   }
   
-  .video-container 
-  { 
-    max-width: 100%; height: auto; 
-  
-    background-color: #007BFF;
-  
-  
-  
-  }
 
+.search input[type="search"] {
 
-
-
-
+  min-height: 20px;
+  max-height: 25px;
 
 }
 
-/* Desktops (1025px–1279px) */
-@media (min-width: 1025px) and (max-width: 1279px) {
-  .container
-  {
-    background-color: forestgreen; 
-  
-  }
-  
-  .nav
-  {
-    background-color: saddlebrown; 
-  }
-
-  .overlay-text
-  {
-    font-size: 1.2rem;
-
-  }
-  
 
 .upload
 {
-  background-color: rebeccapurple;
+  background-color: transparent;
   width: 3.3vw;
   height: 3.3vw;
 }
+
 
 .Notifications
 {
-  background-color: rebeccapurple;
+  background-color: transparent;
   width: 3.3vw;
   height: 3.3vw;
 }
 
+
 .Account 
 {
-  background-color: rebeccapurple;
+  background-color: transparent;
   width: 3.3vw;
   height: 3.3vw;
 }
@@ -2581,6 +2553,192 @@ body {
 margin: 0 auto;
 }
 
+
+.Table
+{
+  background-color: transparent;
+}
+
+.overlay-text 
+{
+  background-color: transparent;
+  font-size: 1.1rem;
+}
+  
+  .sidebar
+{
+  display: none;
+  width:4.7%;
+  background-color:#FFFFFF;
+}
+
+.sidebar:hover {
+  width: 12%; /* Expands slightly on hover for better UX */
+}
+
+
+  .video-container 
+  { 
+    max-width: 100%; height: auto; 
+    margin-top: 60px;
+    background-color: transparent; 
+  width: 100%;
+  max-width: 100%;
+  flex-shrink:0;
+  }
+
+.containerr
+{
+  background-color: transparent; 
+}
+
+
+.captionn h3
+{
+  font-size: clamp(1rem, 1.1vw, 1.5rem);
+}
+
+/* Increase space for time and follow buttons */
+.viewss {
+  flex: 2.1;
+}
+
+/* Increase space for time and follow buttons */
+.follow {
+  flex: 2.1;
+}
+
+.timee {
+  flex: 2;
+}
+
+
+.container-2
+{
+  background-color: transparent;
+  max-height: 455px;
+}
+
+.sectiion
+{
+  background-color: transparent;
+  gap:0.1rem;
+    padding: 0px 0px;
+}
+
+.viewsss
+{
+
+  background-color: transparent;
+  max-width: 45%;
+  height: 25px;
+  border-radius: 7px;
+}
+
+
+.timmee
+{
+
+  background-color: transparent;
+  border-radius: 7px;
+}
+
+.viewsss span {
+  font-weight: 300;
+  flex: 2;
+}
+
+
+.container-1
+{
+  background-color: transparent;
+gap: 0.6rem;
+margin: 0 auto; /* ✅ Centers the block */
+}
+
+.kontainer
+{
+  background-color: transparent;
+  width: clamp(28%, 37%, 32%);
+margin-left: 5px;
+}
+
+
+.videoo {
+  width: 100%;
+  height: auto;
+}
+
+.videoo video {
+  width: 100%;
+  height: 10rem; /* 200px */
+
+}
+}
+
+/* Desktops (1025px–1279px) */
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .container
+  {
+    background-color:#FFFFFF;
+  
+  }
+  
+  .nav
+  {
+    background-color: transparent;
+  }
+
+  .overlay-text
+  {
+    font-size: 1.2rem;
+
+  }
+  
+
+  .upload
+  {
+    background-color: transparent;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  .Notifications
+  {
+    background-color: transparent;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  .Account 
+  {
+    background-color: transparent;
+    width: 3vw;
+    height: 3vw;
+  }
+  
+  
+  
+  .upload img {
+    width: 100%;
+    height:  100%;
+    margin: 0 auto;
+  }
+  
+  .Notifications img {
+    width: 100%;
+    height:  100%;
+    margin: 0 auto;
+  }
+  
+  
+  
+  .Account img {
+    width: 100%;
+    height:  100%;
+  margin: 0 auto;
+  }
+  
   .video-container 
   { 
     max-width: 100%; height: auto; 
@@ -2625,23 +2783,25 @@ margin: 0 auto;
 
 .sectiion
 {
-  background-color: darksalmon;
+  background-color: transparent;
   gap:0.1rem;
     padding: 0px 0px;
 }
 
 .viewsss
 {
-  background-color: firebrick;
-width: 30%;
+
+  background-color: transparent;
+  max-width: 45%;
   height: 25px;
   border-radius: 7px;
 }
 
+
 .timmee
 {
 
-  background-color: firebrick;
+  background-color: transparent;
   border-radius: 7px;
 }
 
@@ -2650,17 +2810,34 @@ width: 30%;
   flex: 2;
 }
 
-
-.container-1
-{
-background-color: transparent; 
-left: 0rem;
+.container-1 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* 🔥 Centers the container */
+  gap: 1rem; /* or whatever spacing you need */
+  justify-content:flex-start; /* center items inside */
+  background-color: transparent;
 }
 
-.kontainer
-{
-  background-color: gray; 
-  margin-left: 0rem;
+.kontainer {
+  background-color: transparent;
+  width: clamp(28%, 37%, 32%);
+  margin-left: 0; /* 🔧 Remove offset */
+}
+
+.kontainer {
+  margin-left: 13px; /* ❌ overrides your responsive layout */
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+.caption span {
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
 .videoo {
@@ -2670,10 +2847,8 @@ left: 0rem;
 
 .videoo video {
   width: 100%;
-  height: 10rem; /* 200px */
-
+  height: 10rem;
 }
-
 
 }
 
@@ -2691,19 +2866,17 @@ left: 0rem;
   
   }
 
-  .container-1
-  {
-  gap: 3rem;
-  background-color: transparent;
+  .container-1 {
+    gap: 3rem;
+    background-color: transparent;
+    justify-content: space-around; /* Ensures even spacing */
   }
 
-  .kontainer
-  {
-    background-color: goldenrod;
+  .kontainer {
+    background-color: transparent;
     width: clamp(28%, 35%, 30%);
-    margin-left: 0.6%;
+    margin-left: 0; /* Let the gap do the spacing */
   }
-
 
 }
 
@@ -2717,8 +2890,7 @@ left: 0rem;
   .video-container 
   { 
     max-width: 100%; height: auto; 
-  
-    background-color: purple;
+    background-color: transparent;
   
   
   

@@ -827,6 +827,7 @@ opacity: 1;
   padding: 0.5rem;
   box-sizing: border-box;
   background-color: transparent;
+  border-style:none;
 }
 
 .containerr {
@@ -839,7 +840,7 @@ opacity: 1;
   border-radius: 0.75rem;
   background-color: transparent;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  margin-top: 3%;
+  margin-top: 1.5%;
   left: 0.2%;
 }
 
@@ -865,6 +866,7 @@ opacity: 1;
   gap: 0rem;
   box-sizing: border-box;
   overflow-wrap: break-word;
+  margin-top:5px;
 }
 
 @media (max-width: 768px) {
@@ -916,7 +918,7 @@ opacity: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-align: left;
+  text-align: left;  
   border-radius: 0.4375rem;
   background-color:transparent;
 
@@ -1161,20 +1163,101 @@ opacity: 1;
   flex: 1;
   width: 100%;
   height: auto;
-  margin-left: 0;
   display: flex;
   flex-wrap: wrap;
-  border-radius: 7px;
-  overflow: hidden;
-  padding: 1rem 0;
-  border-style: none;
-  gap: 0.5rem;
-  justify-content: flex-start;
-  clear: both;
   background-color: transparent;
-  margin-top: 2%;
-  border-style: none;
+  border-radius: 7px;
+  top:1rem;
+  overflow: hidden;
+  padding: 1rem 0; /* Adds some top and bottom spacing */
+  gap:1rem; /* Creates spacing between videos */
+  border-style:none;
+justify-content: flex-start;
 }
+
+
+
+/* Unique background colors */
+.container-1 {
+  background-color: transparent;
+}
+
+.container-5 {
+  background-color: transparent;
+}
+
+.container-6 {
+  background-color: transparent;
+}
+
+.container-7 {
+  background-color: transparent;
+}
+
+
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  .container-1 {
+    width: calc(100% - 10%);
+    left: 5%;
+    justify-content: space-around;
+  }
+
+  .kontainer {
+    width: clamp(40%, 45%, 48%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-1 {
+    width: 100%;
+ 
+    gap: 1rem;
+  }
+
+  .kontainer {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container-1 {
+    width: 100%;
+    left: 0;
+    justify-content: center;
+  }
+
+  .kontainer {
+    width: 90%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Individual Video Containers */
+.kontainer {
+  position: relative;
+  width: clamp(28%, 30%, 32%);
+  height: auto;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+margin-left: 13px;
+margin-bottom: 10px;
+padding-bottom: 0px;
+border-style: none;
+}
+
+
+/* Video Thumbnails */
+.kontainer img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  object-fit: cover; /* Ensures consistent scaling */
+}
+
 
 .scroll-area {
   width: 100%;
@@ -1247,85 +1330,6 @@ opacity: 1;
   z-index: 3;
 }
 
-
-/* Unique background colors */
-.container-1 {
-  background-color: transparent;
-}
-
-.container-5 {
-  background-color: transparent;
-}
-
-.container-6 {
-  background-color: transparent;
-}
-
-.container-7 {
-  background-color: transparent;
-}
-
-/* Individual Video Containers */
-.kontainer {
-  position: relative;
-  width: clamp(28%, 30%, 32%);
-  height: auto;
-  background-color: transparent;
-  border-radius: 0.5rem;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  cursor: pointer;
-margin-left: 13px;
-padding-bottom: 0px;
-border-style: none;
-}
-
-
-/* Video Thumbnails */
-.kontainer img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  object-fit: cover; /* Ensures consistent scaling */
-}
-
-
-/* Responsive Adjustments */
-@media screen and (max-width: 1024px) {
-  .container-1 {
-    width: calc(100% - 10%);
-    left: 5%;
-    justify-content: space-around;
-  }
-
-  .kontainer {
-    width: clamp(40%, 45%, 48%);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container-1 {
-    width: 95%;
-    left: 2.5%;
-    gap: 1rem;
-  }
-
-  .kontainer {
-    width: 48%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .container-1 {
-    width: 100%;
-    left: 0;
-    justify-content: center;
-  }
-
-  .kontainer {
-    width: 90%;
-    margin-bottom: 1.5rem;
-  }
-}
 
 /* Profile Section */
 .profilee {
@@ -1933,23 +1937,157 @@ border-style: none;
 
 /* Tablets / small laptops (769px–1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .layout { grid-template-columns: 1fr 2fr; } 
-  .navbar { /* full nav, horizontal */ }
-  .sidebar { /* visible with full functionality */ }
-  .video-player { max-width: 100%; height: auto; }
+
+  .container
+  {
+    background-color: transparent;
+  
+  .overlay-text
+  {
+    font-size: 0.7rem;
+  }
+  
+  .nav
+  {
+    background-color: transparent;
+  }
+    
+  .upload
+  {
+    background-color: transparent;
+    width: 3.3vw;
+    height: 3.3vw;
+  }
+  
+  
+  .Notifications
+  {
+    background-color: transparent;
+    width: 3.3vw;
+    height: 3.3vw;
+  }
+  
+  
+  .Account 
+  {
+    background-color: transparent;
+    width: 3.3vw;
+    height: 3.3vw;
+  }
+  
+  
+  .upload img {
+    width: 100%;
+    height:  100%;
+    margin: 0 auto;
+  }
+  
+  .Notifications img {
+    width: 100%;
+    height:  100%;
+    margin: 0 auto;
+  }
+  
+.video-container
+{
+  background-color: transparent;
+}
+
+.containerr
+{
+  background-color: transparent;
+  margin-top: 0.5%;
+}
+
+
+/* Shared layout styles */
+.content-container {
+  width: 100%;
+  gap: 0.5rem;
+  background-color: transparent;
+
+}
+
+.rectangle
+{
+  background-color: transparent;
+}
+
+.square
+{
+  background-color: transparent;
+}
+
+.about {
+  background-color: transparent;
+  height: auto;
+  max-height: 10rem; /* 300px */
+ /* Added padding for better spacing */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+  flex: 1; /* Allow this section to take available space */
+}
+
+/* Main Section Container */
+.secction {
+  height: clamp(3vh); /* Responsive height */
+  background-color: transparent;
+  gap: clamp(0.5rem, 1.5vw, 1.5rem); /* Responsive gap */
+  margin-bottom: 0px;
+  padding: 0rem;
+  margin-top: 5px;
+}
+
+
+.scroll-area
+{
+  background-color: transparent;
+  gap:1rem; /* Slight space between items */
+}
+
+.shorts {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 9 / 16;
+  margin: 1rem 0 1rem 0.7rem;
+
+}
+
+.short-video {
+  width: 100%;
+  height: 100%;
+
+}
+
+
+  .container-1
+  {
+    background-color: transparent;
+  gap: 0.6rem;
+  margin: 0 auto; /* ✅ Centers the block */
+  }
+  
+  .kontainer
+  {
+    background-color: transparent;
+    width: clamp(28%, 37%, 32%);
+  margin-left: 6px;
+  }
+  
+  
 }
 
 /* Desktops (1025px–1279px) */
 @media (min-width: 1025px) and (max-width: 1279px) {
   .container
   {
-    background-color: violet; 
+    background-color: transparent;
   
   }
   
   .nav
   {
-    background-color: firebrick; 
+    background-color: transparent;
+
   }
 
 .overlay-text
@@ -1965,23 +2103,23 @@ border-style: none;
 }
 .upload
 {
-  background-color: rebeccapurple;
-  width: 3.3vw;
-  height: 3.3vw;
+  background-color: transparent;
+  width: 3vw;
+  height: 3vw;
 }
 
 .Notifications
 {
-  background-color: rebeccapurple;
-  width: 3.3vw;
-  height: 3.3vw;
+  background-color: transparent;
+  width: 3vw;
+  height: 3vw;
 }
 
 .Account 
 {
-  background-color: rebeccapurple;
-  width: 3.3vw;
-  height: 3.3vw;
+  background-color: transparent;
+  width: 3vw;
+  height: 3vw;
 }
 
 
@@ -2008,63 +2146,113 @@ margin: 0 auto;
 
 .container-2
 {
-  background-color: gainsboro;
+  background-color: transparent;
 }
 
 .container-3
 {
-  background-color: darkblue;
+  background-color: transparent;
 }
 
 .video-container
 {
-  background-color: gray;
+  background-color: transparent;
 }
 
 .containerr
 {
-  background-color: firebrick;
+  background-color: transparent;
   flex: 1 1 320px;
   max-width: 400px;
   min-width: 280px;
   aspect-ratio: 16 / 9;
+  height: 300px;
 }
 
 .rectangle
 {
-  background-color: forestgreen;
+  background-color: transparent;
+}
+
+/* Shared layout styles */
+.content-container {
+  width: 100%;
+  gap: 0.6rem;
+  background-color: transparent;
+
+}
+
+
+
+.container-1
+{
+  background-color: transparent;
+gap: 0.6rem;
+}
+
+.kontainer
+{
+  background-color: transparent;
+  width: clamp(28%, 37%, 32%);
+margin-left: 5px;
+}
+
+
+.scroll-area
+{
+  background-color: transparent;
+  gap:2rem; /* Slight space between items */
+}
+
+.shorts {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 9 / 16;
+  margin: 1rem 0 1rem 0.7rem;
+
+}
+
+.short-video {
+  width: 100%;
+  height: 100%;
+
 }
 
 
 
 
-
-
-
-
-
 }
-
-/* Large desktops (1280px–1599px) */
 @media (min-width: 1280px) and (max-width: 1599px) {
-  .layout { grid-template-columns: 250px 4fr 2fr; }
-  .navbar, .sidebar, .content { padding: 2rem; }
+  .content-container {
+    gap: 3rem;
+    background-color: transparent;
+    justify-content: space-around; /* Ensures even spacing */
+  }
+
+  .kontainer {
+    background-color: transparent;
+    width: clamp(28%, 35%, 30%);
+    margin-left: 0; /* Let the gap do the spacing */
+  }
 }
+
 
 /* Ultra-wide (1600px and up) */
 @media (min-width: 1600px) {
 
+  
+
   .container-1
   {
   gap: 3rem;
-  background-color: grey;
+  background-color: transparent;
   }
 
   .kontainer
   {
-    background-color: pink;
+    background-color: transparent;
     width: clamp(28%, 35%, 30%);
-    margin-left: 0.6%;
+    margin-left: 1rem;
   }
   
 }

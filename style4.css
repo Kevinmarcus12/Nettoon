@@ -1129,32 +1129,40 @@ opacity: 1;
 .container-6,
 .container-7 {
   display: none;
-}
-
+}/* Base tab styles */
 /* Base tab styles */
 .tab {
-  transition: background-color 0.3s ease;
+  transition: border-bottom 0.3s ease, color 0.3s ease;
   border-radius: 0.5rem;
-}
-
-/* Default inactive */
-.tab:not(.active-tab) {
   background-color: transparent;
+  color: black;
+  border-bottom: 3px solid transparent; /* default */
 }
 
-/* Light mode */
 @media (prefers-color-scheme: light) {
   .tab.active-tab {
-    background-color: black; /* light grey */
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+    color: black;
+  }
+
+  .tab.active-tab span {
+    color: black;
   }
 }
 
-/* Dark mode */
+
+/* Dark Mode: Use greenyellow border for active tab */
 @media (prefers-color-scheme: dark) {
   .tab.active-tab {
-    background-color: red;
+    border-bottom: 3px solid greenyellow;
+    border-top: 3px solid greenyellow;
+
   }
+  
 }
+
+
 
 
 /* Shared layout styles */
@@ -1243,7 +1251,7 @@ justify-content: flex-start;
   border-radius: 0.5rem;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
-margin-left: 13px;
+margin-left: 1.8%;
 margin-bottom: 10px;
 padding-bottom: 0px;
 border-style: none;
@@ -1576,13 +1584,22 @@ border-style: none;
 /* Remove margin-left from views */
 .views {
   margin-left: 0;
+  gap:5px;
+  justify-content: flex-start;
 }
+
+/* Remove margin-left from views */
+.time{
+
+  justify-content: flex-end;
+}
+
 
 /* Image inside views */
 .views img {
-  width: 1.8vw;
-  height: 1.8vw;
-  margin-right: 0.3rem;
+  width: clamp(16px, 1.8vw, 24px);
+  height: clamp(16px, 1.8vw, 24px);
+  margin-left: 5px;
 }
 
 /* Text in views */
@@ -1597,6 +1614,11 @@ border-style: none;
   text-overflow: ellipsis;
   color: black;
   font-size: clamp(0.75rem, 1vw, 0.875rem);
+}
+
+.time span
+{
+  margin-right: 10px;
 }
 
 /* Optional: Adjust for smaller screens */
@@ -1770,17 +1792,6 @@ border-style: none;
   }
   
 
-.dark-mode .container-4 .my-videos,
-.dark-mode .container-4 .watchlist,
-.dark-mode .container-4 .favorites,
-.dark-mode .container-4 .playlist,
-.dark-mode .container-4 .community
-
-{
-  background-color: transparent;
-
-}
-
 
 
 .dark-mode .container-4 .my-videos img,
@@ -1792,14 +1803,6 @@ border-style: none;
 {
   filter: invert(1);
 
-}
-
-.dark-mode .container-4 .my-videos span,
-.dark-mode .container-4 .watchlist span,
-.dark-mode .container-4 .favorites span,
-.dark-mode .container-4 .playlist span,
-.dark-mode .container-4 .community span {
-  color: #FFFFFF;
 }
 
 /* Dark Mode */
@@ -2229,6 +2232,8 @@ margin-left: 5px;
     justify-content: space-around; /* Ensures even spacing */
   }
 
+
+  
   .kontainer {
     background-color: transparent;
     width: clamp(28%, 35%, 30%);

@@ -117,3 +117,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const rectangles = document.querySelectorAll(".rectanglee");
+    const containers = document.querySelectorAll('[id^="container-"]');
+
+    rectangles.forEach(rect => {
+      rect.addEventListener("click", () => {
+        // Remove 'active' from all tabs
+        rectangles.forEach(r => r.classList.remove("active"));
+
+        // Hide all containers
+        containers.forEach(c => c.style.display = "none");
+
+        // Activate clicked tab
+        rect.classList.add("active");
+
+        // Show corresponding container
+        const targetId = rect.getAttribute("data-target");
+        const targetContainer = document.getElementById(targetId);
+        if (targetContainer) {
+          targetContainer.style.display = "flex";
+        }
+      });
+    });
+
+    // Set "All" as default active
+    const defaultRect = document.querySelector('.rectanglee[data-target="container-1"]');
+    const defaultContainer = document.getElementById("container-1");
+
+    if (defaultRect && defaultContainer) {
+      defaultRect.classList.add("active");
+      defaultContainer.style.display = "flex";
+    }
+  });

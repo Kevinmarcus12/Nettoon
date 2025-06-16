@@ -1126,7 +1126,7 @@ background-color: transparent; /* Maintain clean UI */
 
 /* Subtle hover effect without changing position */
 .card:hover {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 1); /* Soft shadow on hover */
+background-color: transparent;
 }
 
 /* First card special styling */
@@ -1258,11 +1258,6 @@ background-color: transparent; /* Maintain clean UI */
   transition: transform 0.3s ease-in-out; /* Smooth scaling on hover */
 }
 
-/* Hover Effect for Better Engagement */
-.pichaa:hover video {
-  transform: scale(1.03); /* Slight zoom-in for a subtle effect */
-}
-
 /* 📱 Mobile Optimization */
 @media (max-width: 768px) {
   .pichaa {
@@ -1377,7 +1372,7 @@ background-color: transparent; /* Maintain clean UI */
   font-size: 14px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content:flex-end;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -2141,13 +2136,22 @@ body.dark-mode textarea {
 /* Remove margin-left from views */
 .views {
   margin-left: 0;
+  gap:5px;
+  justify-content: flex-start;
 }
+
+/* Remove margin-left from views */
+.time{
+
+  justify-content: flex-end;
+}
+
 
 /* Image inside views */
 .views img {
-  width: 1.8vw;
-  height: 1.8vw;
-  margin-right: 0.3rem;
+  width: clamp(16px, 1.8vw, 24px);
+  height: clamp(16px, 1.8vw, 24px);
+  margin-left: 5px;
 }
 
 /* Text in views */
@@ -2162,6 +2166,11 @@ body.dark-mode textarea {
   text-overflow: ellipsis;
   color: black;
   font-size: clamp(0.75rem, 1vw, 0.875rem);
+}
+
+.time span
+{
+  margin-right: 10px;
 }
 
 /* Optional: Adjust for smaller screens */
@@ -2817,11 +2826,11 @@ margin-left: 5px;
   margin: 0 auto; /* 🔥 Centers the container */
   gap: 1rem; /* or whatever spacing you need */
   justify-content:flex-start; /* center items inside */
-  background-color: transparent;
+  background-color: gray;
 }
 
 .kontainer {
-  background-color: transparent;
+  background-color: pink;
   width: clamp(28%, 37%, 32%);
   margin-left: 0; /* 🔧 Remove offset */
 }
@@ -2863,22 +2872,28 @@ margin-left: 5px;
   
     background-color: transparent;
   
-  
-  
   }
 
-  .container-1 {
-    gap: 3rem;
-    background-color: transparent;
-    justify-content: space-around; /* Ensures even spacing */
+  .card
+  {
+    margin: 1px 0 14px 8px; /* Maintain original positioning */
   }
 
-  .kontainer {
+  .container-1
+  {
+  
+    background-color:transparent;
+  gap: 1.7rem;
+  
+  }
+  
+  .kontainer
+  {
     background-color: transparent;
     width: clamp(28%, 35%, 30%);
-    margin-left: 0; /* Let the gap do the spacing */
+    margin-left: 1.4%;
+   
   }
-
 }
 
 /* Ultra-wide (1600px and up) */

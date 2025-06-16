@@ -636,7 +636,7 @@ opacity: 1;
   border-radius: 7px;
   margin-top: 60px;
   padding: 0px;
-  border-style:ridge;
+  border-style: none;
   align-items: flex-start;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -653,7 +653,7 @@ opacity: 1;
   background-color:transparent; 
   border-radius: 7px;
   margin-top: 0px;
-  border-style:ridge;
+  border-style: none;
   flex-grow: 1; /* Ensures it takes up remaining space */
   padding-bottom: 0px;
   padding-top: 0px;
@@ -928,7 +928,7 @@ background-color: transparent; /* Maintain clean UI */
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
   justify-content: flex-start;
-  border-style:ridge;
+  border-style: none;
   z-index: 2; 
 
 }
@@ -991,7 +991,7 @@ background-color: transparent; /* Maintain clean UI */
   flex: 0 1 47%; /* Keep original flex behavior */
   border: none; /* Remove unnecessary borders */
   border-radius: 0.4375rem; /* Smooth rounded edges */
-  margin: 15px 0 15px 10px; /* Maintain original positioning */
+  margin: 10px 0 15px 10px; /* Maintain original positioning */
   cursor: pointer; /* Indicates interactivity */
   z-index: 0; 
   line-height: 1; /* Optional: helps tighten layout */
@@ -1185,7 +1185,7 @@ background-color: transparent; /* Maintain clean UI */
   max-width: 180px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content:flex-end;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1638,7 +1638,8 @@ body.dark-mode textarea {
   border-radius: 0.4375rem;
   margin-top: 2rem;
   padding: 0;
-  border-style: ridge;
+  padding-bottom: 0px;
+  border-style: none;
 }
 
 
@@ -1648,7 +1649,7 @@ body.dark-mode textarea {
   left: 0;
   width: 100%;
   height: 2rem; /* 50px converted to rem */
-  background-color:transparent;
+  background-color:#FFFFFF;
   display: flex;
   align-items: center; /* Align content vertically */
 border-style:none;
@@ -1793,15 +1794,16 @@ html {
 .Tablee {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: row;
   background-color: transparent;
   overflow-x: auto;
   overflow-y: hidden;
   gap: 0.625rem;
-  padding: 1rem 0;
+  padding: 1rem 0rem;
   z-index:0;
+  margin-bottom: 0px;
   scroll-behavior: smooth;
 }
 
@@ -1887,7 +1889,7 @@ z-index:10;
   overflow: hidden;
   padding: 1rem 0; /* Adds some top and bottom spacing */
   gap:1rem; /* Creates spacing between videos */
-  border-style:ridge;
+  border-style: none;
 justify-content: flex-start;
 }
 
@@ -1896,11 +1898,11 @@ justify-content: flex-start;
   position: relative;
   width: clamp(28%, 30%, 32%);
   height: auto;
-  background: transparent;
+  background-color: pink;
   border-radius: 0.5rem;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
-margin-left: 1.5rem;
+margin-left: 1.8%;
 margin-bottom: 10px;
 padding-bottom: 0px;
 border-style: none;
@@ -2197,17 +2199,25 @@ border-style: none;
   min-width: 0;
 }
 
-
 /* Remove margin-left from views */
 .views {
   margin-left: 0;
+  gap:5px;
+  justify-content: flex-start;
 }
+
+/* Remove margin-left from views */
+.time{
+
+  justify-content: flex-end;
+}
+
 
 /* Image inside views */
 .views img {
-  width: 1.8vw;
-  height: 1.8vw;
-  margin-right: 0.3rem;
+  width: clamp(16px, 1.8vw, 24px);
+  height: clamp(16px, 1.8vw, 24px);
+  margin-left: 5px;
 }
 
 /* Text in views */
@@ -2223,6 +2233,12 @@ border-style: none;
   color: black;
   font-size: clamp(0.75rem, 1vw, 0.875rem);
 }
+
+.time span
+{
+  margin-right: 10px;
+}
+
 
 /* Optional: Adjust for smaller screens */
 @media screen and (max-width: 768px) {
@@ -3131,9 +3147,21 @@ margin-left: 5px;
 /* Large desktops (1280px–1599px) */
 @media (min-width: 1280px) and (max-width: 1599px) {
 
+  .container
+{
+  background-color:#FFFFFF;
+}
+
+
+.card
+{
+  margin: 35px 0 15px 10px; /* Maintain original positioning */
+}
+
 .container-3
 {
   background-color: transparent;
+  padding-bottom: 0px;
 }
 
 .optionnn
@@ -3149,20 +3177,36 @@ margin-left: 5px;
 
 }
 
+.Table
+{
+  padding-bottom: 0rem;
+padding: 0px;
+margin-bottom: 0px;
+background-color: transparent;
+}
 
-  .container-1
-  {
-  gap: 3rem;
+.series 
+{
+  margin-top: 3.4rem; /* Previously 2rem */
+  max-height: 13rem; /* 220px */
+}
+
+
+.container-1
+{
+
+  background-color:transparent;
+gap: 1.7rem;
+
+}
+
+.kontainer
+{
   background-color: transparent;
-  }
-
-  .kontainer
-  {
-    background-color: transparent;
-    width: clamp(28%, 35%, 30%);
-    margin-left: 0.6%;
-  }
-  
+  width: clamp(28%, 35%, 30%);
+  margin-left: 1.4%;
+ 
+}
 
 
 }
@@ -3172,17 +3216,17 @@ margin-left: 5px;
  
 .container
 {
-  background-color: brown;
+  background-color:#FFFFFF;
 }
 
 .Table
 {
-  background-color: honeydew;
+  background-color: transparent;
 }
 
 .overlay-text
 {
-  background-color: navajowhite;
+  background-color: transparent;
   font-size: 1.5rem;
 }
 
@@ -3247,7 +3291,7 @@ margin: 0 auto;
   { 
     max-width: 100%; height: auto; 
     margin-top: 60px;
-    background-color: hotpink; 
+    background-color: transparent;
   width: 100%;
   max-width: 100%;
   flex-shrink:0;
@@ -3255,7 +3299,7 @@ margin: 0 auto;
 
 .containerr
 {
-  background-color: gray; 
+  background-color: transparent;
 }
 
 
@@ -3281,13 +3325,13 @@ margin: 0 auto;
 
 .container-2
 {
-  background-color:navy; 
+  background-color: transparent;
   max-height: 775px;
 }
 
 .card
 {
-  background-color: darkgoldenrod;
+  background-color: transparent;
   max-height: 300px;
   margin: 5px 0 15px 15px; /* Maintain original positioning */
 }
@@ -3337,7 +3381,7 @@ margin: 0 auto;
 
 .container-3
 {
-  background-color: gray;
+  background-color: transparent;
   height: auto;
   padding: 0px;
 }
@@ -3347,14 +3391,14 @@ margin: 0 auto;
   position: absolute;
 width: 100%;
 height: 30px;
-background-color:hotpink;
+background-color: transparent;
   z-index: 3;
 }
 
 .channel {
 
   height: 100%; /* Fully inherit from container-3 */
-  background-color: palegreen;
+  background-color: transparent;
   margin: 0 auto;
   margin-top: 1.9rem; /* 50px */
   margin-bottom: 0px;
@@ -3384,7 +3428,7 @@ background-color:hotpink;
 {
   padding-bottom: 0rem;
 padding: 0px;
-background-color: darkblue;
+background-color: transparent;
 }
 
 .series 
@@ -3399,14 +3443,14 @@ margin-top: 1.7rem;
 
   .container-1
   {
-    background-color: gray;
+    background-color: transparent;
   gap: 1.5rem;
   width:100%; 
   }
 
   .kontainer
   {
-    background-color: yellow;
+    background-color: transparent;
     width: clamp(28%, 37%, 32%);
 margin-left: 6px;
   }

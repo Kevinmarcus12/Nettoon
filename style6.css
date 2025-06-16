@@ -1803,8 +1803,12 @@ margin: 4.7rem auto 0 auto; /* ✅ Margin-top now works */
 
 /* Large desktops (1280px–1599px) */
 @media (min-width: 1280px) and (max-width: 1599px) {
-  .layout { grid-template-columns: 250px 4fr 2fr; }
-  .navbar, .sidebar, .content { padding: 2rem; }
+  
+  .upload-container
+  {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }
 
 /* Ultra-wide (1600px and up) */

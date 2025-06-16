@@ -123,69 +123,46 @@ document.addEventListener("DOMContentLoaded", function () {
             }
           }, { once: true });   
 
-
-    
-      // Wait for the DOM to load
-  document.addEventListener("DOMContentLoaded", function () {
-    const tabButtons = {
-      "my-videos": "container-1",
-      "watchlist": "container-5",
-      "favorites": "container-6",
-      "playlist": "container-7"
-    };
-
-    Object.keys(tabButtons).forEach((key) => {
-      const button = document.querySelector("." + key);
-      const targetContainerClass = tabButtons[key];
-
-      button.addEventListener("click", () => {
-        // Hide all containers
-        Object.values(tabButtons).forEach((containerClass) => {
-          document.querySelector("." + containerClass).style.display = "none";
-        });
-
-        // Show the clicked container
-        document.querySelector("." + targetContainerClass).style.display = "flex";
-      });
-    });
-  });
-
-  // Remove .active-tab from all
-document.querySelectorAll('.my-videos, .watchlist, .favorites, .playlist')
-.forEach(el => el.classList.remove('active-tab'));
-
-// Add to the clicked one
-button.classList.add('active-tab');
+ // 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const tabs = document.querySelectorAll('.container-4 .tab');
-    const containers = document.querySelectorAll('.content-container');
-  
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        // Remove active-tab from all tabs
-        tabs.forEach(t => t.classList.remove('active-tab'));
-  
-        // Hide all containers
-        containers.forEach(c => c.style.display = 'none');
-  
-        // Activate clicked tab
-        tab.classList.add('active-tab');
-  
-        // Show related container
-        const targetSelector = tab.getAttribute('data-target');
-        const target = document.querySelector(targetSelector);
-        if (target) {
-          target.style.display = 'flex';
-        }
-      });
-    });
-  
-    // Initial state
-    document.querySelector('.tab.my-videos').classList.add('active-tab');
-    document.querySelector('.container-1').style.display = 'flex';
-  });
+
+
+
+          document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.container-4 .tab');
+            const containers = document.querySelectorAll('.content-container');
+          
+            tabs.forEach(tab => {
+              tab.addEventListener('click', () => {
+                // Remove active-tab from all tabs
+                tabs.forEach(t => t.classList.remove('active-tab'));
+          
+                // Hide all containers
+                containers.forEach(c => c.style.display = 'none');
+          
+                // Activate clicked tab
+                tab.classList.add('active-tab');
+          
+                // Show related container
+                const targetSelector = tab.getAttribute('data-target');
+                const target = document.querySelector(targetSelector);
+                if (target) {
+                  target.style.display = 'flex';
+                }
+              });
+            });
+          
+            // Optional: Set default tab on load
+            const defaultTab = document.querySelector('.tab.my-videos');
+            if (defaultTab) {
+              defaultTab.classList.add('active-tab');
+              document.querySelector('.container-1').style.display = 'flex';
+            }
+          });
+
+
+
 
 
   window.addEventListener('DOMContentLoaded', () => {
